@@ -25,9 +25,8 @@ public class MainMenu : MonoBehaviour {
 
 
 
-	void OnGUI () {
-	
-		Texture2D texture = (Texture2D)Resources.Load("batsi");
+	void OnGUI () {		
+		Texture2D texture = (Texture2D)Resources.Load("GUI/menu/batsi");
 		GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), texture);
 		float boxHeigt = Screen.height*.25f, 
 			boxWidth = Screen.width*.25f,

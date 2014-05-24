@@ -17,6 +17,8 @@ void Start ()
 // Update is called once per frame
 void Update ()
 {
+		if (Time.timeScale == 0)
+			return;
 		if (Input.GetKey("t")) {
 		carril=carril-2;
 		if (carril<2) {
