@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\gui\MainMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Facebook\Editor\android\FacebookAndroidUtil.cs">
     <Files>
-      <File FileName="Assets\scripts\gui\MainMenu.cs" Line="38" Column="38" />
+      <File FileName="Assets\scripts\gui\MainMenu.cs" Line="60" Column="1" />
+      <File FileName="Assets\Facebook\Editor\android\FacebookAndroidUtil.cs" Line="138" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
