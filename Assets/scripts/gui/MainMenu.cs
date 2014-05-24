@@ -3,7 +3,7 @@ using System.Collections;
 public class MainMenu : MonoBehaviour {
 
 	void Awake(){
-		enabled = false;
+		/*enabled = false;
 		FB.Init(delegate {
 			//init
 			enabled = true; // "enabled" is a property inherited from MonoBehaviour
@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour {
 			}
 		}, delegate {
 			//en ejemplo pusieron cosas pusieron logica pause aqui
-		});
+		});*/
 	}
 	void FBCallback(FBResult result)
 	{
