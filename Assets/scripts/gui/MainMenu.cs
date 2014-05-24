@@ -8,16 +8,16 @@ public class MainMenu : MonoBehaviour {
 			//init
 			enabled = true; // "enabled" is a property inherited from MonoBehaviour
 			if (FB.IsLoggedIn){
-				FB.API("/me?fields=id,first_name,friends.limit(100).fields(first_name,id)", Facebook.HttpMethod.GET, FBCallback);
+				FB.API("/me?fields=id,first_name,friends.limit(100).fields(first_name,id)", Facebook.HttpMethod.GET, OnLogIn);
 			}
 		}, delegate {
 			//en ejemplo pusieron cosas pusieron logica pause aqui
 		});
 	}
-	void FBCallback(FBResult result)
+	void OnLogIn(FBResult result)
 	{
 
-		
+		Debug.Log (result.Text);
 		//parsear cadena o tronar por que no pudo
 		//GameStateManager.Username = profile["first_name"];
 		//friends = Util.DeserializeJSONFriends(result.Text);
@@ -47,13 +47,23 @@ public class MainMenu : MonoBehaviour {
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*2,buttonWidth,buttonHeigth), "Demo")) {
 			Application.LoadLevel(2);
 		}
-		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "Face")) {
+		string shareString="Login Facebook";
+		if(FB.IsLoggedIn)
+			shareString="Compartir en Facebook";
+
+		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), shareString)) {
 			if (!FB.IsLoggedIn)
-				FB.Login("email,publish_actions", delegate {
-					Debug.Log("login");
-				});
+				FB.Login("email,publish_actions", OnLogIn);
+			else 
+				FB.Feed(
+					linkCaption: "Titulo Prueba",
+					picture: "http://www.friendsmash.com/images/logo_large.jpg",
+					linkName: "Checkout my Friend",
+					link: "http://apps.facebook.com/" + FB.AppId + "/?challenge_brag=" + (FB.IsLoggedIn ? FB.UserId : "guest")
+					);		
 		}
 	}
 
-
+	
+	
 }
