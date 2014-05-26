@@ -2,6 +2,7 @@
 
 public var blackscreen: GameObject;
 public var TouchText: GameObject;
+public var videoDuration: float;
 
 
 
@@ -28,7 +29,9 @@ if (Input.touchCount > 0){
 
 
 		
-		Invoke( "success", 2.0 );
+		Invoke( "success", 3.0 );
+		//Invoke( "loadlvl", 40.0 );
+		Invoke( "loadlvl", videoDuration );
 		
 		
 
@@ -63,7 +66,7 @@ function OnMouseDown () {
 		
 		
 
-Invoke( "success", 3.0 );
+//Invoke( "success", 3.0 );
 		
 
 
@@ -74,5 +77,12 @@ function success(){
 
 		blackscreen.transform.localPosition = new Vector3(0,0.5,0);
 		TouchText.SetActive(true);
+		
+
+}
+function loadlvl(){
+
+	Application.LoadLevel("Start");
+		
 
 }

@@ -78,7 +78,8 @@ public class PlayVideo : MonoBehaviour
 					Screen.orientation = ScreenOrientation.LandscapeLeft;
 #endif
                     // Pause the video if it is currently playing
-                    currentVideo.VideoPlayer.Pause();
+                    //jonathan
+					//currentVideo.VideoPlayer.Pause();
 
                     // Seek the video to the beginning();
                     currentVideo.VideoPlayer.SeekTo(0.0f);
@@ -120,7 +121,8 @@ public class PlayVideo : MonoBehaviour
                     else if (state == VideoPlayerHelper.MediaState.PLAYING)
                     {
                         // Video is already playing, pause it
-                        currentVideo.VideoPlayer.Pause();
+                      //jonathan
+						//currentVideo.VideoPlayer.Pause();
                     }
                 }
                 else
