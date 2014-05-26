@@ -43,6 +43,10 @@ void Update ()
 			this.SendMessage("swipeup");
 		}
 	
+		if (Input.GetKey("j")) {
+			
+			this.SendMessage("deadAnimation");
+		}
 		
 	
     foreach (var T in Input.touches) {

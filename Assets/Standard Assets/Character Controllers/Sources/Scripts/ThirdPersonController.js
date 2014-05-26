@@ -21,6 +21,7 @@ enum CharacterState {
 	Trotting = 2,
 	Running = 3,
 	Jumping = 4,
+	Dead = 5,
 }
 
 private var _characterState : CharacterState;
@@ -45,6 +46,10 @@ var rotateSpeed = 500.0;
 var trotAfterSeconds = 3.0;
 
 var canJump = true;
+
+var moveAction = 1;
+var isDead = false;
+
 
 private var jumpRepeatTime = 0.05;
 private var jumpTimeout = 0.15;
@@ -143,7 +148,7 @@ function UpdateSmoothedMovementDirection ()
 	//var v = Input.GetAxisRaw("Vertical");
 	var h = Input.GetAxisRaw("Horizontal");
 		//var h=1;
-		var v=1;
+		var v=moveAction;
 	// Are we moving backwards or looking backwards
 	if (v < -0.2)
 		movingBack = true;
@@ -357,7 +362,12 @@ function Update() {
 	collisionFlags = controller.Move(movement);
 	
 	// ANIMATION sector
-	if(_animation) {
+
+	if(isDead===true){
+	Debug.Log("aqui ya deveria morir el ");
+	}
+	else{
+		if(_animation) {
 		if(_characterState == CharacterState.Jumping) 
 		{
 			if(!jumpingReachedApex) {
@@ -392,6 +402,9 @@ function Update() {
 				
 			}
 		}
+	}
+	
+	
 	}
 	// ANIMATION sector
 	
@@ -483,5 +496,13 @@ function swipeup()
 {
 lastJumpButtonTime = Time.time; //jonathan
 ApplyJumping2 ();
+
+}
+function deadAnimation()
+{
+moveAction=0;
+
+animation.Play("motionplus10");
+isDead=true;
 
 }
