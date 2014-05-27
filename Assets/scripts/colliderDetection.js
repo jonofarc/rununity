@@ -14,17 +14,22 @@ function Update () {
 function OnCollisionEnter(collision : Collision) {
 		// Debug-draw all contact points and normals
 	//Debug.Log(collision.transform.name);
-	
-	if(collision.transform.name=="Cylinder(Clone)"){
-	
 	Debug.Log(collision.transform.name);
-	this.SendMessage("deadAnimation");
-	Invoke( "restartLvl", 3.0 );
+	if(collision.transform.name=="charraco(Clone)"){
+	
 
-	//Application.LoadLevel(Application.loadedLevel);
+		this.SendMessage("deadAnimation");
+		Invoke( "restartLvl", 3.0 );
 	
 	}
-	//Application.LoadLevel(Application.loadedLevel);
+	if(collision.transform.name=="gota_rescate(Clone)"){
+	
+
+		Destroy(collision.gameObject);
+		this.SendMessage("speedBoost");
+	
+	}
+
 
 }
 function restartLvl(){

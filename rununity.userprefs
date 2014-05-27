@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/colliderDetection.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\spawnObjects.js">
     <Files>
-      <File FileName="Assets/scripts/BringFront.js" Line="76" Column="1" />
-      <File FileName="Assets/scripts/SwipeTest.cs" Line="46" Column="1" />
-      <File FileName="Assets/scripts/colliderDetection.js" Line="32" Column="49" />
-      <File FileName="Assets/Standard Assets/Character Controllers/Sources/Scripts/ThirdPersonController.js" Line="503" Column="7" />
-      <File FileName="Assets/gonti_movements/animate.js" Line="13" Column="3" />
+      <File FileName="Assets\scripts\BringFront.js" Line="1" Column="1" />
+      <File FileName="Assets\scripts\SwipeTest.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\colliderDetection.js" Line="29" Column="3" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" Line="515" Column="1" />
+      <File FileName="Assets\scripts\spawnObjects.js" Line="34" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

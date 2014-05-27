@@ -33,6 +33,9 @@ var trotSpeed = 4.0;
 // when pressing "Fire3" button (cmd) we start running
 var runSpeed = 6.0;
 
+// boost de velocidad al agarrar una gotita
+var SpeedBoost = 0.0;
+
 var inAirControlAcceleration = 3.0;
 
 // How high do we jump when pressing jump and letting go immediately
@@ -205,7 +208,7 @@ function UpdateSmoothedMovementDirection ()
 		}
 		else if (Time.time - trotAfterSeconds > walkTimeStart)
 		{
-			targetSpeed *= trotSpeed;
+			targetSpeed *= trotSpeed+SpeedBoost;
 			_characterState = CharacterState.Trotting;
 		}
 		else
@@ -504,5 +507,12 @@ moveAction=0;
 
 animation.Play("motionplus10");
 isDead=true;
+
+
+}
+function speedBoost()
+{
+
+SpeedBoost=SpeedBoost+1.0;
 
 }
