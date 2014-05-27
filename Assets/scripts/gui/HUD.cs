@@ -3,20 +3,43 @@ using System.Collections;
 using System.IO;
 
 public class HUD : MonoBehaviour {
-	private static float hp=.1f;
+	public GameObject player;//asignamos al player para regresarle valores cuadno la barra de hp este llena
+
+	public static float hp=.5f;
 
 	public static void setHP(float hp){
 		HUD.hp=hp;
 	}
 	// Use this for initialization
 	void Start () {
-	
+		hp=0f;//inisialisamos la variable por si el nivel es reiniciado con el menu o por morir
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+
+	//esta funcion es llamada desde el objeto Gonti_run en el script colliderDetection.js al obtener una gotita
+	 void increaseHP(){
+		if(hp<0.9f){
+			hp=hp+0.1f;
+
+		}
+		else{
+			hp=1f;
+			player.SendMessage("hpMaxed");
+		}
+
+	}
+	//esta funcion es llamada desde el objeto Gonti_run en el script colliderDetection.js al obtener una gotita
+	void decreaseHP(){
+	
+		hp=0f;
+		
+		
+	}
+
 	void OnGUI(){
 		if (Time.timeScale == 1) { 
 			Texture2D pause = (Texture2D)Resources.Load("GUI/HUD/pause");

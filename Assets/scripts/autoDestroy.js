@@ -16,7 +16,7 @@ Destroy (myObject);
 
 if(myObject.transform.position.y<-1){
 
-myObject.transform.position= new Vector3(myObject.transform.position.x,-1,myObject.transform.position.z);
+myObject.transform.position= new Vector3(myObject.transform.position.x,-5,myObject.transform.position.z);
 
 
 }

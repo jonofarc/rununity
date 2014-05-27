@@ -1,13 +1,18 @@
 ﻿#pragma strict
+public var myCamera: GameObject;
+public var lvlFinished: boolean;
+
 
 function Start () {
-
+lvlFinished=false;
 }
 
 function Update () {
 
-
-
+if(lvlFinished==true){
+transform.eulerAngles = Vector3(0,180,0);
+}
+	
 
 }
 
@@ -17,9 +22,10 @@ function OnCollisionEnter(collision : Collision) {
 	Debug.Log(collision.transform.name);
 	if(collision.transform.name=="charraco(Clone)"){
 	
-
-		this.SendMessage("deadAnimation");
-		Invoke( "restartLvl", 3.0 );
+		Destroy(collision.gameObject);
+		this.SendMessage("deadAnimation");	
+		myCamera.SendMessage("decreaseHP");
+		
 	
 	}
 	if(collision.transform.name=="gota_rescate(Clone)"){
@@ -27,13 +33,18 @@ function OnCollisionEnter(collision : Collision) {
 
 		Destroy(collision.gameObject);
 		this.SendMessage("speedBoost");
+		myCamera.SendMessage("increaseHP");
+	
+	}
+	if(collision.transform.name=="LvlFinished"){
+	
+
+				lvlFinished=true;
+				Destroy(collision.gameObject);
+				this.SendMessage("lvlFinished");
+		
 	
 	}
 
-
-}
-function restartLvl(){
-
-	Application.LoadLevel(Application.loadedLevel);
 
 }

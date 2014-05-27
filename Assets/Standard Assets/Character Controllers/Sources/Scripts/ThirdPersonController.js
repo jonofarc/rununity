@@ -35,6 +35,7 @@ var runSpeed = 6.0;
 
 // boost de velocidad al agarrar una gotita
 var SpeedBoost = 0.0;
+var hpMaxedBoost=1;
 
 var inAirControlAcceleration = 3.0;
 
@@ -208,7 +209,7 @@ function UpdateSmoothedMovementDirection ()
 		}
 		else if (Time.time - trotAfterSeconds > walkTimeStart)
 		{
-			targetSpeed *= trotSpeed+SpeedBoost;
+			targetSpeed *= (trotSpeed+SpeedBoost)*hpMaxedBoost;
 			_characterState = CharacterState.Trotting;
 		}
 		else
@@ -503,16 +504,48 @@ ApplyJumping2 ();
 }
 function deadAnimation()
 {
+
+if(SpeedBoost==0){
 moveAction=0;
 
 animation.Play("motionplus10");
+Invoke( "restartLvl", 3.0 );
 isDead=true;
+
+}
+else{
+SpeedBoost=0;
+
+}
+
 
 
 }
 function speedBoost()
 {
+	if(hpMaxedBoost==2){
 
-SpeedBoost=SpeedBoost+1.0;
+	}
+	else{
+		SpeedBoost=SpeedBoost+0.25;
+	}
+}
+function hpMaxed()
+{
+
+hpMaxedBoost=2;
+
+}
+function restartLvl(){
+
+	Application.LoadLevel(Application.loadedLevel);
+
+}
+function lvlFinished(){
+	moveAction=0;
+	isDead=true;//esta variable impidie que se ejecuten otras animaciones mas que la actual
+	animation.Play("motionplus8");
+
+	Debug.Log("Aqui carga el lvl que deve salir despues de pasar el lvl actual");
 
 }
