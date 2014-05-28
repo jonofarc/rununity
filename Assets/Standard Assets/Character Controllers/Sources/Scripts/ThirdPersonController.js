@@ -502,9 +502,11 @@ lastJumpButtonTime = Time.time; //jonathan
 ApplyJumping2 ();
 
 }
+
+//esta funcion es la que entra al chocar con un enemigo
 function deadAnimation()
 {
-
+//checa si no tienes gotitas de tener entra al else
 if(SpeedBoost==0){
 moveAction=0;
 
@@ -515,7 +517,8 @@ isDead=true;
 }
 else{
 SpeedBoost=0;
-
+hpMaxedBoost=1;
+trotMaxAnimationSpeed=1.0;
 }
 
 
@@ -527,6 +530,7 @@ function speedBoost()
 
 	}
 	else{
+	
 		SpeedBoost=SpeedBoost+0.25;
 	}
 }
@@ -534,6 +538,7 @@ function hpMaxed()
 {
 
 hpMaxedBoost=2;
+trotMaxAnimationSpeed=2.0;
 
 }
 function restartLvl(){
