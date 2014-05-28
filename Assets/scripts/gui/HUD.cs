@@ -39,14 +39,14 @@ public class HUD : MonoBehaviour {
 		
 		
 	}
-
+	float sizeRatio=.15f;
 	void OnGUI(){
 		if (Time.timeScale == 1) { 
 			Texture2D pause = (Texture2D)Resources.Load("GUI/HUD/pause");
 			if (GUI.Button (new Rect (Screen.width - (Screen.width * .15f),
 				       Screen.height * .05f,
-				       Screen.width * .1f,
-				       Screen.height * .1f), pause)) 
+				       Screen.width * sizeRatio,
+				       Screen.height * sizeRatio), pause)) 
 				Time.timeScale = 0;
 			float fullHP=Screen.height*.7f,
 				topHp=(Screen.height*.15f)+(fullHP-(fullHP*hp));
@@ -60,22 +60,22 @@ public class HUD : MonoBehaviour {
 			if (GUI.Button (new Rect (
 						(Screen.width / 2) - (Screen.width * .05f),
 						(Screen.height / 2) - (Screen.height * .225f),
-						Screen.width * .1f,
-						Screen.height * .1f), "Resumir")) 
+						Screen.width * sizeRatio,
+						Screen.height * sizeRatio), "Resumir")) 
 				Time.timeScale = 1;
 			if (GUI.Button (new Rect (
 						(Screen.width / 2) - (Screen.width * .05f),
 						(Screen.height / 2) - (Screen.height * .075f),
-						Screen.width * .1f,
-						Screen.height * .1f), "Reiniciar")) {
+						Screen.width * sizeRatio,
+						Screen.height * sizeRatio), "Reiniciar")) {
 				Application.LoadLevel(Application.loadedLevel);
 				Time.timeScale=1;
 			}				
 			if (GUI.Button (new Rect (
 						(Screen.width / 2) - (Screen.width * .05f),
 						(Screen.height / 2) - (Screen.height * -.075f),
-						Screen.width * .1f,
-						Screen.height * .1f), "Menu")){
+						Screen.width * sizeRatio,
+						Screen.height * sizeRatio), "Menu")){
 				Application.LoadLevel("Start");
 				Time.timeScale=1;
 			}
