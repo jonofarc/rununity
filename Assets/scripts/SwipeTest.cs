@@ -5,18 +5,20 @@ public class SwipeTest : MonoBehaviour {
 
 Vector2 StartPos;
 int SwipeID = -1;
-int carril=5;
+int carril=4;
 float minMovement = 10.0f;
 public GameObject player;
 
 // Use this for initialization
 void Start ()
 {
- 
+
 }
 // Update is called once per frame
 void Update ()
 {
+		player.transform.position=new Vector3(carril,(player.transform.position.y+0.0f),player.transform.position.z);
+
 		if (Time.timeScale == 0)
 			return;
 		if (Input.GetKey("t")) {

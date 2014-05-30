@@ -46,6 +46,9 @@ public class IntermediateLevel : MonoBehaviour {
 			if(GUI.Button(new Rect(Screen.width*.15f,count*buttonHeight,buttonWidth+5f,buttonHeight),answer)){
 				if(answer.Equals(question["good"]))
 					print ("la buena");
+			////////////////aqui mando llamar el siguiente lvl al acertar a la pregunta////
+				this.SendMessage("lvlFinished");
+
 			}
 			count++;
 		}

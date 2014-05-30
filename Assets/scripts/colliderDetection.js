@@ -40,11 +40,19 @@ function OnCollisionEnter(collision : Collision) {
 	
 
 				lvlFinished=true;
-				Destroy(collision.gameObject);
+				//Destroy(collision.gameObject);
+				collision.gameObject.SendMessage("lvlFinished");
 				this.SendMessage("lvlFinished");
 		
 	
 	}
 
 
+
+
+
 }
+
+
+
+

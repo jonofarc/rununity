@@ -531,7 +531,7 @@ function speedBoost()
 	}
 	else{
 	
-		SpeedBoost=SpeedBoost+0.25;
+		SpeedBoost=SpeedBoost+0.025;
 	}
 }
 function hpMaxed()
@@ -551,6 +551,6 @@ function lvlFinished(){
 	isDead=true;//esta variable impidie que se ejecuten otras animaciones mas que la actual
 	animation.Play("motionplus8");
 
-	Debug.Log("Aqui carga el lvl que deve salir despues de pasar el lvl actual");
+//	Debug.Log("Aqui carga el lvl que deve salir despues de pasar el lvl actual");
 
 }

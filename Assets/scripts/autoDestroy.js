@@ -9,7 +9,7 @@ function Start () {
 
 function Update () {
 
-if(myPlayer.transform.position.z>(myObject.transform.position.z+20)){
+if(myPlayer.transform.position.z>(myObject.transform.position.z+10)){
 Destroy (myObject);
 
 }

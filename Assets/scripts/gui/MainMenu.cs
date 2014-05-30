@@ -2,17 +2,49 @@
 using System.Collections;
 public class MainMenu : MonoBehaviour {
 
+	bool conFace=false;
+
 	void Awake(){
-		enabled = false;
-		FB.Init(delegate {
-			//init
-			enabled = true; // "enabled" is a property inherited from MonoBehaviour
-			if (FB.IsLoggedIn){
-				FB.API("/me?fields=id,first_name,friends.limit(100).fields(first_name,id)", Facebook.HttpMethod.GET, OnLogIn);
+
+			
+
+			
+			try
+				
+			{
+			
+				enabled = false;
+				FB.Init(delegate {
+					//init	
+					conFace=true;
+					enabled = true; // "enabled" is a property inherited from MonoBehaviour
+					if (FB.IsLoggedIn){
+						FB.API("/me?fields=id,first_name,friends.limit(100).fields(first_name,id)", Facebook.HttpMethod.GET, OnLogIn);
+					}
+				}, delegate {
+					//en ejemplo pusieron cosas pusieron logica pause aqui
+					conFace=true;
+				});
+
+	
+		
 			}
-		}, delegate {
-			//en ejemplo pusieron cosas pusieron logica pause aqui
-		});
+			
+			catch(System.Exception de)
+				
+			{
+				enabled = false;
+
+					
+			}
+
+			
+			
+
+
+
+
+	
 	}
 	void OnLogIn(FBResult result)
 	{
@@ -50,7 +82,8 @@ public class MainMenu : MonoBehaviour {
 		if(FB.IsLoggedIn)
 			shareString="Compartir en Facebook";
 
-		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), shareString)) {
+	
+		if(conFace && GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), shareString)) {
 			if (!FB.IsLoggedIn)
 				FB.Login("email,publish_actions", OnLogIn);
 			else 
@@ -59,8 +92,10 @@ public class MainMenu : MonoBehaviour {
 					picture: "http://www.friendsmash.com/images/logo_large.jpg",
 					linkName: "Checkout my Friend",
 					link: "http://apps.facebook.com/" + FB.AppId + "/?challenge_brag=" + (FB.IsLoggedIn ? FB.UserId : "guest")
-					);		
+					);	
+					
 		}
+
 	}
 
 	
