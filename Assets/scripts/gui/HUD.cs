@@ -39,7 +39,7 @@ public class HUD : MonoBehaviour {
 		
 		
 	}
-	float sizeRatio=.15f;
+	float sizeRatio=.1f;
 	void OnGUI(){
 		if (Time.timeScale == 1) { 
 			Texture2D pause = (Texture2D)Resources.Load("GUI/HUD/pause");

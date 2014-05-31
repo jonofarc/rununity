@@ -8,20 +8,19 @@ public class IntermediateLevel : MonoBehaviour {
 
 	JSONNode question=null;
 	JSONArray answers=null;
+	static string nextLevel="Start";
+	static string failLevel="Start";
+	public static void setNextLevel(string level){
+		IntermediateLevel.nextLevel=level;
+	}
+	public static void setFailLevel(string level){
+		IntermediateLevel.nextLevel=level;
+	}
+
 	void Start () {
-		string fileContents="";
 		string line="";		
-		StreamReader theReader = new StreamReader(Application.dataPath + "/questions.txt");			
-		using (theReader){
-			while (line != null){
-				line = theReader.ReadLine();
-				fileContents+=line;
-
-			}
-			theReader.Close();
-		}		
-
-		JSONNode json=JSON.Parse(fileContents);
+		TextAsset fileContents= Resources.Load("questions") as TextAsset;
+		JSONNode json=JSON.Parse(fileContents.ToString());
 		int quest= Random.Range(1,json.Count);
 		question=json[quest];
 		answers=question["bad"].AsArray;
@@ -43,12 +42,11 @@ public class IntermediateLevel : MonoBehaviour {
 		float buttonWidth=Screen.width*.7f;
 		int count=1;
 		foreach(JSONNode answer in answers){
-			if(GUI.Button(new Rect(Screen.width*.15f,count*buttonHeight,buttonWidth+5f,buttonHeight),answer)){
+			if(GUI.Button(new Rect(Screen.width*.15f,count*buttonHeight,buttonWidth,buttonHeight),answer)){
 				if(answer.Equals(question["good"]))
-					print ("la buena");
-			////////////////aqui mando llamar el siguiente lvl al acertar a la pregunta////
-				this.SendMessage("lvlFinished");
-
+					Application.LoadLevel(nextLevel);
+				else 
+					Application.LoadLevel(failLevel);			
 			}
 			count++;
 		}
