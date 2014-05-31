@@ -1,23 +1,23 @@
 
 {
     "1":{
-    	"q":"cuanto es 1 +2",
+    	"q":"¿cuanto es 1 +2?",
     	"bad":["5","6"],
     	"good":"3"
     }, 
     "2":{
-    	"q":"hueles mal",
-    	"bad":["si","no"],
-    	"good":"talvez"
+    	"q":"¿el agua es liquida?",
+    	"bad":["tal vez","no"],
+    	"good":"si"
     },
     "3":{
-    	"q":"taz gordo",
-    	"bad":["si","no"],
-    	"good":"talvez"
+    	"q":"¿el agua tiene sabor?",
+    	"bad":["tal vez","no"],
+    	"good":"no"
     },
     "4":{
-    	"q":"eres rico",
-    	"bad":["si","no"],
-    	"good":"talvez"
+    	"q":"¿El juego es bueno?",
+    	"bad":["tal vez","no"],
+    	"good":"si"
     }
 }

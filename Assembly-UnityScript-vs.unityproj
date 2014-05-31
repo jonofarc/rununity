@@ -64,7 +64,6 @@
      <Compile Include="Assets\scripts\Loadlvl1.js" />
      <Compile Include="Assets\scripts\autoDestroy.js" />
      <Compile Include="Assets\scripts\colliderDetection.js" />
-     <Compile Include="Assets\scripts\gotolvl.js" />
      <Compile Include="Assets\scripts\moveEnemy.js" />
      <Compile Include="Assets\scripts\railAdjustment.js" />
      <Compile Include="Assets\scripts\spawnObjects.js" />

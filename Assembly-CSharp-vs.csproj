@@ -107,6 +107,7 @@
      <Compile Include="Assets\scripts\VideoPlaybackAppManager.cs" />
      <Compile Include="Assets\scripts\VideoPlaybackUIEventHandler.cs" />
      <Compile Include="Assets\scripts\VideoPlaybackUIView.cs" />
+     <Compile Include="Assets\scripts\gotoLvl.cs" />
      <Compile Include="Assets\scripts\gui\HUD.cs" />
      <Compile Include="Assets\scripts\gui\IntermediateLevel.cs" />
      <Compile Include="Assets\scripts\gui\MainMenu.cs" />

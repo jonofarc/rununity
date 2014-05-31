@@ -43,7 +43,7 @@ public class IntermediateLevel : MonoBehaviour {
 		int count=1;
 		foreach(JSONNode answer in answers){
 			if(GUI.Button(new Rect(Screen.width*.15f,count*buttonHeight,buttonWidth,buttonHeight),answer)){
-				if(answer.Equals(question["good"]))
+				if(!answer.Equals(question["good"]))
 					Application.LoadLevel(nextLevel);
 				else 
 					Application.LoadLevel(failLevel);			
