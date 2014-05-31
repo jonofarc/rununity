@@ -3,17 +3,21 @@
 public var myPlayer: GameObject;
 public var BadSpawneable : Transform;
 public var GoodSpawneable : Transform;
+public var mainCamera: GameObject;
 var passedTime : float;
 
 
 
 function Start () {
 passedTime= myPlayer.transform.position.z+10;
+
 }
 
 function Update () {
 
 	if(myPlayer.transform.position.z>passedTime){
+	
+	mainCamera.SendMessage("setPoints");
 	
 	var GoodOrBad = Random.Range(0,2);
 		if(GoodOrBad==0){

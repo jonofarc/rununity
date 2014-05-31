@@ -6,13 +6,30 @@ public class HUD : MonoBehaviour {
 	public GameObject player;//asignamos al player para regresarle valores cuadno la barra de hp este llena
 
 	public static float hp=.5f;
+	public static float points=.0f;
 
 	public static void setHP(float hp){
 		HUD.hp=hp;
+
+	}
+	public void setPoints(){
+
+		if (hp < 1) {
+		    points = points + (Mathf.Pow (2, (hp * 10)));
+		} 
+		else {
+		
+			points = points + ((Mathf.Pow (2, (hp * 10)))*2);
+
+		}
+
+	//	Debug.Log (points);
+	
 	}
 	// Use this for initialization
 	void Start () {
-		hp=0f;//inisialisamos la variable por si el nivel es reiniciado con el menu o por morir
+		hp=0.0f;//inisialisamos la variable por si el nivel es reiniciado con el menu o por morir
+		points=0f; // idem
 	}
 	
 	// Update is called once per frame
@@ -29,6 +46,15 @@ public class HUD : MonoBehaviour {
 		else{
 			hp=1f;
 			player.SendMessage("hpMaxed");
+	
+	
+				
+				Debug.Log(points);
+				points=points+500;
+				Debug.Log(points);
+			
+
+
 		}
 
 	}
@@ -41,6 +67,9 @@ public class HUD : MonoBehaviour {
 	}
 	float sizeRatio=.1f;
 	void OnGUI(){
+
+		GUI.Label(new Rect(10, 10, 150, 150), points.ToString());
+
 		if (Time.timeScale == 1) { 
 			Texture2D pause = (Texture2D)Resources.Load("GUI/HUD/pause");
 			if (GUI.Button (new Rect (Screen.width - (Screen.width * .15f),
