@@ -4,6 +4,8 @@ using System.IO;
 
 public class HUD : MonoBehaviour {
 	public GameObject player;//asignamos al player para regresarle valores cuadno la barra de hp este llena
+	public GUIStyle pointsColor;
+
 
 	public static float hp=.5f;
 	public static float points=.0f;
@@ -30,6 +32,8 @@ public class HUD : MonoBehaviour {
 	void Start () {
 		hp=0.0f;//inisialisamos la variable por si el nivel es reiniciado con el menu o por morir
 		points=0f; // idem
+		pointsColor.normal.textColor = new Color(0,0,0);//asigan el color que se usara para el font de los puntos
+
 	}
 	
 	// Update is called once per frame
@@ -68,7 +72,7 @@ public class HUD : MonoBehaviour {
 	float sizeRatio=.1f;
 	void OnGUI(){
 
-		GUI.Label(new Rect(10, 10, 150, 150), points.ToString());
+		GUI.Label(new Rect(10, 10, 150, 150), points.ToString(),pointsColor);
 
 		if (Time.timeScale == 1) { 
 			Texture2D pause = (Texture2D)Resources.Load("GUI/HUD/pause");
