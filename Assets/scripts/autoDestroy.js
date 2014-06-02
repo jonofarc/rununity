@@ -1,7 +1,7 @@
 ﻿#pragma strict
 public var myPlayer: GameObject;
-public var myObject: GameObject;
 
+public var distanceTillDestroy: int;
 
 function Start () {
 
@@ -9,21 +9,21 @@ function Start () {
 
 function Update () {
 
-if(myPlayer.transform.position.z>(myObject.transform.position.z+10)){
-Destroy (myObject);
+if(myPlayer.transform.position.z>(this.transform.position.z+distanceTillDestroy)){
+Destroy (this.gameObject);
 
 }
 
-if(myObject.transform.position.y<-1){
+if(this.transform.position.y<-15){
 
-myObject.transform.position= new Vector3(myObject.transform.position.x,-5,myObject.transform.position.z);
+this.transform.position= new Vector3(this.transform.position.x,-15,this.transform.position.z);
 
 
 }
 
-if(myObject.transform.position.y>5){
+if(this.transform.position.y>25){
 
-myObject.transform.position= new Vector3(myObject.transform.position.x,5,myObject.transform.position.z);
+this.transform.position= new Vector3(this.transform.position.x,25,this.transform.position.z);
 
 
 }

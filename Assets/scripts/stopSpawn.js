@@ -10,6 +10,7 @@ function Update () {
 }
 
 function OnTriggerEnter (other : Collider) {
-		mySpawnController.active=false;
+		//mySpawnController.active=false;
+		mySpawnController.SetActive(false);
 		Destroy(this.gameObject);
 }

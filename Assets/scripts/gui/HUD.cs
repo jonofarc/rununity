@@ -51,13 +51,8 @@ public class HUD : MonoBehaviour {
 			hp=1f;
 			player.SendMessage("hpMaxed");
 	
-	
-				
-				Debug.Log(points);
-				points=points+500;
-				Debug.Log(points);
-			
 
+				points=points+500;
 
 		}
 
