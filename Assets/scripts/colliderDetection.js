@@ -28,7 +28,7 @@ function OnCollisionEnter(collision : Collision) {
 		
 	
 	}
-	if(collision.transform.name=="gota_rescate(Clone)"){
+	if(collision.transform.name=="gotita_rescate3(Clone)"||collision.transform.name=="gota_rescate(Clone)"){
 	
 
 		Destroy(collision.gameObject);
