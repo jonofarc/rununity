@@ -22,31 +22,26 @@ void Update ()
 		if (Time.timeScale == 0)
 			return;
 		if (Input.GetKey("t")) {
-		carril=carril-2;
-		if (carril<2) {
-			carril=2;
-			}
-		player.transform.position=new Vector3(carril,(player.transform.position.y+0.0f),player.transform.position.z);
+			carril=carril-2;
+			if (carril<2) {
+				carril=2;
+				}
+			player.transform.position=new Vector3(carril,(player.transform.position.y+0.0f),player.transform.position.z);
 			
 		}
-		if (Input.GetKey("y")) {
-			
-		carril=carril+2;
-		if (carril>6) {
-			carril=6;
-			}
-			
-		player.transform.position=new Vector3(carril,(player.transform.position.y+0.0f),player.transform.position.z);
-		
+		if (Input.GetKey("y")) {			
+			carril=carril+2;
+			if (carril>6) {
+				carril=6;
+			}			
+			player.transform.position=new Vector3(carril,(player.transform.position.y+0.0f),player.transform.position.z);		
 		}
 		
-		if (Input.GetKey("u")) {
-			
+		if (Input.GetKey("u")) {			
 			this.SendMessage("swipeup");
 		}
 	
-		if (Input.GetKey("j")) {
-			
+		if (Input.GetKey("j")) {			
 			this.SendMessage("deadAnimation");
 		}
 		

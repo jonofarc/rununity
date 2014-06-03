@@ -131,7 +131,24 @@ public var jumpPoseAnimation : AnimationClip;
 	}
 			
 }
-
+var SwipeID = -1;
+var  carril=4;
+var  minMovement = 10.0f;
+var  StartPos=null;
+var fp : Vector2;  // first finger position
+var lp : Vector2;  // last finger position
+function moveLane(carr: int){	
+	carril=carril+carr;
+	if (carril>6) {
+		carril=6;
+		return;
+	}
+	else if (carril<2) {
+		carril=2;
+		return; 
+	}			
+	gameObject.transform.position=new Vector3(carril,(gameObject.transform.position.y+0.0f),gameObject.transform.position.z);	
+}
 
 function UpdateSmoothedMovementDirection ()
 {
@@ -142,28 +159,12 @@ function UpdateSmoothedMovementDirection ()
 	var forward = cameraTransform.TransformDirection(Vector3.forward);
 	forward.y = 0;
 	
-	forward = forward.normalized;
-
-	// Right vector relative to the camera
-	// Always orthogonal to the forward vector
-	var right = Vector3(forward.z, 0, -forward.x);
-
-// jonathan aqui es donde modificamos para darle la posibilidad de que siempre se mueva hacia adelante es el equivalente a siempre precionar la tecla de avanse
-	//var v = Input.GetAxisRaw("Vertical");
-	var h = Input.GetAxisRaw("Horizontal");
-		//var h=1;
-		var v=moveAction;
-	// Are we moving backwards or looking backwards
-	if (v < -0.2)
-		movingBack = true;
-	else
-		movingBack = false;
-	
+	forward = forward.normalized;	
 	var wasMoving = isMoving;
-	isMoving = Mathf.Abs (h) > 0.1 || Mathf.Abs (v) > 0.1;
+	isMoving = moveAction==1 ;
 		
 	// Target direction relative to the camera
-	var targetDirection = h * right + v * forward;
+	var targetDirection = 0 *forward + moveAction * forward;
 	
 	// Grounded controls
 	if (grounded)
@@ -201,13 +202,7 @@ function UpdateSmoothedMovementDirection ()
 	
 		_characterState = CharacterState.Idle;
 		
-		// Pick speed modifier
-		if (Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift))
-		{
-			targetSpeed *= runSpeed;
-			_characterState = CharacterState.Running;
-		}
-		else if (Time.time - trotAfterSeconds > walkTimeStart)
+		if (Time.time - trotAfterSeconds > walkTimeStart)
 		{
 			targetSpeed *= (trotSpeed+SpeedBoost)*hpMaxedBoost;
 			_characterState = CharacterState.Trotting;
@@ -223,20 +218,46 @@ function UpdateSmoothedMovementDirection ()
 		// Reset walk time start when we slow down
 		if (moveSpeed < walkSpeed * 0.3)
 			walkTimeStart = Time.time;
+			
+		
+			
 	}
 	// In air controls
 	else
 	{
-		// Lock camera while in air
-		if (jumping)
-			lockCameraTimer = 0.0;
-
 		if (isMoving)
 			inAirVelocity += targetDirection.normalized * Time.deltaTime * inAirControlAcceleration;
 	}
-	
+	if (Input.GetKeyUp(KeyCode.A)) {
+		moveLane(-2);		
+	} 
+	if (Input.GetKeyUp(KeyCode.D)) {			
+		moveLane(2);
+	}	
 
-		
+	for (var touch : Touch in Input.touches){
+			if (touch.phase == TouchPhase.Began){
+				fp = touch.position;
+				lp = touch.position;
+			}
+			if (touch.phase == TouchPhase.Moved ){
+				lp = touch.position;
+			}
+			if(touch.phase == TouchPhase.Ended){      
+				// left swipe
+				if((fp.x - lp.x) > 80){       
+					  moveLane(-2);
+				}
+			  	// right swipe
+				else if((fp.x - lp.x) < -80){
+					moveLane(2);
+				}
+				// up swipe
+				else if((fp.y - lp.y) < -40 ){
+					lastJumpButtonTime = Time.time; 
+				}
+		}
+	}	
 }
 
 
@@ -252,7 +273,7 @@ function ApplyJumping ()
 		// - With a timeout so you can press the button slightly before landing		
 		if (canJump && Time.time < lastJumpButtonTime + jumpTimeout) {
 			verticalSpeed = CalculateJumpVerticalSpeed (jumpHeight);
-			SendMessage("DidJump", SendMessageOptions.DontRequireReceiver);
+			DidJump();
 		}			
 		
 			
@@ -338,11 +359,7 @@ function Update() {
 		
 	}
 
-		if (Input.GetKey("q") ) {
 		
-		lastJumpButtonTime = Time.time; //jonathan
-		
-		}
 
 	UpdateSmoothedMovementDirection();
 	

@@ -18,7 +18,6 @@ public class IntermediateLevel : MonoBehaviour {
 	}
 
 	void Start () {
-		string line="";		
 		TextAsset fileContents= Resources.Load("questions") as TextAsset;
 		JSONNode json=JSON.Parse(fileContents.ToString());
 		int quest= Random.Range(1,json.Count);
