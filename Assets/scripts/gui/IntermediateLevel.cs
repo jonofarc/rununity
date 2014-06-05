@@ -52,7 +52,7 @@ public class IntermediateLevel : MonoBehaviour {
 				count++;
 			}
 		} else if(correcto ){
-			FBUtil.score("100000",delegate {
+			FBUtil.score(HUD.getPoints()+"",delegate {
 				Application.LoadLevel(nextLevel);
 			});
 			correcto=false;

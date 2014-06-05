@@ -8,7 +8,10 @@ public class HUD : MonoBehaviour {
 
 
 	public static float hp=.5f;
-	public static float points=.0f;
+	public static float points=100f;
+	public static float getPoints(){
+		return points;
+	}
 
 	public static void setHP(float hp){
 		HUD.hp=hp;
