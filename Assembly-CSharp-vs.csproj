@@ -101,7 +101,6 @@
      <Compile Include="Assets\Qualcomm Augmented Reality\Scripts\WordBehaviour.cs" />
      <Compile Include="Assets\Vuforia Video Playback\Scripts\VideoPlaybackBehaviour.cs" />
      <Compile Include="Assets\Vuforia Video Playback\Scripts\VideoPlayerHelper.cs" />
-     <Compile Include="Assets\scripts\Controller.cs" />
      <Compile Include="Assets\scripts\PlayVideo.cs" />
      <Compile Include="Assets\scripts\SwipeTest.cs" />
      <Compile Include="Assets\scripts\TrackableEventHandler.cs" />
@@ -109,6 +108,7 @@
      <Compile Include="Assets\scripts\VideoPlaybackUIEventHandler.cs" />
      <Compile Include="Assets\scripts\VideoPlaybackUIView.cs" />
      <Compile Include="Assets\scripts\gotoLvl.cs" />
+     <Compile Include="Assets\scripts\gui\Facebook.cs" />
      <Compile Include="Assets\scripts\gui\HUD.cs" />
      <Compile Include="Assets\scripts\gui\IntermediateLevel.cs" />
      <Compile Include="Assets\scripts\gui\MainMenu.cs" />

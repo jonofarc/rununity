@@ -13,7 +13,7 @@
     "3":{
     	"q":"¿el agua tiene sabor?",
     	"bad":["tal vez","no"],
-    	"good":"no"
+    	"good":"si"
     },
     "4":{
     	"q":"¿El juego es bueno?",

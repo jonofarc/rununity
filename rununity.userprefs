@@ -1,13 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\spawnObjects.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\gui\IntermediateLevel.cs">
     <Files>
-      <File FileName="Assets\scripts\autoDestroy.js" Line="14" Column="1" />
-      <File FileName="Assets\scripts\spawnObjects.js" Line="145" Column="14" />
-      <File FileName="Assets\scripts\colliderDetection.js" Line="19" Column="51" />
-      <File FileName="Assets\scripts\stopSpawn.js" Line="14" Column="38" />
-      <File FileName="Assets\scripts\moveEnemy.js" Line="8" Column="1" />
-      <File FileName="Assets\scripts\gui\HUD.cs" Line="54" Column="1" />
+      <File FileName="Assets\scripts\gui\IntermediateLevel.cs" Line="53" Column="5" />
+      <File FileName="Assets\scripts\gui\MainMenu.cs" Line="37" Column="16" />
+      <File FileName="Assets\scripts\gui\Facebook.cs" Line="38" Column="85" />
+      <File FileName="Assets\Resources\questions.txt" Line="19" Column="32" />
+      <File FileName="Assets\Facebook\Scripts\FB.cs" Line="4" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
