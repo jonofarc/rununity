@@ -4,8 +4,11 @@ public var myPlayer: GameObject;
 public var BadSpawneable : GameObject;
 public var GoodSpawneable : GameObject;
 public var mainCamera: GameObject;
+public var BadChances: int;
+public var GoodChances: int;
 public var distanceForGoodOrBad: int;
 public var spawnDistance: int;
+public var backgroundChances: int;
 public var backgroundObjects : GameObject[];; 
 
 private var passedTime : float;
@@ -30,22 +33,23 @@ function Update () {
 	distanseToNextGoodSpawn=0;
 	mainCamera.SendMessage("setPoints");
 	
-	var GoodOrBad = Random.Range(0,2);
-	var doBackgroundObjects = Random.Range(0,6);
-	
-		if(GoodOrBad==0){
+	var GoodOrBad = Random.Range(0,(GoodChances+BadChances));
+	var doBackgroundObjects = Random.Range(0,backgroundChances);
+	Debug.Log(GoodOrBad);
+		if(GoodOrBad<BadChances){
 			BadSpawn();
 			//GoodSpawn();
 		
 		}
-		if(GoodOrBad==1){
-	
+	//	if(GoodOrBad>=GoodChances+BadChances){
+		else{
+		Debug.Log("entre al good");
 			//GoodSpawn();
 			spawnGoodTrue=1;
 		
 		}
 		
-		if(doBackgroundObjects<1){
+		if(doBackgroundObjects==backgroundChances){
 	
 			backgroundObjectSpawn(doBackgroundObjects);
 			
@@ -59,7 +63,7 @@ function Update () {
 
 
 	if((spawnGoodTrue==1)&&(myPlayer.transform.position.z>(passedTime-distanceForGoodOrBad+distanseToNextGoodSpawn))){
-	Debug.Log("entre a good");
+
 		GoodSpawn();
 		distanseToNextGoodSpawn=distanseToNextGoodSpawn+2.5;
 	}
