@@ -2,27 +2,22 @@
 using System.Collections;
 public class MainMenu : MonoBehaviour {
 
-	bool conFace=false;
 
 	void Awake(){
 					
-		FBUtil.init(ref conFace);
+		FBUtil.init();
 	}
-
-
-
-
 	void OnGUI () {		
 		Texture2D texture = (Texture2D)Resources.Load("GUI/menu/batsi");
 		GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), texture);
-		float boxHeigt = Screen.height*.25f, 
-			boxWidth = Screen.width*.25f,
-			boxLeft = Screen.width*.9f - boxWidth, 
-			boxTop=Screen.height*.9f-boxHeigt,
+		float boxHeigt = Screen.height*.4f, 
+			boxWidth = Screen.width*.4f,
+			boxLeft = Screen.width*.97f - boxWidth, 
+			boxTop=Screen.height*.97f-boxHeigt,
 			buttonWidth=boxWidth*.9f,
-			buttonHeigth=boxHeigt*.2f,
+			buttonHeigth=-5f+boxHeigt*.2f,
 			buttonLeft = boxLeft+boxWidth*.05f,
-			buttonTop=boxHeigt/4f;
+			buttonTop=boxHeigt/5f;
 
 		GUI.Box(new Rect(boxLeft,boxTop,boxWidth,boxHeigt), "Algo de gonti");
 		
@@ -33,7 +28,10 @@ public class MainMenu : MonoBehaviour {
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*2,buttonWidth,buttonHeigth), "Demo")) {
 			Application.LoadLevel(2);
 		}
-		if(conFace && GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "Compartir en Facebook")) {
+		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "LeaderBoard")) {
+			FBUtil.friendsScores();
+		}
+		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*4,buttonWidth,buttonHeigth), "Compartir en Facebook")) {
 			FBUtil.share(delegate {
 
 			});	

@@ -19,9 +19,8 @@ public class IntermediateLevel : MonoBehaviour {
 	public static void setFailLevel(string level){
 		IntermediateLevel.nextLevel=level;
 	}
-	bool conFace=false;
 	void Start () {
-		FBUtil.init(ref conFace);
+		FBUtil.init();
 		TextAsset fileContents= Resources.Load("questions") as TextAsset;
 		JSONNode json=JSON.Parse(fileContents.ToString());
 		int quest= Random.Range(1,json.Count);
@@ -37,7 +36,7 @@ public class IntermediateLevel : MonoBehaviour {
 		}	
 	}
 	void OnGUI(){
-		if(!correcto && conFace){
+		if(!correcto ){
 			myStyle = new GUIStyle(GUI.skin.box);
 			myStyle.fontSize=20;
 			GUI.Box(new Rect(Screen.width*.1f,Screen.height*.1f,Screen.width*.8f,Screen.height*.8f ),question["q"],myStyle);
@@ -52,7 +51,7 @@ public class IntermediateLevel : MonoBehaviour {
 				count++;
 			}
 		} else if(correcto ){
-			FBUtil.score(HUD.getPoints()+"",delegate {
+			FBUtil.score(((int)HUD.getPoints())+"",delegate {
 				Application.LoadLevel(nextLevel);
 			});
 			correcto=false;
@@ -63,7 +62,6 @@ public class IntermediateLevel : MonoBehaviour {
 	private void addButton( float top, float width,float height, JSONNode answer  ){
 		if(GUI.Button(new Rect(Screen.width*.15f,top,width,height),answer,myStyle )){
 			if(answer.Equals(question["good"]))
-				if(conFace)
 					correcto=true;					
 			else 
 				Application.LoadLevel(failLevel);			

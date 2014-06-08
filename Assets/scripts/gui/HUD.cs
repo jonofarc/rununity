@@ -8,7 +8,7 @@ public class HUD : MonoBehaviour {
 
 
 	public static float hp=.5f;
-	public static float points=100f;
+	public static float points=Random.Range(0f,1000f);
 	public static float getPoints(){
 		return points;
 	}
