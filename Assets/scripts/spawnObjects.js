@@ -8,7 +8,7 @@ public var BadChances: int;
 public var GoodChances: int;
 public var distanceForGoodOrBad: int;
 public var spawnDistance: int;
-public var backgroundChances: int;
+public var backgroundChances: int; //0 es igual a que siempre aparesca entre mas alto el numero menos posibilidaddes de salir
 public var backgroundObjects : GameObject[];; 
 
 private var passedTime : float;
@@ -34,8 +34,9 @@ function Update () {
 	mainCamera.SendMessage("setPoints");
 	
 	var GoodOrBad = Random.Range(0,(GoodChances+BadChances));
-	var doBackgroundObjects = Random.Range(0,backgroundChances);
-	Debug.Log(GoodOrBad);
+	var doBackgroundObjects = Random.Range(0,backgroundChances+1);
+	//Debug.Log(doBackgroundObjects+"doBackgroundObjects");
+	
 		if(GoodOrBad<BadChances){
 			BadSpawn();
 			//GoodSpawn();
@@ -43,7 +44,7 @@ function Update () {
 		}
 	//	if(GoodOrBad>=GoodChances+BadChances){
 		else{
-		Debug.Log("entre al good");
+
 			//GoodSpawn();
 			spawnGoodTrue=1;
 		
@@ -51,7 +52,7 @@ function Update () {
 		
 		if(doBackgroundObjects==backgroundChances){
 	
-			backgroundObjectSpawn(doBackgroundObjects);
+			backgroundObjectSpawn(0);
 			
 		
 		}
@@ -141,7 +142,7 @@ function backgroundObjectSpawn(object:int){
 
 var spawny: int;
 	carril = Random.Range(0,2);
-	Debug.Log(object);
+	//Debug.Log(object);
 	if(carril==0){
 		carril=15;
 	}

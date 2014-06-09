@@ -19,7 +19,7 @@ transform.eulerAngles = Vector3(0,180,0);
 function OnCollisionEnter(collision : Collision) {
 		// Debug-draw all contact points and normals
 	//Debug.Log(collision.transform.name);
-	Debug.Log(collision.transform.name);
+//	Debug.Log(collision.transform.name);
 	if(collision.transform.name=="charraco(Clone)"){
 	
 		Destroy(collision.gameObject);
