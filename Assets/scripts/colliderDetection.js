@@ -1,7 +1,8 @@
 ﻿#pragma strict
 public var myCamera: GameObject;
 public var lvlFinished: boolean;
-
+public var goodSpawn: GameObject;
+public var badSpawn: GameObject;
 
 function Start () {
 lvlFinished=false;
@@ -20,7 +21,7 @@ function OnCollisionEnter(collision : Collision) {
 		// Debug-draw all contact points and normals
 	//Debug.Log(collision.transform.name);
 //	Debug.Log(collision.transform.name);
-	if(collision.transform.name=="charraco(Clone)"){
+	if(collision.transform.name==badSpawn.transform.name+"(Clone)"){
 	
 		Destroy(collision.gameObject);
 		this.SendMessage("deadAnimation");	
@@ -28,7 +29,7 @@ function OnCollisionEnter(collision : Collision) {
 		
 	
 	}
-	if(collision.transform.name=="gotita_rescate3(Clone)"||collision.transform.name=="gota_rescate(Clone)"){
+	if(collision.transform.name==goodSpawn.transform.name+"(Clone)"){
 	
 
 		Destroy(collision.gameObject);

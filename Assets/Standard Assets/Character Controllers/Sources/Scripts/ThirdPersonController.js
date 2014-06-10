@@ -385,7 +385,7 @@ function Update() {
 	// ANIMATION sector
 
 	if(isDead===true){
-	Debug.Log("aqui ya deveria morir el ");
+//	Debug.Log("aqui ya deveria morir el ");
 	}
 	else{
 		if(_animation) {
