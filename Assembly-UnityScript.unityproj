@@ -67,6 +67,7 @@
      <Compile Include="Assets\scripts\colliderDetection.js" />
      <Compile Include="Assets\scripts\moveEnemy.js" />
      <Compile Include="Assets\scripts\railAdjustment.js" />
+     <Compile Include="Assets\scripts\spawnObjects lvl2.js" />
      <Compile Include="Assets\scripts\spawnObjects.js" />
      <Compile Include="Assets\scripts\stopSpawn.js" />
      <Compile Include="Assets\scripts\touchtest.js" />

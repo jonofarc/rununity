@@ -1,0 +1,417 @@
+fileFormatVersion: 2
+guid: c8809526c49c4cf429bbbe59148584b1
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: charraco03_polySurface1
+    100002: charraco03_polySurface1_0
+    100004: //RootNode
+    100006: charraco_geo
+    100008: Game_BrowInnerL
+    100010: Game_BrowInnerR
+    100012: Game_BrowOuterL
+    100014: Game_BrowOuterR
+    100016: Game_Head
+    100018: Game_Hips
+    100020: Game_Jaw
+    100022: Game_JawRoot
+    100024: Game_LeftArm
+    100026: Game_LeftEye
+    100028: Game_LeftFoot
+    100030: Game_LeftForeArm
+    100032: Game_LeftHand
+    100034: Game_LeftHandIndex1
+    100036: Game_LeftHandIndex2
+    100038: Game_LeftHandIndex3
+    100040: Game_LeftHandMiddle1
+    100042: Game_LeftHandMiddle2
+    100044: Game_LeftHandMiddle3
+    100046: Game_LeftHandPinky1
+    100048: Game_LeftHandPinky2
+    100050: Game_LeftHandPinky3
+    100052: Game_LeftHandRing1
+    100054: Game_LeftHandRing2
+    100056: Game_LeftHandRing3
+    100058: Game_LeftHandThumb1
+    100060: Game_LeftHandThumb2
+    100062: Game_LeftHandThumb3
+    100064: Game_LeftLeg
+    100066: Game_LeftToeBase
+    100068: Game_LeftUpLeg
+    100070: Game_LipCornerL
+    100072: Game_LipCornerR
+    100074: Game_LipLower
+    100076: Game_LipLowerL
+    100078: Game_LipLowerR
+    100080: Game_LipUpper
+    100082: Game_LipUpperL
+    100084: Game_LipUpperR
+    100086: Game_RightArm
+    100088: Game_RightEye
+    100090: Game_RightFoot
+    100092: Game_RightForeArm
+    100094: Game_RightHand
+    100096: Game_RightHandIndex1
+    100098: Game_RightHandIndex2
+    100100: Game_RightHandIndex3
+    100102: Game_RightHandMiddle1
+    100104: Game_RightHandMiddle2
+    100106: Game_RightHandMiddle3
+    100108: Game_RightHandPinky1
+    100110: Game_RightHandPinky2
+    100112: Game_RightHandPinky3
+    100114: Game_RightHandRing1
+    100116: Game_RightHandRing2
+    100118: Game_RightHandRing3
+    100120: Game_RightHandThumb1
+    100122: Game_RightHandThumb2
+    100124: Game_RightHandThumb3
+    100126: Game_RightLeg
+    100128: Game_RightToeBase
+    100130: Game_RightUpLeg
+    100132: Game_Root
+    100134: Game_Spine
+    100136: Game_Spine1
+    100138: Game_Spine2
+    100140: Game_TongueF
+    100142: Game_TongueR
+    100144: Game_UpperLidL
+    100146: Game_UpperLidR
+    100148: Left_UpperLid
+    100150: Left_UpperLid_0
+    100152: ojo_derecho
+    100154: ojo_derecho_0
+    100156: Right_UpperLid
+    100158: Right_UpperLid_0
+    400000: charraco03_polySurface1
+    400002: charraco03_polySurface1_0
+    400004: //RootNode
+    400006: charraco_geo
+    400008: Game_BrowInnerL
+    400010: Game_BrowInnerR
+    400012: Game_BrowOuterL
+    400014: Game_BrowOuterR
+    400016: Game_Head
+    400018: Game_Hips
+    400020: Game_Jaw
+    400022: Game_JawRoot
+    400024: Game_LeftArm
+    400026: Game_LeftEye
+    400028: Game_LeftFoot
+    400030: Game_LeftForeArm
+    400032: Game_LeftHand
+    400034: Game_LeftHandIndex1
+    400036: Game_LeftHandIndex2
+    400038: Game_LeftHandIndex3
+    400040: Game_LeftHandMiddle1
+    400042: Game_LeftHandMiddle2
+    400044: Game_LeftHandMiddle3
+    400046: Game_LeftHandPinky1
+    400048: Game_LeftHandPinky2
+    400050: Game_LeftHandPinky3
+    400052: Game_LeftHandRing1
+    400054: Game_LeftHandRing2
+    400056: Game_LeftHandRing3
+    400058: Game_LeftHandThumb1
+    400060: Game_LeftHandThumb2
+    400062: Game_LeftHandThumb3
+    400064: Game_LeftLeg
+    400066: Game_LeftToeBase
+    400068: Game_LeftUpLeg
+    400070: Game_LipCornerL
+    400072: Game_LipCornerR
+    400074: Game_LipLower
+    400076: Game_LipLowerL
+    400078: Game_LipLowerR
+    400080: Game_LipUpper
+    400082: Game_LipUpperL
+    400084: Game_LipUpperR
+    400086: Game_RightArm
+    400088: Game_RightEye
+    400090: Game_RightFoot
+    400092: Game_RightForeArm
+    400094: Game_RightHand
+    400096: Game_RightHandIndex1
+    400098: Game_RightHandIndex2
+    400100: Game_RightHandIndex3
+    400102: Game_RightHandMiddle1
+    400104: Game_RightHandMiddle2
+    400106: Game_RightHandMiddle3
+    400108: Game_RightHandPinky1
+    400110: Game_RightHandPinky2
+    400112: Game_RightHandPinky3
+    400114: Game_RightHandRing1
+    400116: Game_RightHandRing2
+    400118: Game_RightHandRing3
+    400120: Game_RightHandThumb1
+    400122: Game_RightHandThumb2
+    400124: Game_RightHandThumb3
+    400126: Game_RightLeg
+    400128: Game_RightToeBase
+    400130: Game_RightUpLeg
+    400132: Game_Root
+    400134: Game_Spine
+    400136: Game_Spine1
+    400138: Game_Spine2
+    400140: Game_TongueF
+    400142: Game_TongueR
+    400144: Game_UpperLidL
+    400146: Game_UpperLidR
+    400148: Left_UpperLid
+    400150: Left_UpperLid_0
+    400152: ojo_derecho
+    400154: ojo_derecho_0
+    400156: Right_UpperLid
+    400158: Right_UpperLid_0
+    4300000: charraco_geo
+    4300002: charraco03_polySurface1_0
+    4300004: Left_UpperLid_0
+    4300006: Right_UpperLid_0
+    4300008: ojo_derecho_0
+    7400000: motionplus15
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: charraco03_polySurface1_0
+    13700002: charraco_geo
+    13700004: Left_UpperLid_0
+    13700006: ojo_derecho_0
+    13700008: Right_UpperLid_0
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: motionplus15
+      takeName: motionplus15
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: charraco03_polySurface1_0
+        weight: 1
+      - path: charraco_geo
+        weight: 1
+      - path: Game_Root
+        weight: 1
+      - path: Game_Root/Game_Hips
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_LeftUpLeg
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_LeftUpLeg/Game_LeftLeg
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_LeftUpLeg/Game_LeftLeg/Game_LeftFoot
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_LeftUpLeg/Game_LeftLeg/Game_LeftFoot/Game_LeftToeBase
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_RightUpLeg
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_RightUpLeg/Game_RightLeg
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_RightUpLeg/Game_RightLeg/Game_RightFoot
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_RightUpLeg/Game_RightLeg/Game_RightFoot/Game_RightToeBase
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_BrowInnerL
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_BrowInnerR
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_BrowOuterL
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_BrowOuterR
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_JawRoot
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_JawRoot/Game_Jaw
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_JawRoot/Game_Jaw/Game_LipLower
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_JawRoot/Game_Jaw/Game_LipLower/Game_LipLowerL
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_JawRoot/Game_Jaw/Game_LipLower/Game_LipLowerR
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_JawRoot/Game_Jaw/Game_TongueR
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_JawRoot/Game_Jaw/Game_TongueR/Game_TongueF
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_LeftEye
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_LeftEye/charraco03_polySurface1
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_LipCornerL
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_LipCornerR
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_LipUpper
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_LipUpper/Game_LipUpperL
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_LipUpper/Game_LipUpperR
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_RightEye
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_RightEye/ojo_derecho
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_UpperLidL
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_UpperLidL/Left_UpperLid
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_UpperLidR
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_Head/Game_UpperLidR/Right_UpperLid
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm/Game_LeftHand
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm/Game_LeftHand/Game_LeftHandIndex1
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm/Game_LeftHand/Game_LeftHandIndex1/Game_LeftHandIndex2
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm/Game_LeftHand/Game_LeftHandIndex1/Game_LeftHandIndex2/Game_LeftHandIndex3
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm/Game_LeftHand/Game_LeftHandMiddle1
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm/Game_LeftHand/Game_LeftHandMiddle1/Game_LeftHandMiddle2
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm/Game_LeftHand/Game_LeftHandMiddle1/Game_LeftHandMiddle2/Game_LeftHandMiddle3
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm/Game_LeftHand/Game_LeftHandPinky1
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm/Game_LeftHand/Game_LeftHandPinky1/Game_LeftHandPinky2
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm/Game_LeftHand/Game_LeftHandPinky1/Game_LeftHandPinky2/Game_LeftHandPinky3
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm/Game_LeftHand/Game_LeftHandRing1
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm/Game_LeftHand/Game_LeftHandRing1/Game_LeftHandRing2
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm/Game_LeftHand/Game_LeftHandRing1/Game_LeftHandRing2/Game_LeftHandRing3
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm/Game_LeftHand/Game_LeftHandThumb1
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm/Game_LeftHand/Game_LeftHandThumb1/Game_LeftHandThumb2
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_LeftArm/Game_LeftForeArm/Game_LeftHand/Game_LeftHandThumb1/Game_LeftHandThumb2/Game_LeftHandThumb3
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm/Game_RightHand
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm/Game_RightHand/Game_RightHandIndex1
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm/Game_RightHand/Game_RightHandIndex1/Game_RightHandIndex2
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm/Game_RightHand/Game_RightHandIndex1/Game_RightHandIndex2/Game_RightHandIndex3
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm/Game_RightHand/Game_RightHandMiddle1
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm/Game_RightHand/Game_RightHandMiddle1/Game_RightHandMiddle2
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm/Game_RightHand/Game_RightHandMiddle1/Game_RightHandMiddle2/Game_RightHandMiddle3
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm/Game_RightHand/Game_RightHandPinky1
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm/Game_RightHand/Game_RightHandPinky1/Game_RightHandPinky2
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm/Game_RightHand/Game_RightHandPinky1/Game_RightHandPinky2/Game_RightHandPinky3
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm/Game_RightHand/Game_RightHandRing1
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm/Game_RightHand/Game_RightHandRing1/Game_RightHandRing2
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm/Game_RightHand/Game_RightHandRing1/Game_RightHandRing2/Game_RightHandRing3
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm/Game_RightHand/Game_RightHandThumb1
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm/Game_RightHand/Game_RightHandThumb1/Game_RightHandThumb2
+        weight: 1
+      - path: Game_Root/Game_Hips/Game_Spine/Game_Spine1/Game_Spine2/Game_RightArm/Game_RightForeArm/Game_RightHand/Game_RightHandThumb1/Game_RightHandThumb2/Game_RightHandThumb3
+        weight: 1
+      - path: Left_UpperLid_0
+        weight: 1
+      - path: ojo_derecho_0
+        weight: 1
+      - path: Right_UpperLid_0
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 2
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
