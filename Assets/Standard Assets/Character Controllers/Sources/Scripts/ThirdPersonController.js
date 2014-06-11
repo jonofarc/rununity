@@ -52,7 +52,7 @@ var trotAfterSeconds = 3.0;
 var canJump = true;
 
 var moveAction = 1;
-var isDead = false;
+var stopMovement = false;
 
 
 private var jumpRepeatTime = 0.05;
@@ -138,16 +138,24 @@ var  StartPos=null;
 var fp : Vector2;  // first finger position
 var lp : Vector2;  // last finger position
 function moveLane(carr: int){	
-	carril=carril+carr;
-	if (carril>6) {
-		carril=6;
-		return;
+
+
+	if(stopMovement===false){
+		carril=carril+carr;
+		if (carril>6) {
+			carril=6;
+			return;
+		}
+		else if (carril<2) {
+			carril=2;
+			return; 
+		}			
+		gameObject.transform.position=new Vector3(carril,(gameObject.transform.position.y+0.0f),gameObject.transform.position.z);	
+
+
 	}
-	else if (carril<2) {
-		carril=2;
-		return; 
-	}			
-	gameObject.transform.position=new Vector3(carril,(gameObject.transform.position.y+0.0f),gameObject.transform.position.z);	
+
+
 }
 
 function UpdateSmoothedMovementDirection ()
@@ -384,8 +392,9 @@ function Update() {
 	
 	// ANIMATION sector
 
-	if(isDead===true){
-	Debug.Log("aqui ya deveria morir el ");
+	if(stopMovement===true){
+	//Debug.Log("aqui ya deveria morir el ");
+	canJump=false;
 	}
 	else{
 		if(_animation) {
@@ -529,7 +538,7 @@ moveAction=0;
 
 animation.Play("motionplus10");
 Invoke( "restartLvl", 3.0 );
-isDead=true;
+stopMovement=true;
 
 }
 else{
@@ -565,7 +574,7 @@ function restartLvl(){
 }
 function lvlFinished(){
 	moveAction=0;
-	isDead=true;//esta variable impidie que se ejecuten otras animaciones mas que la actual
+	stopMovement=true;//esta variable impidie que se ejecuten otras animaciones mas que la actual
 	animation.Play("motionplus8");
 
 //	Debug.Log("Aqui carga el lvl que deve salir despues de pasar el lvl actual");

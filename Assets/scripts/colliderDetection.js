@@ -19,9 +19,9 @@ transform.eulerAngles = Vector3(0,180,0);
 
 function OnCollisionEnter(collision : Collision) {
 		// Debug-draw all contact points and normals
-	Debug.Log(collision.transform.name);
+//	Debug.Log(collision.transform.tag);
 //	Debug.Log(collision.transform.name);
-	if(collision.transform.name==badSpawn.transform.name+"(Clone)"){
+	if(collision.transform.tag=="badSpawn"){
 	
 		Destroy(collision.gameObject);
 		this.SendMessage("deadAnimation");	
@@ -29,7 +29,7 @@ function OnCollisionEnter(collision : Collision) {
 		
 	
 	}
-	if(collision.transform.name==goodSpawn.transform.name+"(Clone)"){
+	if(collision.transform.tag=="goodSpawn"){
 	
 
 		Destroy(collision.gameObject);
