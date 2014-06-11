@@ -1,23 +1,168 @@
 
 {
     "1":{
-    	"q":"¿cuanto es 1 +2?",
-    	"bad":["5","6"],
-    	"good":"3"
+    	"q":"¿De toda el agua del mundo cuanta es salada de los mares y océanos?",
+    	"bad":["50%","70%"],
+    	"good":"97%"
     }, 
     "2":{
-    	"q":"¿el agua es liquida?",
-    	"bad":["tal vez","no"],
-    	"good":"si"
+    	"q":"¿Cuánta agua está congelada en los polos?",
+    	"bad":["10%","3%"],
+    	"good":"2%"
     },
     "3":{
-    	"q":"¿el agua tiene sabor?",
-    	"bad":["tal vez","no"],
-    	"good":"si"
+    	"q":"¿Qué porcentaje de agua del planeta es la que se puede tomar?",
+    	"bad":["5","70"],
+    	"good":"1"
     },
     "4":{
-    	"q":"¿El juego es bueno?",
-    	"bad":["tal vez","no"],
-    	"good":"si"
+    	"q":"¿Cómo se deben lavar los carros?",
+    	"bad":["Con la lluvia","Con la manguera"],
+    	"good":"Con una cubeta"
+    },
+    "5":{
+    	"q":"¿Cuándo te enjabonas las manos como debe estar el grifo?",
+    	"bad":["Con agua caliente","Con agua fría"],
+    	"good":"Cerrado"
+    },
+    "6":{
+    	"q":"¿Cuál es el horario correcto para regar?",
+    	"bad":["Al medio día, porque es cuando hace más calor y las plantas tienen sed.","Por la mañana para que les dure todo el día."],
+    	"good":"Por la noche o antes de que salga el sol para que el agua no se evapore y la aprovechen las plantas."
+    },
+    "7":{
+    	"q":"¿Cuánto debes durar bañándote?",
+    	"bad":["30 min","15 min"],
+    	"good":"5 min"
+    },
+    "8":{
+    	"q":"¿Cuál es el porcentaje de agua que tenemos los seres humanos?",
+    	"bad":["25","50"],
+    	"good":"75"
+    },
+    "9":{
+    	"q":"¿Cuánta agua debemos tomar diariamente los seres humanos?",
+    	"bad":["6 litros","3 litros"],
+    	"good":"2 litros"
+    },
+    "10":{
+    	"q":"¿Cuánto tiempo puede vivir un ser humano sin beber agua?",
+    	"bad":["Un mes","Una semana"],
+    	"good":"Dos semanas"
+    },
+    "11":{
+    	"q":"¿Cuáles son las fases del ciclo del “Ciclo del Agua”?",
+    	"bad":["Extracción, potabilización, cloración, almacenamiento, distribución y tratamiento.","Estado sólido, líquido y gaseoso"],
+    	"good":"El agua se evapora y se convierte en nubes, cae la lluvia, se infiltra el agua en la tierra y se llenan lagos, ríos y mares."
+    },
+    "12":{
+    	"q":"¿Cuáles son las fases del “Camino del Agua”?",
+    	"bad":["Estado sólido, líquido y gaseoso","El agua se evapora y se convierte en nubes, cae la lluvia, se infiltra el agua en la tierra y se llenan lagos, ríos y mares."],
+    	"good":"Extracción, potabilización, cloración, almacenamiento, distribución y tratamiento."
+    },
+    "13":{
+    	"q":"¿De dónde puedes beber agua?",
+    	"bad":["De los regadores y las llaves de los parques y áreas públicas.","De la lluvia."],
+    	"good":"Agua embotellada y de la llave de tu casa"
+    },
+    "14":{
+    	"q":"¿Para qué se le pone cloro al agua?",
+    	"bad":["Para cambiar el color del agua.","Para cambiar el sabor del agua."],
+    	"good":"Para desinfectar el agua."
+    },
+    "15":{
+    	"q":"¿Qué son las “Aguas Tratadas” (aguas moradas)?",
+    	"bad":["Agua potable.","Agua de lluvia."],
+    	"good":"Agua reciclada de las aguas negras"
+    },
+    "16":{
+    	"q":"¿Qué uso se le puede dar a las “Aguas Tratadas”?",
+    	"bad":["Para beber y cocinar.","Riego de todas las plantas, limpieza de la casa, aseo personal, entre otros."],
+    	"good":"Riego de Jardines, parques, enfriamiento de motores, limpieza de banquetas y calles, entre otros."
+    },
+    "17":{
+    	"q":"¿De qué forma se deben lavar los platos en la casa?",
+    	"bad":["Bajo el chorro directo de la llave.","Usando mucho jabón y limpiadores industriales."],
+    	"good":"Llenando de agua las tarjas y no dejarla correr"
+    },
+    "18":{
+    	"q":"¿Cómo nos debemos lavar los dientes?",
+    	"bad":["Con el chorro de la llave abierto","Con una cubeta."],
+    	"good":"Con un vaso de agua, mojamos el cepillo, nos enjuagamos y limpiamos el lavabo."
+    },
+    "19":{
+    	"q":"¿Cómo podemos cuidar el agua cuando usamos el baño?",
+    	"bad":["Evitar ir al baño lo más posible.","Bajándole al baño cada vez que echamos un papelito en la taza."],
+    	"good":"Poniendo un bote de un litro de capacidad lleno de agua o arena dentro del depósito del sanitario"
+    },
+    "20":{
+    	"q":"¿Cuáles son las fuentes de extracción de agua para potabilizar en la ciudad de Chihuahua?",
+    	"bad":["Ríos Chuviscar y Sacramento","Manantiales de aguas volcánicas"],
+    	"good":"Presas y Pozos profundos."
+    },
+    "21":{
+    	"q":"¿Cómo deben papa y mama lavar la ropa de la casa?",
+    	"bad":["Metiendo 2 o 3 prendas a la lavadora y llenarla hasta el tope.","Dejando que la lavadora se llene de agua hasta el tope para echarle la ropa después y que el agua se derrame."],
+    	"good":"Llenando la lavadora al máximo para que usemos menos agua."
+    },
+    "22":{
+    	"q":"¿Qué es la huella hídrica?",
+    	"bad":["La marca que deja un pez cuando sale del agua.","La marca de agua que deja un rio cuando se seca."],
+    	"good":"Un indicador que mide el consumo humano de agua dulce para producir bienes y servicios."
+    },
+    "23":{
+    	"q":"¿Qué es el agua virtual?",
+    	"bad":["El agua que podemos comprar por Internet.","Imágenes o videos de agua."],
+    	"good":"Agua de lluvia consumida durante el proceso de producción de un producto."
+    },
+    "24":{
+    	"q":"¿Qué es el agua azul?",
+    	"bad":["El agua que está en los mares.","Agua que toman los pitufos."],
+    	"good":"El agua superficial o subterránea consumida en el proceso de producción de un bien o servicio."
+    },
+    "25":{
+    	"q":"¿Qué es el agua gris?",
+    	"bad":["El agua que ya está sucia.","El agua que se junta en las calles cuando llueve mucho."],
+    	"good":"Indicador de contaminación del agua potable a causa de la producción de un bien o servicio."
+    },
+    "26":{
+    	"q":"¿Cuántos litros de agua se necesitan para producir 1 hamburguesa?",
+    	"bad":["12 litros","25,000 litros"],
+    	"good":"2,400 litros"
+    },
+    "27":{
+    	"q":"¿Cuántos litros de agua se necesitan para producir 1 playera de algodón?",
+    	"bad":["450 litros","658,000 litros"],
+    	"good":"2,700 litros"
+    },
+    "28":{
+    	"q":"¿Cuántos litros de agua se necesitan para producir 1kg de tomate?",
+    	"bad":["6 litros","2500 litros"],
+    	"good":"180 litros"
+    },
+    "29":{
+    	"q":"¿Cuántos litros de agua se necesitan para producir 500 hojas?",
+    	"bad":["1,000 litros","3,000 litros"],
+    	"good":"5,000 litros"
+    }, 
+    "30":{
+    	"q":"¿Qué debemos hacer si vemos una fuga en la calle?",
+    	"bad":["Jugar con el agua.","Nada."],
+    	"good":"Reportar la fuga."
+    },
+    "31":{
+    	"q":"¿Cuántos litros de agua se necesitan para producir 1kg de carne de Res?",
+    	"bad":["36,400 litros","600 litros"],
+    	"good":"15,400 litros"
+    },
+    "32":{
+    	"q":"¿Cómo se deben limpiar las banquetas y patios?",
+    	"bad":["Con manguera y jabón.","Con mucho jabón por que están muy sucios."],
+    	"good":"Con una cubeta y escoba."
+    },
+    "33":{
+    	"q":"¿Cuál es el lugar de la casa donde más agua se desperdicia?",
+    	"bad":["En la recamara","En la sala"],
+    	"good":"En el baño"
     }
 }
