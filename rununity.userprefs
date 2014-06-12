@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\colliderDetection.js">
     <Files>
-      <File FileName="Assets\scripts\colliderDetection.js" Line="17" Column="1" />
+      <File FileName="Assets\scripts\colliderDetection.js" Line="91" Column="1" />
+      <File FileName="Assets\scripts\colliderDetection.js" Line="20" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

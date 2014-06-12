@@ -17,7 +17,7 @@ function Update () {
 
 	if(Time.time<moveBack){
 	Debug.Log("entre");
-		this.transform.Translate(0,0,-20*Time.deltaTime);
+		this.transform.Translate(0,0,-15*Time.deltaTime);
 		
 	}
 	else if(moveBackObject!=null){
