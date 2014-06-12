@@ -13,10 +13,22 @@ public class gotoLvl : MonoBehaviour {
 	void Start () {
 	
 		if(lvlNumber==1){
-			myNextLvl="Start";
+			myNextLvl="VideoIntro";
+		}
+		if(lvlNumber==2){
+			myNextLvl="Level1";
 		}
 		if(lvlNumber==3){
 			myNextLvl="LevelIntermediate";
+		}
+		if(lvlNumber==4){
+			myNextLvl="Level2";
+		}
+		if(lvlNumber==5){
+			myNextLvl="Level3";
+		}
+		if(lvlNumber==6){
+			myNextLvl="Start";
 		}
 
 
@@ -37,10 +49,10 @@ public class gotoLvl : MonoBehaviour {
 
 	void loadLvl(){
 		
-		IntermediateLevel.setNextLevel("Start");
-		IntermediateLevel.setFailLevel("Level1");
+		IntermediateLevel.setNextLevel(myNextLvl.ToString());
+		IntermediateLevel.setFailLevel(Application.loadedLevelName);
 		
-		Application.LoadLevel(myNextLvl.ToString());
+		Application.LoadLevel("LevelIntermediate");
 		
 		
 	}

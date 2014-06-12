@@ -19,7 +19,7 @@ public class IntermediateLevel : MonoBehaviour {
 		IntermediateLevel.nextLevel=level;
 	}
 	public static void setFailLevel(string level){
-		IntermediateLevel.nextLevel=level;
+		IntermediateLevel.failLevel=level;
 	}
 	void Start () {
 		FBUtil.init();
@@ -73,6 +73,7 @@ public class IntermediateLevel : MonoBehaviour {
 				});
 			});
 			dic.Add("No, llevame al siguiente nivel",delegate {
+				Debug.Log(nextLevel);
 					Application.LoadLevel(nextLevel);
 				
 			});
