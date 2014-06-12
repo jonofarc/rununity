@@ -43,17 +43,12 @@ public class FBUtil {
 			FB.Login(actionsLogin, delegate {
 				if (FB.IsLoggedIn){
 					Dictionary<string, string> dic= new Dictionary<string, string>(){{"score",score}};
-					FB.API ("/me/scores", HttpMethod.POST, delegate(FBResult result){
-						//252232634964826/scores?user.id=660260877354538
-						Debug.Log(result);
-					}, dic);
+					FB.API ("/me/scores", HttpMethod.POST, callback, dic);
 				}
 			});
 		else{
 			Dictionary<string, string> dic= new Dictionary<string, string>() {{"score", score}};
-			FB.API ("/me/scores", HttpMethod.POST, delegate(FBResult res) {
-				Debug.Log(res);
-			}, dic);
+			FB.API ("/me/scores", HttpMethod.POST,callback, dic);
 		}
 
 
