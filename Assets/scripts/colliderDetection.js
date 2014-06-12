@@ -1,14 +1,29 @@
 ﻿#pragma strict
 public var myCamera: GameObject;
 public var lvlFinished: boolean;
-public var goodSpawn: GameObject;
-public var badSpawn: GameObject;
+private var moveBack: float;
+public var moveBackObject: GameObject;
+
 
 function Start () {
 lvlFinished=false;
+moveBack=-1f;
 }
 
 function Update () {
+
+
+	//move back section for enemies that push you back
+
+	if(Time.time<moveBack){
+	Debug.Log("entre");
+		this.transform.Translate(0,0,-20*Time.deltaTime);
+		
+	}
+	else if(moveBackObject!=null){
+		moveBackObject.SetActive(false);
+	}
+
 
 if(lvlFinished==true){
 transform.eulerAngles = Vector3(0,180,0);
@@ -29,6 +44,17 @@ function OnCollisionEnter(collision : Collision) {
 		
 	
 	}
+	if(collision.transform.tag=="badSpawn2"){
+	
+		Destroy(collision.gameObject);
+		this.SendMessage("deadAnimation");	
+		myCamera.SendMessage("decreaseHP");
+		moveBack=Time.time+3;
+		if(moveBackObject!=null){
+			moveBackObject.SetActive(true);
+		}
+	
+	}
 	if(collision.transform.tag=="goodSpawn"){
 	
 
@@ -42,8 +68,11 @@ function OnCollisionEnter(collision : Collision) {
 
 				lvlFinished=true;
 				//Destroy(collision.gameObject);
+				
 				collision.gameObject.SendMessage("lvlFinished");
 				this.SendMessage("lvlFinished");
+				
+				
 		
 	
 	}
@@ -51,8 +80,10 @@ function OnCollisionEnter(collision : Collision) {
 
 
 
+	
 
 }
+
 
 
 
