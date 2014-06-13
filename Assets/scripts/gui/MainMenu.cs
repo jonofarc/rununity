@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
+using System.Collections.Generic;
+using SimpleJSON;
 public class MainMenu : MonoBehaviour {
 
 
@@ -7,18 +10,53 @@ public class MainMenu : MonoBehaviour {
 					
 		FBUtil.init();
 	}
+	bool leaderBoard=false;
+	JSONNode scores;
 	void OnGUI () {		
 		Texture2D texture = (Texture2D)Resources.Load("GUI/menu/batsi");
 		GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), texture);
-		float boxHeigt = Screen.height*.4f, 
-			boxWidth = Screen.width*.4f,
-			boxLeft = Screen.width*.97f - boxWidth, 
-			boxTop=Screen.height*.97f-boxHeigt,
-			buttonWidth=boxWidth*.9f,
-			buttonHeigth=-5f+boxHeigt*.2f,
-			buttonLeft = boxLeft+boxWidth*.05f,
-			buttonTop=boxHeigt/5f;
+		GUI.skin.button.fontSize=14;
+		GUI.skin.button.wordWrap=true;
+		GUI.skin.box.fontSize=16;
+		GUI.skin.box.wordWrap = true;
+		if(leaderBoard){
+			if(scores==null)
+				leaderBoard=false;
+			else{
+				doLeaderBoard();
+			}
+		}else{
+			doMainMenu();
+		}
+	}
+	private void doLeaderBoard(){
+		GUI.Box(new Rect(Screen.width*.1f,Screen.height*.1f,Screen.width*.8f,Screen.height*.8f),"Puntuaciones");
+		GUI.skin.button.fontSize=16;
+		GUI.skin.button.wordWrap = true;
+		float buttonHeight=((Screen.height*.75f)/scores.Count)-(10f*scores.Count);
+		float buttonWidth=Screen.width*.7f;
+		int count=0;
+		foreach (JSONNode node in scores["data"].AsArray){
+			//{{"user":{"id":"660260877354538", "name":"Oscar Damian Velazquez"}, "score":"0", "application":{"name":"Run", "id":"252232634964826"}}}
+			string scoreLabel= String.Format("{0} {1}",node["score"].ToString(),node["user"]["name"]);
 
+			GUI.Label(new Rect(Screen.width*.15f,(Screen.height*.2f)+((buttonHeight+5f)*count)+5f,buttonWidth,buttonHeight),scoreLabel);		
+			count=count+1;
+		}
+	}
+
+
+
+	private void doMainMenu(){
+		float boxHeigt = Screen.height*.4f, 
+		boxWidth = Screen.width*.4f,
+		boxLeft = Screen.width*.97f - boxWidth, 
+		boxTop=Screen.height*.97f-boxHeigt,
+		buttonWidth=boxWidth*.9f,
+		buttonHeigth=-5f+boxHeigt*.2f,
+		buttonLeft = boxLeft+boxWidth*.05f,
+		buttonTop=boxHeigt/5f;
+		
 		GUI.Box(new Rect(boxLeft,boxTop,boxWidth,boxHeigt), "Algo de gonti");
 		
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop,buttonWidth,buttonHeigth), "Video")) {
@@ -29,14 +67,17 @@ public class MainMenu : MonoBehaviour {
 			Application.LoadLevel(2);
 		}
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "LeaderBoard")) {
-			FBUtil.friendsScores();
+			FBUtil.friendsScores(delegate(FBResult result) {
+				 scores=JSON.Parse(result.Text);
+				leaderBoard=true;
+
+			});
 		}
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*4,buttonWidth,buttonHeigth), "Compartir en Facebook")) {
 			FBUtil.share(delegate {
-
+				
 			});	
 		}
-
 	}
 
 	

@@ -11,22 +11,16 @@ public class FBUtil {
 			});
 		
 	}
-	public static void friendsScores(){
+	public static void friendsScores(FacebookDelegate deleg){
 		if (!FB.IsLoggedIn)
 			FB.Login(actionsLogin, delegate {
 				if (FB.IsLoggedIn){
-				
-					FB.API ("/"+FB.AppId+"/scores", HttpMethod.GET, delegate(FBResult result){
-						//252232634964826/scores?user.id=660260877354538
-						Debug.Log(result);
-					});
+					//252232634964826/scores?user.id=660260877354538
+					FB.API ("/"+FB.AppId+"/scores", HttpMethod.GET, deleg);
 				}
 			});
 		else{
-
-			FB.API ("/"+FB.AppId+"/scores", HttpMethod.GET, delegate(FBResult res) {
-				Debug.Log(res);
-			});
+			FB.API ("/"+FB.AppId+"/scores", HttpMethod.GET, deleg);
 		}
 	}
 
