@@ -13,6 +13,9 @@ public var runMaxAnimationSpeed : float = 1.0;
 public var jumpAnimationSpeed : float = 1.15;
 public var landAnimationSpeed : float = 1.0;
 
+public var leftSideMovement : boolean = false;
+public var rightSideMovement : boolean = false;
+
 private var _animation : Animation;
 
 enum CharacterState {
@@ -26,7 +29,7 @@ enum CharacterState {
 
 private var _characterState : CharacterState;
 
-// The speed when walking
+// The speed when walking|
 var walkSpeed = 2.0;
 // after trotAfterSeconds of walking we trot with trotSpeed
 var trotSpeed = 4.0;
@@ -137,6 +140,7 @@ var  minMovement = 10.0f;
 var  StartPos=null;
 var fp : Vector2;  // first finger position
 var lp : Vector2;  // last finger position
+
 function moveLane(carr: int){	
 
 
@@ -149,8 +153,9 @@ function moveLane(carr: int){
 		else if (carril<2) {
 			carril=2;
 			return; 
-		}			
-		gameObject.transform.position=new Vector3(carril,(gameObject.transform.position.y+0.0f),gameObject.transform.position.z);	
+		}	
+		//el movimiento es manejado en otra oarte pro eso comente esta linea		
+		//gameObject.transform.position=new Vector3(carril,(gameObject.transform.position.y+0.0f),gameObject.transform.position.z);	
 
 
 	}
@@ -236,11 +241,22 @@ function UpdateSmoothedMovementDirection ()
 		if (isMoving)
 			inAirVelocity += targetDirection.normalized * Time.deltaTime * inAirControlAcceleration;
 	}
-	if (Input.GetKeyUp(KeyCode.A)) {
-		moveLane(-2);		
+	if(leftSideMovement==true){
+	this.transform.Translate(-6.6*Time.deltaTime,0,0);
+	}
+	if(rightSideMovement==true){
+	this.transform.Translate(6.6*Time.deltaTime,0,0);
+	}
+	if (Input.GetKeyUp(KeyCode.A)&&leftSideMovement==false&&rightSideMovement==false&&carril>2.5&&stopMovement==false) {	
+		moveLane(-2);	
+		//jonathan	
+		leftSideMovement=true;
+		animJumpLeft();
 	} 
-	if (Input.GetKeyUp(KeyCode.D)) {			
+	if (Input.GetKeyUp(KeyCode.D)&&leftSideMovement==false&&rightSideMovement==false&&carril<5.5&&stopMovement==false) {			
 		moveLane(2);
+		rightSideMovement=true;
+		animJumpRight();
 	}	
 
 	for (var touch : Touch in Input.touches){
@@ -253,12 +269,17 @@ function UpdateSmoothedMovementDirection ()
 			}
 			if(touch.phase == TouchPhase.Ended){      
 				// left swipe
-				if((fp.x - lp.x) > 80){       
-					  moveLane(-2);
+				if((fp.x - lp.x) > 80&&carril>2.5&&stopMovement==false){       
+				 moveLane(-2);
+					leftSideMovement=true;
+					animJumpLeft();
+	  
 				}
 			  	// right swipe
-				else if((fp.x - lp.x) < -80){
+				else if((fp.x - lp.x) < -80&&carril<5.5&&stopMovement==false){
 					moveLane(2);
+					rightSideMovement=true;
+					animJumpRight();
 				}
 				// up swipe
 				else if((fp.y - lp.y) < -40 ){
@@ -579,4 +600,41 @@ function lvlFinished(){
 
 //	Debug.Log("Aqui carga el lvl que deve salir despues de pasar el lvl actual");
 
+}
+function animJumpLeft(){
+	animation["motionplus0"].speed=3;
+	animation.Play("motionplus0");
+	
+	Invoke( "startMovement", (animation["motionplus0"].length/3) );
+	Debug.Log(animation["motionplus0"].speed );
+	stopMovement=true;
+
+}
+function animJumpRight(){
+	animation["motionplus0"].speed=3;
+	animation.Play("motionplus0");
+	
+	Invoke( "startMovement", (animation["motionplus0"].length/3) );
+	Debug.Log(animation["motionplus0"].speed );
+	stopMovement=true;
+
+}
+function startMovement(){
+
+
+	stopMovement=false;
+	canJump=true;
+	leftSideMovement=false;
+	rightSideMovement=false;
+	this.transform.position= Vector3(carril,this.transform.position.y,this.transform.position.z);
+	/*if(this.transform.position.x<2.5&&this.transform.position.x>1.5){
+		this.transform.position= Vector3(2,this.transform.position.y,this.transform.position.z);
+	}
+	if(this.transform.position.x<4.5&&this.transform.position.x>3.5){
+		this.transform.position= Vector3(4,this.transform.position.y,this.transform.position.z);
+	}
+	if(this.transform.position.x<6.5&&this.transform.position.x>5.5){
+		this.transform.position= Vector3(6,this.transform.position.y,this.transform.position.z);
+	}
+*/
 }

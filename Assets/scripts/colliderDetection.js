@@ -1,6 +1,6 @@
 ﻿#pragma strict
 public var myCamera: GameObject;
-public var lvlFinished: boolean;
+private var lvlFinished: boolean;
 private var moveBack: float;
 public var moveBackObject: GameObject;
 
