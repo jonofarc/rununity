@@ -11,6 +11,9 @@ public class FBUtil {
 			});
 		
 	}
+
+	
+
 	public static void friendsScores(FacebookDelegate deleg){
 		if (!FB.IsLoggedIn)
 			FB.Login(actionsLogin, delegate {

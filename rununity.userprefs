@@ -1,45 +1,29 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\gui\MainMenu.cs">
     <Files>
-      <File FileName="Assets\scripts\colliderDetection.js" Line="15" Column="1" />
-      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" Line="250" Column="115" />
-      <File FileName="Assets\scripts\CameraScript.js" Line="10" Column="78" />
+      <File FileName="Assets\scripts\gui\MainMenu.cs" Line="41" Column="46" />
+      <File FileName="Assets\scripts\gui\FBUtil.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Resources" expanded="True" />
             <Node name="scripts" expanded="True">
-              <Node name="gui" expanded="True" />
+              <Node name="gui" expanded="True">
+                <Node name="MainMenu.cs" selected="True" />
+              </Node>
             </Node>
-          </Node>
-          <Node name="Assembly-CSharp-firstpass" expanded="True">
-            <Node name="Plugins" expanded="True" />
           </Node>
           <Node name="Assembly-UnityScript" expanded="True">
             <Node name="scripts" expanded="True" />
-          </Node>
-          <Node name="Assembly-UnityScript-firstpass" expanded="True">
-            <Node name="Standard Assets" expanded="True">
-              <Node name="Character Controllers" expanded="True">
-                <Node name="Sources" expanded="True">
-                  <Node name="Scripts" expanded="True">
-                    <Node name="ThirdPersonController.js" selected="True" />
-                  </Node>
-                </Node>
-              </Node>
-            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\damian\rununity\Assets\scripts\gui\MainMenu.cs" line="46" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

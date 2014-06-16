@@ -29,6 +29,8 @@ public class MainMenu : MonoBehaviour {
 			doMainMenu();
 		}
 	}
+
+	Dictionary<String, Texture2D> dicImages= new Dictionary<string, Texture2D>();
 	private void doLeaderBoard(){
 		GUI.Box(new Rect(Screen.width*.1f,Screen.height*.1f,Screen.width*.8f,Screen.height*.8f),"Puntuaciones");
 		GUI.skin.button.fontSize=16;
@@ -38,11 +40,29 @@ public class MainMenu : MonoBehaviour {
 		int count=0;
 		foreach (JSONNode node in scores["data"].AsArray){
 			//{{"user":{"id":"660260877354538", "name":"Oscar Damian Velazquez"}, "score":"0", "application":{"name":"Run", "id":"252232634964826"}}}
-			string scoreLabel= String.Format("{0} {1}",node["score"].ToString(),node["user"]["name"]);
+			string userId=node["user"]["id"];
+			if(!dicImages.ContainsKey(userId)){
+				dicImages.Add(userId,null);
+				StartCoroutine(userImage(userId));
+			}
+			if(dicImages[userId]!=null){
+				Rect rect=new Rect(Screen.width*.15f,(Screen.height*.2f)+((buttonHeight+5f)*count)+5f,buttonWidth*.1f,16f);
+				GUI.DrawTexture(rect,dicImages[userId]);
+			}
+			GUI.Label(new Rect((Screen.width*.15f)+(buttonWidth*.1f),(Screen.height*.2f)+((buttonHeight+5f)*count)+5f,buttonWidth*.1f,buttonHeight),node["score"]);
+			GUI.Label(new Rect((Screen.width*.15f)+(buttonWidth*.2f),(Screen.height*.2f)+((buttonHeight+5f)*count)+5f,buttonWidth*.8f,buttonHeight),node["user"]["name"]);
+			
 
-			GUI.Label(new Rect(Screen.width*.15f,(Screen.height*.2f)+((buttonHeight+5f)*count)+5f,buttonWidth,buttonHeight),scoreLabel);		
+
 			count=count+1;
 		}
+	}
+	private IEnumerator userImage(string userId){
+		WWW url = new WWW("https" + "://graph.facebook.com/" + userId + "/picture?type=large"); //+ "?access_token=" + FB.AccessToken);
+		yield return url;
+		Texture2D texture = new Texture2D(128, 128, TextureFormat.DXT1, false);
+		url.LoadImageIntoTexture (texture);
+		dicImages[userId]=texture;	
 	}
 
 
