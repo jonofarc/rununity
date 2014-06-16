@@ -44,7 +44,7 @@ if (Input.touchCount > 0){
 
 function success(){
 
-		blackscreen.transform.localPosition = new Vector3(0,0.5,0);
+		blackscreen.transform.localPosition = new Vector3(0,5.5,0);
 		TouchText.SetActive(true);
 		
 
