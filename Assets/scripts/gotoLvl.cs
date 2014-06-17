@@ -5,13 +5,14 @@ using System.Collections;
 
 public class gotoLvl : MonoBehaviour {
 
-	public int lvlNumber=0;
+	//public int lvlNumber=0;
 	public float timeToLoadNextLvlv=0;
-	private string myNextLvl;
+	public string myNextLvl="Start";
+
 
 	// Use this for initialization
 	void Start () {
-	
+/*	
 		if(lvlNumber==1){
 			myNextLvl="VideoIntro";
 		}
@@ -30,7 +31,7 @@ public class gotoLvl : MonoBehaviour {
 		if(lvlNumber==6){
 			myNextLvl="Start";
 		}
-
+*/
 
 	}
 	
