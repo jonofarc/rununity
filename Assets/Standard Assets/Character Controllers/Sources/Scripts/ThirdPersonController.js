@@ -606,7 +606,7 @@ function animJumpLeft(){
 	animation.Play("motionplus0");
 	
 	Invoke( "startMovement", (animation["motionplus0"].length/3) );
-	Debug.Log(animation["motionplus0"].speed );
+//	Debug.Log(animation["motionplus0"].speed );
 	stopMovement=true;
 
 }
