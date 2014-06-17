@@ -7,7 +7,7 @@ public var GoodSpawneable : GameObject;
 public var mainCamera: GameObject;
 public var BadChances: int;
 public var GoodChances: int;
-public var BadSpawneableHeight: int;
+public var BadSpawneableHeight: float;
 public var distanceForGoodOrBad: int;
 public var spawnDistance: int;
 public var backgroundObjectsOn: boolean; 
@@ -109,14 +109,14 @@ function BadSpawn(){
 		carril = Random.Range(1,4)*2;
 		clone=Instantiate (BadSpawneable, new Vector3(carril,0.1+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
-		clone=Instantiate (BadSpawneable2, new Vector3(carril,3.5+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
+		clone=Instantiate (BadSpawneable2, new Vector3(carril,3.9+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
 	}
 	if(tipoEnemigo==5){
 	// estalactita y estalacmita en carriles diferentes pero contiguos
 		carril = 2;
 	//	Instantiate (BadSpawneable, new Vector3(carril,0.1,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
-		clone=Instantiate (BadSpawneable2, new Vector3(carril,3.5+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
+		clone=Instantiate (BadSpawneable2, new Vector3(carril,3.9+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
 		clone=Instantiate (BadSpawneable, new Vector3(carril+2,0.1+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
@@ -134,11 +134,11 @@ function BadSpawn(){
 	if(tipoEnemigo==7){
 		// 3 estacamitas en toda la parte superior
 		carril = 2;
-		clone=Instantiate (BadSpawneable2, new Vector3(carril,3.5+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
+		clone=Instantiate (BadSpawneable2, new Vector3(carril,3.9+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
-		clone=Instantiate (BadSpawneable2, new Vector3(carril+2,3.5+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
+		clone=Instantiate (BadSpawneable2, new Vector3(carril+2,3.9+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
-	   	clone=Instantiate (BadSpawneable2, new Vector3(carril+4,3.5+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
+	   	clone=Instantiate (BadSpawneable2, new Vector3(carril+4,3.9+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
 	}
 
