@@ -16,8 +16,9 @@ public class FBUtil {
 
 	public static void friendsScores(FacebookDelegate deleg){
 		if (!FB.IsLoggedIn)
-			FB.Login(actionsLogin, delegate {
+			FB.Login(actionsLogin, delegate(FBResult result) {
 				if (FB.IsLoggedIn){
+
 					//252232634964826/scores?user.id=660260877354538
 					FB.API ("/"+FB.AppId+"/scores", HttpMethod.GET, deleg);
 				}

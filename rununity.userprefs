@@ -1,41 +1,19 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\gui\MainMenu.cs">
     <Files>
-      <File FileName="Assets\scripts\BringFront.js" Line="66" Column="31" />
-      <File FileName="Assets\scripts\gui\MainMenu.cs" Line="41" Column="46" />
+      <File FileName="Assets\scripts\gui\MainMenu.cs" Line="106" Column="1" />
+      <File FileName="Assets\scripts\gui\IntermediateLevel.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\gui\MainMenu.cs" Line="52" Column="105" />
       <File FileName="Assets\scripts\gui\FBUtil.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\gotoLvl.cs" Line="24" Column="4" />
-      <File FileName="Assets\scripts\PlayVideo.cs" Line="22" Column="15" />
-      <File FileName="Assets\scripts\gui\HUD.cs" Line="6" Column="61" />
-      <File FileName="Assets\Qualcomm Augmented Reality\Scripts\KeepAliveBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets\Qualcomm Augmented Reality\Scripts\DataSetLoadBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets\Qualcomm Augmented Reality\Scripts\DefaultInitializationErrorHandler.cs" Line="15" Column="2" />
-      <File FileName="Assets\scripts\spawnObjects lvl2.js" Line="112" Column="60" />
-      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" Line="614" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Qualcomm Augmented Reality" expanded="True">
-              <Node name="Scripts" expanded="True" />
-            </Node>
             <Node name="scripts" expanded="True">
-              <Node name="gui" expanded="True" />
-            </Node>
-          </Node>
-          <Node name="Assembly-UnityScript" expanded="True">
-            <Node name="scripts" expanded="True" />
-          </Node>
-          <Node name="Assembly-UnityScript-firstpass" expanded="True">
-            <Node name="Standard Assets" expanded="True">
-              <Node name="Character Controllers" expanded="True">
-                <Node name="Sources" expanded="True">
-                  <Node name="Scripts" expanded="True">
-                    <Node name="ThirdPersonController.js" selected="True" />
-                  </Node>
-                </Node>
+              <Node name="gui" expanded="True">
+                <Node name="MainMenu.cs" selected="True" />
               </Node>
             </Node>
           </Node>

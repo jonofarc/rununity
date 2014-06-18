@@ -19,6 +19,7 @@ public class MainMenu : MonoBehaviour {
 		GUI.skin.button.wordWrap=true;
 		GUI.skin.box.fontSize=16;
 		GUI.skin.box.wordWrap = true;
+		GUI.skin.label.wordWrap = true;
 		if(leaderBoard){
 			if(scores==null)
 				leaderBoard=false;
@@ -32,12 +33,13 @@ public class MainMenu : MonoBehaviour {
 
 	Dictionary<String, Texture2D> dicImages= new Dictionary<string, Texture2D>();
 	private void doLeaderBoard(){
-		GUI.Box(new Rect(Screen.width*.1f,Screen.height*.1f,Screen.width*.8f,Screen.height*.8f),"Puntuaciones");
+		GUI.Box(new Rect(Screen.width*.1f,Screen.height*.1f,Screen.width*.8f,Screen.height*.8f),"Puntuaciones(Primeros 10)");
 		GUI.skin.button.fontSize=16;
 		GUI.skin.button.wordWrap = true;
-		float buttonHeight=((Screen.height*.75f)/scores.Count)-(10f*scores.Count);
+		float buttonHeight=((Screen.height*.75f)/10);
 		float buttonWidth=Screen.width*.7f;
 		int count=0;
+		//for (int x=0;x<10;x++)
 		foreach (JSONNode node in scores["data"].AsArray){
 			//{{"user":{"id":"660260877354538", "name":"Oscar Damian Velazquez"}, "score":"0", "application":{"name":"Run", "id":"252232634964826"}}}
 			string userId=node["user"]["id"];
@@ -45,12 +47,13 @@ public class MainMenu : MonoBehaviour {
 				dicImages.Add(userId,null);
 				StartCoroutine(userImage(userId));
 			}
+
 			if(dicImages[userId]!=null){
-				Rect rect=new Rect(Screen.width*.15f,(Screen.height*.2f)+((buttonHeight+5f)*count)+5f,buttonWidth*.1f,16f);
+				Rect rect=new Rect(-5+(Screen.width*.15f),(Screen.height*.15f)+((buttonHeight)*count),buttonWidth*.1f,16f);
 				GUI.DrawTexture(rect,dicImages[userId]);
 			}
-			GUI.Label(new Rect((Screen.width*.15f)+(buttonWidth*.1f),(Screen.height*.2f)+((buttonHeight+5f)*count)+5f,buttonWidth*.1f,buttonHeight),node["score"]);
-			GUI.Label(new Rect((Screen.width*.15f)+(buttonWidth*.2f),(Screen.height*.2f)+((buttonHeight+5f)*count)+5f,buttonWidth*.8f,buttonHeight),node["user"]["name"]);
+			GUI.Label(new Rect((Screen.width*.15f)+(buttonWidth*.1f),(Screen.height*.15f)+((buttonHeight)*count),buttonWidth*.1f,buttonHeight),node["score"]);
+			GUI.Label(new Rect((Screen.width*.15f)+(buttonWidth*.2f),(Screen.height*.15f)+((buttonHeight)*count),buttonWidth*.8f,buttonHeight),node["user"]["name"]);
 			
 
 
@@ -60,7 +63,7 @@ public class MainMenu : MonoBehaviour {
 	private IEnumerator userImage(string userId){
 		WWW url = new WWW("https" + "://graph.facebook.com/" + userId + "/picture?type=large"); //+ "?access_token=" + FB.AccessToken);
 		yield return url;
-		Texture2D texture = new Texture2D(128, 128, TextureFormat.DXT1, false);
+		Texture2D texture = new Texture2D(32, 32, TextureFormat.DXT1, false);
 		url.LoadImageIntoTexture (texture);
 		dicImages[userId]=texture;	
 	}
