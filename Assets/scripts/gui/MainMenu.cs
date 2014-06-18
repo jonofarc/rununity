@@ -38,6 +38,12 @@ public class MainMenu : MonoBehaviour {
 		GUI.skin.button.wordWrap = true;
 		float buttonHeight=((Screen.height*.75f)/10);
 		float buttonWidth=Screen.width*.7f;
+		Texture2D closeText = (Texture2D)Resources.Load("close-button");
+		Rect closeRect = new Rect ((Screen.width * .9f) - 32, (Screen.height * .1f), 32, 32);
+		GUI.DrawTexture(closeRect, closeText);
+		if (GUI.Button (closeRect, "", new GUIStyle ())) {
+			leaderBoard=false;
+		}
 		int count=0;
 		//for (int x=0;x<10;x++)
 		foreach (JSONNode node in scores["data"].AsArray){
