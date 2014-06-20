@@ -90,7 +90,6 @@ private var lastJumpButtonTime = -10.0;
 // Last time we performed a jump
 private var lastJumpTime = -1.0;
 
-
 // the height we jumped from (Used to determine for how long to apply extra jump power after jumping.)
 private var lastJumpStartHeight = 0.0;
 
@@ -291,7 +290,7 @@ function UpdateSmoothedMovementDirection ()
 
 
 function ApplyJumping ()
-{
+{	
 	// Prevent jumping too fast after each other
 	if (lastJumpTime + jumpRepeatTime > Time.time)
 		return;
@@ -301,6 +300,7 @@ function ApplyJumping ()
 		// - Only when pressing the button down
 		// - With a timeout so you can press the button slightly before landing		
 		if (canJump && Time.time < lastJumpButtonTime + jumpTimeout) {
+			Camera.main.SendMessage("jumpStart");
 			verticalSpeed = CalculateJumpVerticalSpeed (jumpHeight);
 			DidJump();
 		}			

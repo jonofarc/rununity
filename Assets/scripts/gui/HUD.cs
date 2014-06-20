@@ -32,11 +32,16 @@ public class HUD : MonoBehaviour {
 	//	Debug.Log (points);
 	
 	}
+	void jumpStart(){
+		Sound.playTrack(gameObject,"jump");
+	}
+
 	// Use this for initialization
 	void Start () {
 		hp=0.0f;//inisialisamos la variable por si el nivel es reiniciado con el menu o por morir
 		points=0f; // idem
 		pointsColor.normal.textColor = new Color(0,0,0);//asigan el color que se usara para el font de los puntos
+		Sound.playTheme (gameObject);
 
 	}
 	
@@ -47,6 +52,7 @@ public class HUD : MonoBehaviour {
 
 	//esta funcion es llamada desde el objeto Gonti_run en el script colliderDetection.js al obtener una gotita
 	 void increaseHP(){
+		Sound.playTrack(gameObject,"suck");
 		if(hp<0.9f){
 			hp=hp+0.1f;
 
@@ -63,7 +69,7 @@ public class HUD : MonoBehaviour {
 	}
 	//esta funcion es llamada desde el objeto Gonti_run en el script colliderDetection.js al obtener una gotita
 	void decreaseHP(){
-	
+		Sound.playTrack(gameObject,"splash");
 		hp=0f;
 		
 		
