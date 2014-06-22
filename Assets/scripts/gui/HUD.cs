@@ -42,6 +42,9 @@ public class HUD : MonoBehaviour {
 		points=0f; // idem
 		pointsColor.normal.textColor = new Color(0,0,0);//asigan el color que se usara para el font de los puntos
 		Sound.playTheme (gameObject);
+		Application.targetFrameRate = -1;
+
+
 
 	}
 	
@@ -80,12 +83,16 @@ public class HUD : MonoBehaviour {
 		GUI.Label(new Rect(10, 10, 150, 150), points.ToString(),pointsColor);
 
 		if (Time.timeScale == 1) { 
-			Texture2D pause = (Texture2D)Resources.Load("GUI/HUD/pause");
-			if (GUI.Button (new Rect (Screen.width - (Screen.width * .15f),
-				       Screen.height * .05f,
-				       Screen.width * sizeRatio,
-				       Screen.height * sizeRatio), pause)) 
+			Texture2D pauset = (Texture2D)Resources.Load("GUI/HUD/pause");
+			Rect pauser=new Rect (Screen.width - (Screen.width * .15f),
+			                      Screen.height * .05f,
+			                      Screen.width * sizeRatio,
+			                      Screen.height * sizeRatio);
+			GUI.DrawTexture(pauser,pauset);
+			if (GUI.Button (pauser, "", new GUIStyle())){ 
 				Time.timeScale = 0;
+				Sound.pauseTheme(gameObject);
+			}
 			float fullHP=Screen.height*.7f,
 				topHp=(Screen.height*.15f)+(fullHP-(fullHP*hp));
 
@@ -99,8 +106,11 @@ public class HUD : MonoBehaviour {
 						(Screen.width / 2) - (Screen.width * .05f),
 						(Screen.height / 2) - (Screen.height * .225f),
 						Screen.width * sizeRatio,
-						Screen.height * sizeRatio), "Resumir")) 
+				Screen.height * sizeRatio), "Resumir")){
+				Sound.playTheme(gameObject);
 				Time.timeScale = 1;
+			} 
+				
 			if (GUI.Button (new Rect (
 						(Screen.width / 2) - (Screen.width * .05f),
 						(Screen.height / 2) - (Screen.height * .075f),

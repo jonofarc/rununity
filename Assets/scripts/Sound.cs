@@ -14,11 +14,19 @@ public class Sound {
 		song = (AudioClip)Resources.Load("sounds/jump");
 		tracks.Add("jump",song);
 	}
+	private static AudioSource theme=null;
 	public static void playTheme(GameObject gameObject){
-		AudioSource audio = gameObject.AddComponent<AudioSource>();		
-		audio.clip = tracks ["theme"];
-		audio.loop=true;
-		audio.Play();
+		if (theme == null) {
+						theme = gameObject.AddComponent<AudioSource> ();		
+						theme.clip = tracks ["theme"];
+						theme.loop = true;
+						theme.Play ();
+		} else {
+			theme.Play();
+		}
+	}
+	public static void pauseTheme(GameObject gameObject){
+		theme.Pause ();
 	}
 	public static void playTrack(GameObject gameObject,string sound){
 		AudioSource audio = gameObject.AddComponent<AudioSource>();		

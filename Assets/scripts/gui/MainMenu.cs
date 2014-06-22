@@ -9,12 +9,16 @@ public class MainMenu : MonoBehaviour {
 	void Awake(){
 					
 		FBUtil.init();
+
 	}
 	bool leaderBoard=false;
 	JSONNode scores;
+	int currentImage=0;
 	void OnGUI () {		
-		Texture2D texture = (Texture2D)Resources.Load("GUI/menu/batsi");
-		GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), texture);
+		if (currentImage >= backgrounds.Length)
+			currentImage = 0;
+		GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), backgrounds[currentImage]);
+		currentImage++;
 		GUI.skin.button.fontSize=14;
 		GUI.skin.button.wordWrap=true;
 		GUI.skin.box.fontSize=16;
@@ -30,6 +34,16 @@ public class MainMenu : MonoBehaviour {
 			doMainMenu();
 		}
 	}
+	Texture2D[] backgrounds= new Texture2D[107];
+	void Start () {
+		for (int x = 1; x<108; x++) {
+			string file= String.Format("GUI/menu/output{0:00000}",x);
+			backgrounds[x-1]=(Texture2D)Resources.Load(file);
+		}
+		Application.targetFrameRate = 20;
+
+
+	}
 
 	Dictionary<String, Texture2D> dicImages= new Dictionary<string, Texture2D>();
 	private void doLeaderBoard(){
@@ -41,7 +55,7 @@ public class MainMenu : MonoBehaviour {
 		Texture2D closeText = (Texture2D)Resources.Load("close-button");
 		Rect closeRect = new Rect ((Screen.width * .9f) - 32, (Screen.height * .1f), 32, 32);
 		GUI.DrawTexture(closeRect, closeText);
-		if (GUI.Button (closeRect, "", new GUIStyle ())) {
+		if (GUI.Button (closeRect, "", new GUIStyle())) {
 			leaderBoard=false;
 		}
 		int count=0;
