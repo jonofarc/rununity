@@ -456,7 +456,7 @@ function Update() {
 	}
 	
 	
-	}
+	
 	// ANIMATION sector
 	
 	// Set rotation to the move direction
@@ -487,6 +487,7 @@ function Update() {
 			SendMessage("DidLand", SendMessageOptions.DontRequireReceiver);
 		}
 	}
+  }
 }
 
 function OnControllerColliderHit (hit : ControllerColliderHit )
