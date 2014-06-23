@@ -1,34 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\gui\HUD.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/gui/HUD.cs">
     <Files>
-      <File FileName="Assets\scripts\gui\MainMenu.cs" Line="50" Column="31" />
-      <File FileName="Assets\scripts\gui\HUD.cs" Line="15" Column="3" />
-      <File FileName="Assets\scripts\gui\IntermediateLevel.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Sound.cs" Line="28" Column="31" />
+      <File FileName="Assets/scripts/colliderDetection.js" Line="35" Column="53" />
+      <File FileName="Assets/scripts/gui/HUD.cs" Line="41" Column="17" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="scripts" expanded="True">
-              <Node name="gui" expanded="True">
-                <Node name="HUD.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-          <Node name="Assembly-UnityScript-firstpass" expanded="True">
-            <Node name="Standard Assets" expanded="True">
-              <Node name="Character Controllers" expanded="True">
-                <Node name="Sources" expanded="True">
-                  <Node name="Scripts" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

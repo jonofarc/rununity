@@ -5,6 +5,7 @@ using System.IO;
 public class HUD : MonoBehaviour {
 	public GameObject player;//asignamos al player para regresarle valores cuadno la barra de hp este llena
 	public GUIStyle pointsColor;
+	public bool musicOn;
 
 
 	public static float hp=.5f;
@@ -41,7 +42,10 @@ public class HUD : MonoBehaviour {
 		hp=0.0f;//inisialisamos la variable por si el nivel es reiniciado con el menu o por morir
 		points=0f; // idem
 		pointsColor.normal.textColor = new Color(0,0,0);//asigan el color que se usara para el font de los puntos
-		Sound.playTheme (gameObject);
+		if(musicOn==true){
+			Sound.playTheme (gameObject);
+		}
+
 		Application.targetFrameRate = -1;
 
 

@@ -32,7 +32,8 @@ transform.eulerAngles = Vector3(0,180,0);
 
 }
 
-function OnCollisionEnter(collision : Collision) {
+//function OnCollisionEnter(collision : Collision) {
+function OnTriggerEnter (collision : Collider) {
 		// Debug-draw all contact points and normals
 //	Debug.Log(collision.transform.tag);
 //	Debug.Log(collision.transform.name);
