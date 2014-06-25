@@ -6,6 +6,8 @@ public var idleAnimation : AnimationClip;
 public var walkAnimation : AnimationClip;
 public var runAnimation : AnimationClip;
 public var jumpPoseAnimation : AnimationClip;
+public var moveLeft : AnimationClip;
+public var moveRight : AnimationClip;
 
 public var walkMaxAnimationSpeed : float = 0.75;
 public var trotMaxAnimationSpeed : float = 1.0;
@@ -603,20 +605,24 @@ function lvlFinished(){
 
 }
 function animJumpLeft(){
-	animation["motionplus0"].speed=3;
-	animation.Play("motionplus0");
+	//animation["motionplus0"].speed=3;
+	//animation.Play("motionplus0");
+	animation[moveLeft.name].speed=3;
+	animation.Play(moveLeft.name);
+	//moveLeft.play();
+	//moveLeft.speed=3;
 	
 	Invoke( "startMovement", (animation["motionplus0"].length/3) );
-//	Debug.Log(animation["motionplus0"].speed );
+
 	stopMovement=true;
 
 }
 function animJumpRight(){
-	animation["motionplus0"].speed=3;
-	animation.Play("motionplus0");
+	animation[moveRight.name].speed=3;
+	animation.Play(moveRight.name);
 	
 	Invoke( "startMovement", (animation["motionplus0"].length/3) );
-	Debug.Log(animation["motionplus0"].speed );
+	
 	stopMovement=true;
 
 }
