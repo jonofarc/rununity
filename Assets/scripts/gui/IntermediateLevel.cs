@@ -69,12 +69,13 @@ public class IntermediateLevel : MonoBehaviour {
 			Dictionary<string,ButtonDelegate> dic= new Dictionary<string,ButtonDelegate>();
 			dic.Add("Si",delegate {
 				FBUtil.score(((int)HUD.getPoints())+"",delegate {
-					Application.LoadLevel(nextLevel);
+					GotoLvl.changeLevel(true);
+					
 				});
 			});
 			dic.Add("No, llevame al siguiente nivel",delegate {
 				Debug.Log(nextLevel);
-					Application.LoadLevel(nextLevel);
+					GotoLvl.changeLevel(true);
 				
 			});
 			addButtons(dic);
@@ -84,7 +85,7 @@ public class IntermediateLevel : MonoBehaviour {
 			addBOX("La respuesta correcta era:\n "+question["good"]);
 			Dictionary<string,ButtonDelegate> dic= new Dictionary<string,ButtonDelegate>();
 			dic.Add("Repetir nivel",delegate {
-				Application.LoadLevel(failLevel);
+				GotoLvl.changeLevel(false);
 			});
 			dic.Add("Menu principal",delegate {
 				Application.LoadLevel("Start");				

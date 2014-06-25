@@ -106,8 +106,8 @@ public class MainMenu : MonoBehaviour {
 			Application.LoadLevel(0);
 		}
 		
-		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*2,buttonWidth,buttonHeigth), "Demo")) {
-			Application.LoadLevel(2);
+		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*2,buttonWidth,buttonHeigth), "Jugar!!!")) {
+			GotoLvl.changeLevel(true);
 		}
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "LeaderBoard")) {
 			FBUtil.friendsScores(delegate(FBResult result) {
