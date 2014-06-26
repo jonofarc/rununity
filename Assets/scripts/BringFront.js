@@ -70,7 +70,13 @@ GUIUtility.RotateAroundPivot(thisAngle, pos);
 //all to be rotated put here
 //GUI.Label(new Rect(Screen.width/2-100, Screen.height/2-50,200,50), "Upside down");  
 		if(GUI.Button(new Rect(posx*0.65,posy*0.65,50,50), "Saltar")) {
-			GotoLvl.changeLevel(true);
+			if(Application.loadedLevelName=="VideoIntro"){
+				Application.LoadLevel("Start");
+			}
+			else{
+				GotoLvl.changeLevel(true);
+			}
+			
 		}
 //end of rotated
  

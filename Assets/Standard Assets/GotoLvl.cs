@@ -15,7 +15,7 @@ public class GotoLvl : MonoBehaviour {
 	void llamadaAfuncionEstupidaPorqueUnityNoTieneDElegadosConDelay(){
 		changeLevel ();
 	}
-	public static int finalLevel=3;
+	public static int finalLevel=5;
 	public static void changeLevel(bool succes=true){
 		//0==Estamos un nivel, 1 estamos en un menu,2 estamos en un video 
 			string loadedLevelName=Application.loadedLevelName;
@@ -49,9 +49,10 @@ public class GotoLvl : MonoBehaviour {
 		switch (tipoNivelIda) {
 			case 0: nextLevel="Level"+currentLevel; break;
 			case 1:nextLevel="LevelIntermediate"; break;
-			case 2:nextLevel="VideoInicioLvl"+currentLevel; break;
+			case 2:nextLevel="VideoInicioLvl"+(currentLevel+1); break;
 			default:nextLevel="Start";break;
-		}					
+		}	
+		Debug.Log (nextLevel);
 		Application.LoadLevel(nextLevel);
 		
 		
