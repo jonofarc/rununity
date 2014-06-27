@@ -66,9 +66,9 @@ public class FBUtil {
 	}
 	private static void internalShare(FacebookDelegate del){
 		FB.Feed(
-			linkCaption: "Titulo Run",
-			picture: "http://www.exiconglobal.com/corp/wp-content/uploads/2012/10/App-Icon-copy.png",
-			linkName: "Checkout my Friend",
+			linkCaption: "El Gran Ciclo",
+			picture: "http://blog.osdamv.com/content/256.png",
+			linkName: "Ven ayuda a gonti!!!",
 			link: "http://apps.facebook.com/" + FB.AppId + "/?challenge_brag=" + (FB.IsLoggedIn ? FB.UserId : "guest"),
 			callback: del
 			);
