@@ -1,6 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\spawnObjects lvl2.js">
+    <Files>
+      <File FileName="rununity.sln" Line="1" Column="1" />
+      <File FileName="Assets\scripts\gui\HUD.cs" Line="91" Column="68" />
+      <File FileName="Assets\scripts\spawnObjects.js" Line="74" Column="1" />
+      <File FileName="Assets\scripts\spawnObjects lvl2.js" Line="72" Column="52" />
+      <File FileName="Assets\scripts\spawnObjectslvl3.js" Line="71" Column="52" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

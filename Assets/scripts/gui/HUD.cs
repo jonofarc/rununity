@@ -5,6 +5,7 @@ using System.IO;
 public class HUD : MonoBehaviour {
 	public GameObject player;//asignamos al player para regresarle valores cuadno la barra de hp este llena
 	public GUIStyle pointsColor;
+	public GUIStyle watermarkStyle;
 	public bool musicOn;
 
 
@@ -41,7 +42,7 @@ public class HUD : MonoBehaviour {
 	void Start () {
 		hp=0.0f;//inisialisamos la variable por si el nivel es reiniciado con el menu o por morir
 		points=0f; // idem
-		pointsColor.normal.textColor = new Color(0,0,0);//asigan el color que se usara para el font de los puntos
+		//pointsColor.normal.textColor = new Color(0,0,0);//asigan el color que se usara para el font de los puntos
 		if(musicOn==true){
 			Sound.playTheme (gameObject);
 		}
@@ -83,8 +84,18 @@ public class HUD : MonoBehaviour {
 	}
 	float sizeRatio=.1f;
 	void OnGUI(){
+		// jonathan agregado el puntaje y su estilo
+		pointsColor.normal.background = (Texture2D)Resources.Load("GUI/HUD/pointsMetter");
+		pointsColor.alignment= TextAnchor.MiddleCenter;
+		pointsColor.normal.textColor = Color.white;
+		GUI.Label(new Rect(10, 10, Screen.width*0.15f, Screen.height*0.13f), "puntos:"+points.ToString(),pointsColor);
 
-		GUI.Label(new Rect(10, 10, 150, 150), points.ToString(),pointsColor);
+		//jonathan agregado el label de watermark y su estilo
+		watermarkStyle.normal.background = (Texture2D)Resources.Load("UserInterface/capture_button_normal_XHigh");
+		watermarkStyle.alignment= TextAnchor.MiddleCenter;
+		GUI.Label (new Rect (Screen.width/2, Screen.height-70, 200, 60), "Version de Desarrollo", watermarkStyle);
+
+
 
 		if (Time.timeScale == 1) { 
 			Texture2D pauset = (Texture2D)Resources.Load("GUI/HUD/pause");
@@ -103,6 +114,9 @@ public class HUD : MonoBehaviour {
 			GUI.Box(new Rect(Screen.width*.05f,Screen.height*.15f,Screen.width*.05f, fullHP ),"");
 			Texture2D water = (Texture2D)Resources.Load("GUI/HUD/water");
 			GUI.DrawTexture(new Rect(Screen.width*.05f,topHp, Screen.width*.05f, fullHP*hp), water);
+
+
+
 		}
 		
 		if (Time.timeScale == 0) {

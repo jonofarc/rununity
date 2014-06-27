@@ -69,7 +69,7 @@ function Update () {
 	if((spawnGoodTrue==1)&&(myPlayer.transform.position.z>(passedTime-distanceForGoodOrBad+distanseToNextGoodSpawn))){
 
 		GoodSpawn();
-		distanseToNextGoodSpawn=distanseToNextGoodSpawn+2.5;
+		distanseToNextGoodSpawn=distanseToNextGoodSpawn+5;
 	}
 
 
