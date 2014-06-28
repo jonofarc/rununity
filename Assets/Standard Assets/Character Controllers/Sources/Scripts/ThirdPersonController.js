@@ -15,8 +15,8 @@ public var runMaxAnimationSpeed : float = 1.0;
 public var jumpAnimationSpeed : float = 1.15;
 public var landAnimationSpeed : float = 1.0;
 
-public var leftSideMovement : boolean = false;
-public var rightSideMovement : boolean = false;
+private  var leftSideMovement : boolean = false;
+private  var rightSideMovement : boolean = false;
 
 private var _animation : Animation;
 
@@ -46,6 +46,8 @@ var inAirControlAcceleration = 3.0;
 
 // How high do we jump when pressing jump and letting go immediately
 var jumpHeight = 0.5;
+public var jumpHeightOriginal = jumpHeight;
+
 
 // The gravity for the character
 var gravity = 20.0;
@@ -56,8 +58,11 @@ var trotAfterSeconds = 3.0;
 
 var canJump = true;
 
-var moveAction = 1;
-var stopMovement = false;
+public var flyingLvlv : boolean = false;
+public var mTerrain: GameObject; //esta variable solo se usa en los niveles donde "vuelas hasta ahora solo el lvl4"
+
+private var moveAction = 1;
+private  var stopMovement = false;
 
 
 private var jumpRepeatTime = 0.05;
@@ -103,8 +108,11 @@ private var lastGroundedTime = 0.0;
 
 private var isControllable = true;
 
+
 function Awake ()
 {
+
+jumpHeightOriginal = jumpHeight;
 	moveDirection = transform.TransformDirection(Vector3.forward);
 	
 	_animation = GetComponent(Animation);
@@ -135,12 +143,12 @@ public var jumpPoseAnimation : AnimationClip;
 	}
 			
 }
-var SwipeID = -1;
-var  carril=4;
-var  minMovement = 10.0f;
-var  StartPos=null;
-var fp : Vector2;  // first finger position
-var lp : Vector2;  // last finger position
+private var SwipeID = -1;
+private var  carril=4;
+private var  minMovement = 10.0f;
+private var  StartPos=null;
+private var fp : Vector2;  // first finger position
+private var lp : Vector2;  // last finger position
 
 function moveLane(carr: int){	
 
@@ -155,7 +163,7 @@ function moveLane(carr: int){
 			carril=2;
 			return; 
 		}	
-		//el movimiento es manejado en otra oarte pro eso comente esta linea		
+		//el movimiento es manejado en otra parte pro eso comente esta linea		
 		//gameObject.transform.position=new Vector3(carril,(gameObject.transform.position.y+0.0f),gameObject.transform.position.z);	
 
 
@@ -283,7 +291,10 @@ function UpdateSmoothedMovementDirection ()
 					animJumpRight();
 				}
 				// up swipe
-				else if((fp.y - lp.y) < -40 ){
+				else if((fp.y - lp.y) < -40 && jumpHeight==jumpHeightOriginal){
+					lastJumpButtonTime = Time.time; 
+				}
+				else if((fp.y - lp.y) > 40 && jumpHeight<jumpHeightOriginal){
 					lastJumpButtonTime = Time.time; 
 				}
 		}
@@ -291,8 +302,7 @@ function UpdateSmoothedMovementDirection ()
 }
 
 
-function ApplyJumping ()
-{	
+function ApplyJumping (){	
 	// Prevent jumping too fast after each other
 	if (lastJumpTime + jumpRepeatTime > Time.time)
 		return;
@@ -305,13 +315,13 @@ function ApplyJumping ()
 			Camera.main.SendMessage("jumpStart");
 			verticalSpeed = CalculateJumpVerticalSpeed (jumpHeight);
 			DidJump();
-		}			
+		}
+		
 		
 			
 	}
 }
-function ApplyJumping2 ()
-{
+function ApplyJumping2 (){
 
 	// Prevent jumping too fast after each other
 	if (lastJumpTime + jumpRepeatTime > Time.time){
@@ -329,7 +339,9 @@ function ApplyJumping2 ()
 			verticalSpeed = CalculateJumpVerticalSpeed (jumpHeight);
 			SendMessage("DidJump", SendMessageOptions.DontRequireReceiver);
 			}
+
 	}
+
 }
 
 
@@ -371,6 +383,19 @@ function DidJump ()
 	lastJumpButtonTime = -10;
 	
 	_characterState = CharacterState.Jumping;
+	
+//toda esta seccion es para los niveles donde "vuelas hasta haora solo el lvl4"
+		if(flyingLvlv==true){
+			mTerrain.SendMessage("terrainAdjust");
+			if(jumpHeight==jumpHeightOriginal){
+				jumpHeight=0;
+			}
+			else{
+				jumpHeight=jumpHeightOriginal;
+			}
+		}
+///////////////////////////////////////////////////////////////////////////////
+	
 }
 
 function Update() {
@@ -476,6 +501,8 @@ function Update() {
 		{
 			transform.rotation = Quaternion.LookRotation(xzMove);
 		}
+		//fx para evitar se desalinie del carril en el aire
+		this.transform.position= Vector3(carril,this.transform.position.y,this.transform.position.z);
 	}	
 	
 	// We are in jump mode but just became grounded
