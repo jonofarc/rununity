@@ -276,7 +276,7 @@ function UpdateSmoothedMovementDirection ()
 			if (touch.phase == TouchPhase.Moved ){
 				lp = touch.position;
 			}
-			if(touch.phase == TouchPhase.Ended){      
+			     
 				// left swipe
 				if((fp.x - lp.x) > 80&&carril>2.5&&stopMovement==false){       
 				 moveLane(-2);
@@ -291,13 +291,13 @@ function UpdateSmoothedMovementDirection ()
 					animJumpRight();
 				}
 				// up swipe
-				else if((fp.y - lp.y) < -40 && jumpHeight==jumpHeightOriginal){
+				else if((fp.y - lp.y) < -80 && jumpHeight==jumpHeightOriginal){
 					lastJumpButtonTime = Time.time; 
 				}
-				else if((fp.y - lp.y) > 40 && jumpHeight<jumpHeightOriginal){
+				else if((fp.y - lp.y) > 80 && jumpHeight<jumpHeightOriginal){
 					lastJumpButtonTime = Time.time; 
 				}
-		}
+		
 	}	
 }
 
