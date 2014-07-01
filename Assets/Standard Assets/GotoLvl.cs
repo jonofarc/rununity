@@ -43,6 +43,7 @@ public class GotoLvl : MonoBehaviour {
 	//0== un nivel, 1  en un menu,2  en un video 
 	static void loadLvl(int tipoNivelIda){
 		int currentLevel= PlayerPrefs.GetInt("level");
+		Debug.Log (currentLevel);
 		if (currentLevel <= 0 || currentLevel>finalLevel )
 			currentLevel = 1;
 		string nextLevel = null;
