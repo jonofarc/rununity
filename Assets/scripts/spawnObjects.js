@@ -21,6 +21,7 @@ private var spawnGoodTrue: int;
 private var carril: int;
 private var distanseToNextGoodSpawn: float;
 private var clone: GameObject;
+private var sublvl:int;
 
 
 
@@ -28,6 +29,7 @@ private var clone: GameObject;
 function Start () {
 passedTime= myPlayer.transform.position.z+distanceForGoodOrBad;
 spawnGoodTrue=0;
+sublvl = GotoLvl.getSubLevel ();
 
 }
 
