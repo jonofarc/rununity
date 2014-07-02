@@ -12,6 +12,8 @@ public class HUD : MonoBehaviour {
 	public static float hp=.5f;
 	//public static float points=Random.Range(0f,1000f);
 	public static float points;
+	public static int sublvl;
+
 	public static float getPoints(){
 		return points;
 	}
@@ -42,6 +44,8 @@ public class HUD : MonoBehaviour {
 	void Start () {
 		hp=0.0f;//inisialisamos la variable por si el nivel es reiniciado con el menu o por morir
 		points=0f; // idem
+		sublvl = GotoLvl.getSubLevel ();
+
 		//pointsColor.normal.textColor = new Color(0,0,0);//asigan el color que se usara para el font de los puntos
 		if(musicOn==true){
 			Sound.playTheme (gameObject);
@@ -89,6 +93,8 @@ public class HUD : MonoBehaviour {
 		pointsColor.alignment= TextAnchor.MiddleCenter;
 		pointsColor.normal.textColor = Color.white;
 		GUI.Label(new Rect(10, 10, Screen.width*0.15f, Screen.height*0.13f), "puntos:"+points.ToString(),pointsColor);
+
+		GUI.Label(new Rect(Screen.width/2, 10, Screen.width*0.15f, Screen.height*0.13f), "sublvl:"+sublvl.ToString(),pointsColor);
 
 		//jonathan agregado el label de watermark y su estilo
 		watermarkStyle.normal.background = (Texture2D)Resources.Load("UserInterface/capture_button_normal_XHigh");

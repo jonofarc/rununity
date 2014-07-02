@@ -77,6 +77,7 @@ public class IntermediateLevel : BaseGui {
 			});
 			dic.Add("No, llevame al siguiente nivel",delegate {
 				Debug.Log(nextLevel);
+				GotoLvl.changeSubLevel();
 					GotoLvl.changeLevel(true);
 				
 			});
