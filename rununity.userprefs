@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\gui\IntermediateLevel.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\gui\BaseGui.cs">
     <Files>
-      <File FileName="Assets\scripts\gui\BaseGui.cs" Line="10" Column="27" />
-      <File FileName="Assets\scripts\gui\MainMenu.cs" Line="81" Column="28" />
-      <File FileName="Assets\scripts\gui\IntermediateLevel.cs" Line="132" Column="1" />
+      <File FileName="Assets\scripts\gui\BaseGui.cs" Line="29" Column="27" />
+      <File FileName="Assets\scripts\gui\BaseGui.cs" Line="29" Column="19" />
+      <File FileName="Assets\scripts\gui\MainMenu.cs" Line="91" Column="29" />
+      <File FileName="Assets\scripts\gui\IntermediateLevel.cs" Line="117" Column="68" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
