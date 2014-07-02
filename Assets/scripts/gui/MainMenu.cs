@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using SimpleJSON;
-public class MainMenu : MonoBehaviour {
+public class MainMenu : BaseGui {
 
 
 	void Awake(){
@@ -13,18 +13,8 @@ public class MainMenu : MonoBehaviour {
 	}
 	bool leaderBoard=false;
 	JSONNode scores;
-	int currentImage=0;
 	void OnGUI () {		
-		if (currentImage >= backgrounds.Length)
-			currentImage = 0;
-		GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), backgrounds[currentImage]);
-		currentImage++;
-		GUI.skin.font=font;
-		GUI.skin.button.fontSize=14;
-		GUI.skin.button.wordWrap=true;
-		GUI.skin.box.fontSize=16;
-		GUI.skin.box.wordWrap = true;
-		GUI.skin.label.wordWrap = true;
+		base.OnGUI();
 		if(leaderBoard){
 			if(scores==null)
 				leaderBoard=false;
@@ -35,17 +25,9 @@ public class MainMenu : MonoBehaviour {
 			doMainMenu();
 		}
 	}
-	Texture2D[] backgrounds= new Texture2D[107];
-	Font font= null;
+
 	void Start () {
-		for (int x = 1; x<108; x++) {
-			string file= String.Format("GUI/menu/output{0:00000}",x);
-			backgrounds[x-1]=(Texture2D)Resources.Load(file);
-		}
-		font=(Font)Resources.Load("GUI/LDFComicSans");
-		Application.targetFrameRate = 20;
-
-
+		base.Start();
 	}
 
 	Dictionary<String, Texture2D> dicImages= new Dictionary<string, Texture2D>();
@@ -95,15 +77,15 @@ public class MainMenu : MonoBehaviour {
 
 	private void doMainMenu(){
 		float boxHeigt = Screen.height*.5f, 
-		boxWidth = Screen.width*.4f,
-		boxLeft = Screen.width*.97f - boxWidth, 
+		boxWidth = Screen.width*.8f,
+		boxLeft = Screen.width*.1f, 
 		boxTop=Screen.height*.97f-boxHeigt,
 		buttonWidth=boxWidth*.9f,
-		buttonHeigth=(boxHeigt*.2f)-8,
+		buttonHeigth=(boxHeigt/6)-5f,
 		buttonLeft = boxLeft+boxWidth*.05f,
 		buttonTop=boxHeigt/6f;
 		
-		GUI.Box(new Rect(boxLeft,boxTop,boxWidth,boxHeigt), "Algo de gonti");
+		GUI.Box(new Rect(boxLeft,boxTop,boxWidth,boxHeigt), "Menu");
 		
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop,buttonWidth,buttonHeigth), "Video")) {
 			Application.LoadLevel(0);

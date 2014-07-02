@@ -5,7 +5,7 @@ using SimpleJSON;
 using System.IO;
 using System.Text;
 
-public class IntermediateLevel : MonoBehaviour {
+public class IntermediateLevel : BaseGui {
 
 	JSONNode question=null;
 	JSONArray answers=null;
@@ -22,6 +22,7 @@ public class IntermediateLevel : MonoBehaviour {
 		IntermediateLevel.failLevel=level;
 	}
 	void Start () {
+		base.Start();
 		FBUtil.init();
 		TextAsset fileContents= Resources.Load("questions") as TextAsset;
 		JSONNode json=JSON.Parse(fileContents.ToString());
@@ -38,6 +39,7 @@ public class IntermediateLevel : MonoBehaviour {
 		}	
 	}
 	void OnGUI(){
+		base.OnGUI();
 		if(questionStatus==QuestionStatus.unanswered ){
 
 			addBOX(question["q"]);
@@ -76,6 +78,11 @@ public class IntermediateLevel : MonoBehaviour {
 			dic.Add("No, llevame al siguiente nivel",delegate {
 				Debug.Log(nextLevel);
 				GotoLvl.changeSubLevel();
+					GotoLvl.changeLevel(true);
+				
+			});
+			dic.Add("Repetir nivel",delegate {
+				Debug.Log(nextLevel);
 					GotoLvl.changeLevel(true);
 				
 			});
