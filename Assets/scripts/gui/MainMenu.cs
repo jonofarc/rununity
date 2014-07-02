@@ -81,11 +81,11 @@ public class MainMenu : BaseGui {
 		boxLeft = Screen.width*.1f, 
 		boxTop=Screen.height*.97f-boxHeigt,
 		buttonWidth=boxWidth*.9f,
-		buttonHeigth=(boxHeigt*.2f)-8,
+		buttonHeigth=(boxHeigt/6)-5f,
 		buttonLeft = boxLeft+boxWidth*.05f,
 		buttonTop=boxHeigt/6f;
 		
-		GUI.Box(new Rect(boxLeft,boxTop,boxWidth,boxHeigt), "Algo de gonti");
+		GUI.Box(new Rect(boxLeft,boxTop,boxWidth,boxHeigt), "Menu");
 		
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop,buttonWidth,buttonHeigth), "Video")) {
 			Application.LoadLevel(0);

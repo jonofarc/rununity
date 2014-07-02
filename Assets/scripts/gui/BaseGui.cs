@@ -5,7 +5,7 @@ using System;
 public class BaseGui : MonoBehaviour {
 
 
-	Texture2D[] backgrounds= new Texture2D[57];
+	Texture2D[] backgrounds= new Texture2D[56];
 	protected Font font= null;
 	protected void Start () {
 		for (int x = 0; x<56; x++) {
@@ -21,14 +21,12 @@ public class BaseGui : MonoBehaviour {
 	protected void OnGUI(){
 		if (currentImage >= backgrounds.Length)
 			currentImage = 0;
-		if(backgrounds[currentImage]==null)
-			print(currentImage);
 		GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), backgrounds[currentImage]);
 		currentImage++;
 		GUI.skin.font=font;
-		GUI.skin.button.fontSize=14;
+		GUI.skin.button.fontSize=33;
 		GUI.skin.button.wordWrap=true;
-		GUI.skin.box.fontSize=16;
+		GUI.skin.box.fontSize=40;
 		GUI.skin.box.wordWrap = true;
 		GUI.skin.label.wordWrap = true;
 	}
