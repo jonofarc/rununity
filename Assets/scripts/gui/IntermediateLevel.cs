@@ -75,6 +75,7 @@ public class IntermediateLevel : MonoBehaviour {
 			});
 			dic.Add("No, llevame al siguiente nivel",delegate {
 				Debug.Log(nextLevel);
+				GotoLvl.changeSubLevel();
 					GotoLvl.changeLevel(true);
 				
 			});

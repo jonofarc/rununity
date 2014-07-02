@@ -51,7 +51,7 @@ function success(){
 
 }
 function loadlvl(){
-	GotoLvl.changeLevel(true);
+	//GotoLvl.changeLevel(true);
 	Application.LoadLevel(lvlToLoad);
 		
 
