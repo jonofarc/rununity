@@ -19,6 +19,7 @@ public class MainMenu : MonoBehaviour {
 			currentImage = 0;
 		GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), backgrounds[currentImage]);
 		currentImage++;
+		GUI.skin.font=font;
 		GUI.skin.button.fontSize=14;
 		GUI.skin.button.wordWrap=true;
 		GUI.skin.box.fontSize=16;
@@ -35,11 +36,13 @@ public class MainMenu : MonoBehaviour {
 		}
 	}
 	Texture2D[] backgrounds= new Texture2D[107];
+	Font font= null;
 	void Start () {
 		for (int x = 1; x<108; x++) {
 			string file= String.Format("GUI/menu/output{0:00000}",x);
 			backgrounds[x-1]=(Texture2D)Resources.Load(file);
 		}
+		font=(Font)Resources.Load("GUI/LDFComicSans");
 		Application.targetFrameRate = 20;
 
 
@@ -48,7 +51,7 @@ public class MainMenu : MonoBehaviour {
 	Dictionary<String, Texture2D> dicImages= new Dictionary<string, Texture2D>();
 	private void doLeaderBoard(){
 		GUI.Box(new Rect(Screen.width*.1f,Screen.height*.1f,Screen.width*.8f,Screen.height*.8f),"Puntuaciones(Primeros 10)");
-		GUI.skin.button.fontSize=16;
+		GUI.skin.button.fontSize=22;
 		GUI.skin.button.wordWrap = true;
 		float buttonHeight=((Screen.height*.75f)/10);
 		float buttonWidth=Screen.width*.7f;
@@ -91,32 +94,34 @@ public class MainMenu : MonoBehaviour {
 
 
 	private void doMainMenu(){
-		float boxHeigt = Screen.height*.4f, 
+		float boxHeigt = Screen.height*.5f, 
 		boxWidth = Screen.width*.4f,
 		boxLeft = Screen.width*.97f - boxWidth, 
 		boxTop=Screen.height*.97f-boxHeigt,
 		buttonWidth=boxWidth*.9f,
-		buttonHeigth=-5f+boxHeigt*.2f,
+		buttonHeigth=(boxHeigt*.2f)-8,
 		buttonLeft = boxLeft+boxWidth*.05f,
-		buttonTop=boxHeigt/5f;
+		buttonTop=boxHeigt/6f;
 		
 		GUI.Box(new Rect(boxLeft,boxTop,boxWidth,boxHeigt), "Algo de gonti");
 		
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop,buttonWidth,buttonHeigth), "Video")) {
 			Application.LoadLevel(0);
 		}
-		
-		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*2,buttonWidth,buttonHeigth), "Jugar!!!")) {
+		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*2,buttonWidth,buttonHeigth), "Nueva partida")) {
+			Application.LoadLevel("Level1");
+		}
+		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "Continuar!!!")) {
 			GotoLvl.changeLevel(true);
 		}
-		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "LeaderBoard")) {
+		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*4,buttonWidth,buttonHeigth), "LeaderBoard")) {
 			FBUtil.friendsScores(delegate(FBResult result) {
 				 scores=JSON.Parse(result.Text);
 				leaderBoard=true;
 
 			});
 		}
-		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*4,buttonWidth,buttonHeigth), "Compartir en Facebook")) {
+		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*5,buttonWidth,buttonHeigth), "Compartir en Facebook")) {
 			FBUtil.share(delegate {
 				
 			});	
