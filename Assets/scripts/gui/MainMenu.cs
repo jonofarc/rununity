@@ -103,7 +103,6 @@ public class MainMenu : BaseGui {
 		}
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "Continuar!!!")) {
 			loadingLevel=true;
-			GotoLvl.setSubLevel();
 			GotoLvl.changeLevel(true);
 		}
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*4,buttonWidth,buttonHeigth), "LeaderBoard")) {
