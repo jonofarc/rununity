@@ -7,14 +7,14 @@ public class GotoLvl : MonoBehaviour {
 
 	//public int lvlNumber=0;
 	public float timeToLoadNextLvlv=0;
-	public string myNextLvl="Start";
+
+	Texture2D loadingBackground = (Texture2D)Resources.Load("GUI/menu/sec_inicio_00000");
 
 	void lvlFinished(){
 		Invoke("llamadaAfuncionEstupidaPorqueUnityNoTieneDElegadosConDelay",timeToLoadNextLvlv);		
 	}
 	void llamadaAfuncionEstupidaPorqueUnityNoTieneDElegadosConDelay(){
-		changeLevel ();
-		//changeLevelDirectly ();
+		changeLevel ();		//changeLevelDirectly ();
 	}
 	public static int finalLevel=5;
 	public static int subLvls=5;
@@ -51,7 +51,6 @@ public class GotoLvl : MonoBehaviour {
 		if (currentLevel <= 0 || currentLevel>finalLevel )
 			currentLevel = 1;
 		string nextLevel = null;
-		Debug.Log ("tipo de nuvel de ida "+tipoNivelIda);
 		switch (tipoNivelIda) {
 		case 0: nextLevel="Level"+currentLevel; break;
 		case 1:nextLevel="LevelIntermediate";  break;
@@ -63,8 +62,14 @@ public class GotoLvl : MonoBehaviour {
 
 			currentsubLvls=0;
 			PlayerPrefs.SetInt ("subLvlv", currentsubLvls);
+	
+
 
 			Application.LoadLevel(nextLevel);
+
+
+		
+
 		}
 		else if(tipoNivelIda==2){
 			nextLevel="Level"+currentLevel;
@@ -79,12 +84,7 @@ public class GotoLvl : MonoBehaviour {
 		
 	}
 
-	void changeLevelDirectly(){
 
-		Application.LoadLevel(myNextLvl);
-		
-		
-	}
 	
 	public static void changeSubLevel(){
 

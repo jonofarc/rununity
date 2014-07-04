@@ -11,6 +11,7 @@ public class IntermediateLevel : BaseGui {
 	JSONArray answers=null;
 	static string nextLevel="Start";
 	static string failLevel="Start";
+	bool loadingLevel=false;
 
 	enum QuestionStatus{correct,wrong,unanswered};
 	QuestionStatus questionStatus=QuestionStatus.unanswered;
@@ -22,6 +23,7 @@ public class IntermediateLevel : BaseGui {
 		IntermediateLevel.failLevel=level;
 	}
 	void Start () {
+		loadingLevel=false;
 		base.Start();
 		FBUtil.init();
 		TextAsset fileContents= Resources.Load("questions") as TextAsset;
@@ -40,6 +42,7 @@ public class IntermediateLevel : BaseGui {
 	}
 	void OnGUI(){
 		base.OnGUI();
+		if(loadingLevel==false){
 		if(questionStatus==QuestionStatus.unanswered ){
 
 			addBOX(question["q"]);
@@ -76,8 +79,9 @@ public class IntermediateLevel : BaseGui {
 				});
 			});
 			dic.Add("No, llevame al siguiente nivel",delegate {
-				Debug.Log(nextLevel);
+		
 				GotoLvl.changeSubLevel();
+					loadingLevel=true;
 					GotoLvl.changeLevel(true);
 				
 			});
@@ -101,7 +105,14 @@ public class IntermediateLevel : BaseGui {
 			addButtons(dic);
 		}
 
+		}//end if loadinglevel
+		else{
 
+
+		GUI.Label(new Rect(Screen.width*0.5f, Screen.height*0.5f, Screen.width, Screen.height*0.13f), "Cargando...");
+
+
+		}
 	}
 	private void addBOX(string title){
 		

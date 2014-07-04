@@ -2,8 +2,13 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\gui\MainMenu.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\GotoLvl.cs" Line="95" Column="32" />
-      <File FileName="Assets\scripts\gui\MainMenu.cs" Line="101" Column="4" />
+      <File FileName="Assets\scripts\gui\HUD.cs" Line="7" Column="1" />
+      <File FileName="Assets\Standard Assets\GotoLvl.cs" Line="26" Column="34" />
+      <File FileName="Assets\scripts\gui\MainMenu.cs" Line="102" Column="4" />
+      <File FileName="Assets\scripts\gui\LoadingScreen.cs" Line="8" Column="2" />
+      <File FileName="Assets\scripts\gui\IntermediateLevel.cs" Line="84" Column="18" />
+      <File FileName="Assets\scripts\gui\BaseGui.cs" Line="27" Column="22" />
+      <File FileName="Assets\scripts\subLvlAdjust.js" Line="14" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

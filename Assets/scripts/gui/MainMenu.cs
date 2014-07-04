@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using SimpleJSON;
 public class MainMenu : BaseGui {
+	bool loadingLevel=false;
 
 
 	void Awake(){
@@ -27,6 +28,7 @@ public class MainMenu : BaseGui {
 	}
 
 	void Start () {
+		loadingLevel=false;
 		base.Start();
 	}
 
@@ -75,7 +77,10 @@ public class MainMenu : BaseGui {
 
 
 
-	private void doMainMenu(){
+  private void doMainMenu(){
+
+	if(loadingLevel==false){
+
 		float boxHeigt = Screen.height*.5f, 
 		boxWidth = Screen.width*.8f,
 		boxLeft = Screen.width*.1f, 
@@ -91,11 +96,13 @@ public class MainMenu : BaseGui {
 			Application.LoadLevel(0);
 		}
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*2,buttonWidth,buttonHeigth), "Nueva partida")) {
+			loadingLevel=true;
 			PlayerPrefs.SetInt ("level", 1);
 			GotoLvl.currentsubLvls=0;
 			Application.LoadLevel("Level1");
 		}
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "Continuar!!!")) {
+			loadingLevel=true;
 			GotoLvl.setSubLevel();
 			GotoLvl.changeLevel(true);
 		}
@@ -112,6 +119,16 @@ public class MainMenu : BaseGui {
 			});	
 		}
 	}
+	else{
+			
+			
+		GUI.Label(new Rect(Screen.width*0.5f, Screen.height*0.5f, Screen.width, Screen.height*0.13f), "Cargando...");
+			
+			
+	}
+
+
+  }
 
 	
 	
