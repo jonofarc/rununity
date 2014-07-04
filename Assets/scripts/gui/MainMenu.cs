@@ -91,9 +91,12 @@ public class MainMenu : BaseGui {
 			Application.LoadLevel(0);
 		}
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*2,buttonWidth,buttonHeigth), "Nueva partida")) {
+			PlayerPrefs.SetInt ("level", 1);
+			GotoLvl.currentsubLvls=0;
 			Application.LoadLevel("Level1");
 		}
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "Continuar!!!")) {
+			GotoLvl.setSubLevel();
 			GotoLvl.changeLevel(true);
 		}
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*4,buttonWidth,buttonHeigth), "LeaderBoard")) {

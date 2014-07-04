@@ -60,7 +60,9 @@ public class GotoLvl : MonoBehaviour {
 		}	
 	
 		if (currentsubLvls == subLvls&&tipoNivelIda==2) {
+
 			currentsubLvls=0;
+			PlayerPrefs.SetInt ("subLvlv", currentsubLvls);
 
 			Application.LoadLevel(nextLevel);
 		}
@@ -87,7 +89,14 @@ public class GotoLvl : MonoBehaviour {
 	public static void changeSubLevel(){
 
 		currentsubLvls++;
+		PlayerPrefs.SetInt ("subLvlv", currentsubLvls);
 
+	}
+	public static void setSubLevel(){
+		
+		currentsubLvls = PlayerPrefs.GetInt ("subLvlv");
+
+		
 	}
 	public static int getSubLevel(){
 		
