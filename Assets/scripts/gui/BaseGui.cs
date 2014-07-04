@@ -23,10 +23,11 @@ public class BaseGui : MonoBehaviour {
 			currentImage = 0;
 		GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), backgrounds[currentImage]);
 		currentImage++;
+
 		GUI.skin.font=font;
-		GUI.skin.button.fontSize=33;
+		GUI.skin.button.fontSize=(int) (Screen.width * 0.04f);
 		GUI.skin.button.wordWrap=true;
-		GUI.skin.box.fontSize=40;
+		GUI.skin.box.fontSize=(int) (Screen.width * 0.04f);
 		GUI.skin.box.wordWrap = true;
 		GUI.skin.label.wordWrap = true;
 	}
