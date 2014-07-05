@@ -76,6 +76,12 @@ public class VideoTexture_FullScreen : MonoBehaviour
 	
 	void Start ()
 	{	
+
+		int currentLevel = PlayerPrefs.GetInt ("level");
+		currentLevel++;
+		PlayerPrefs.SetInt ("level", currentLevel);
+		PlayerPrefs.SetInt ("sublevel", 0);
+
 		CTI = new Rect(0,0,0,0);
 		
 		style.fontSize = timecodeSize;

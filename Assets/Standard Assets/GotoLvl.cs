@@ -18,6 +18,7 @@ public class GotoLvl : MonoBehaviour {
 	}
 	public static int finalLevel=5;
 	public static int subLvls=5;
+
 	public static int currentsubLvls=0;
 	public static void changeLevel(bool succes=true){
 		//0==Estamos un nivel, 1 estamos en un menu,2 estamos en un video 
@@ -101,6 +102,7 @@ public class GotoLvl : MonoBehaviour {
 		
 		
 	}
+
 
 	
 }
