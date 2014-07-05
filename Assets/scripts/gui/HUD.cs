@@ -111,8 +111,8 @@ public class HUD : BaseGui {
 			Texture2D pauset = (Texture2D)Resources.Load("GUI/HUD/pause");
 			Rect pauser=new Rect (Screen.width - (Screen.width * .15f),
 			                      Screen.height * .05f,
-			                      Screen.width * sizeRatio,
-			                      Screen.height * sizeRatio);
+			                      64,
+			                      64);
 			GUI.DrawTexture(pauser,pauset);
 			if (GUI.Button (pauser, "", new GUIStyle())){ 
 				Time.timeScale = 0;
