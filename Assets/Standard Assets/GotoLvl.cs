@@ -59,7 +59,7 @@ public class GotoLvl : MonoBehaviour {
 		default:nextLevel="Start";break;
 		}	
 		
-		if (currentsubLvls == subLvls&&tipoNivelIda==2) {
+		if (currentsubLvls >= subLvls&&tipoNivelIda==2) {
 			currentsubLvls=0;
 			
 			Application.LoadLevel(nextLevel);
