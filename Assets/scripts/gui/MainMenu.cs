@@ -98,11 +98,13 @@ public class MainMenu : BaseGui {
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*2,buttonWidth,buttonHeigth), "Nueva partida")) {
 			loadingLevel=true;
 			PlayerPrefs.SetInt ("level", 1);
+			PlayerPrefs.SetInt ("sublevel", 0);
 			GotoLvl.currentsubLvls=0;
 			Application.LoadLevel("Level1");
 		}
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "Continuar!!!")) {
 			loadingLevel=true;
+			GotoLvl.setSubLevel();
 			GotoLvl.changeLevel(true);
 		}
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*4,buttonWidth,buttonHeigth), "LeaderBoard")) {
