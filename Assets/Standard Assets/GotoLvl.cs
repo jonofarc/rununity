@@ -87,6 +87,7 @@ public class GotoLvl : MonoBehaviour {
 	public static void changeSubLevel(){
 		
 		currentsubLvls++;
+		PlayerPrefs.SetInt ("sublevel", currentsubLvls);
 		
 	}
 	public static int getSubLevel(){
@@ -94,5 +95,12 @@ public class GotoLvl : MonoBehaviour {
 		return currentsubLvls;
 		
 	}
+	public static void setSubLevel(){
+		
+		currentsubLvls= PlayerPrefs.GetInt("sublevel");
+		
+		
+	}
+
 	
 }

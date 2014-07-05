@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 45343b9bd047b504fa04f89f0c2fb8a6
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 15
   fileIDToRecycleName:
     100000: Chairs
     100002: LightVolume
@@ -29,13 +29,19 @@ ModelImporter:
     3300006: SideMonitors
     3300008: SideMonitors_Filter
     3300010: Walls
-    4300000: SideMonitors
-    4300002: LightVolume
-    4300004: Chairs
-    4300006: Walls
-    4300008: Screen_5
-    4300010: SideMonitors_Filter
-    9500000: //RootNode
+    4300000: Empty_Mesh
+    4300002: Empty_Mesh_1
+    4300004: Empty_Mesh_2
+    4300006: Empty_Mesh_3
+    4300008: Empty_Mesh_4
+    4300010: Empty_Mesh_5
+    4300012: SideMonitors
+    4300014: LightVolume
+    4300016: Chairs
+    4300018: Walls
+    4300020: Screen_5
+    4300022: SideMonitors_Filter
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -54,12 +60,12 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00999999978
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     weldVertices: 1
@@ -70,7 +76,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
@@ -86,6 +92,5 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
-  additionalBone: 0
+  animationType: 1
   userData: 

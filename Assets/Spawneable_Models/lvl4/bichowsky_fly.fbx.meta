@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: a1f2a6362f276bf44af3eb0f2536cfda
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 15
   fileIDToRecycleName:
     100000: //RootNode
     100002: Game_BrowInnerL
@@ -154,6 +154,7 @@ ModelImporter:
     4300016: left_wing_0
     7400000: motionplus20
     9500000: //RootNode
+    11100000: //RootNode
     13700000: left_eyebrow
     13700002: left_wing_0
     13700004: polySurface21
@@ -213,6 +214,5 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
-  additionalBone: 0
+  animationType: 1
   userData: 
