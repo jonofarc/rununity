@@ -291,10 +291,10 @@ function UpdateSmoothedMovementDirection ()
 					animJumpRight();
 				}
 				// up swipe
-				else if((fp.y - lp.y) < -80 && jumpHeight==jumpHeightOriginal){
+				else if((fp.y - lp.y) < -40 && jumpHeight==jumpHeightOriginal){
 					lastJumpButtonTime = Time.time; 
 				}
-				else if((fp.y - lp.y) > 80 && jumpHeight<jumpHeightOriginal){
+				else if((fp.y - lp.y) > 40 && jumpHeight<jumpHeightOriginal){
 					lastJumpButtonTime = Time.time; 
 				}
 		

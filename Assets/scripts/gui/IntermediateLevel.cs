@@ -115,16 +115,11 @@ public class IntermediateLevel : BaseGui {
 		}
 	}
 	private void addBOX(string title){
-		
-		GUI.skin.box.fontSize=16;
-		GUI.skin.box.wordWrap = true;
 		GUI.Box(new Rect(Screen.width*.1f,Screen.height*.1f,Screen.width*.8f,Screen.height*.8f),title);
 	}
 	private delegate void ButtonDelegate (string text);
 
 	private void addButtons(Dictionary<string,ButtonDelegate> data){
-		GUI.skin.button.fontSize=16;
-		GUI.skin.button.wordWrap = true;
 		float buttonHeight=((Screen.height*.75f)/data.Count)-(10f*data.Count);
 		float buttonWidth=Screen.width*.7f;
 		int buttonNumber=0;
