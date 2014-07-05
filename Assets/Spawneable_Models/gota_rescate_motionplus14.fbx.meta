@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: a9b474f7dfeae734398af4e2eb177e3f
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 15
   fileIDToRecycleName:
     100000: _tongue
     100002: _tongue_0
@@ -226,7 +226,7 @@ ModelImporter:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     optimizeGameObjects: 0
-    animationCompression: 1
+    animationCompression: 2
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
@@ -483,5 +483,4 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 1
-  additionalBone: 0
   userData: 
