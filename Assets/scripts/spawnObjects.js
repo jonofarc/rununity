@@ -209,30 +209,30 @@ function BadSpawn2(){
 	if(tipoEnemigo==1){
 	// estalactita en carril primero y ultimo
 		carril = 2;
-		clone=Instantiate (BadSpawneable, new Vector3(carril,0.1+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
+		clone=Instantiate (BadSpawneable, new Vector3(carril,-0.5+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
 	//	Instantiate (BadSpawneable, new Vector3(carril+2,0.1,(myPlayer.transform.position.z+50)), Quaternion.Euler(0,180,0));
-		clone=Instantiate (BadSpawneable, new Vector3(carril+4,0.1+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
+		clone=Instantiate (BadSpawneable, new Vector3(carril+4,-0.5+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
 	}
 	if(tipoEnemigo==2){
 	//estalactita en un carril al azar
 		carril = Random.Range(1,4)*2;
-		clone=Instantiate (BadSpawneable, new Vector3(carril,0.1+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
+		clone=Instantiate (BadSpawneable, new Vector3(carril,-0.5+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
 	}
 	if(tipoEnemigo==3){
 	//estalactita en 2 carriles seguidos al azar
 		carril = Random.Range(1,3)*2;
-		clone=Instantiate (BadSpawneable, new Vector3(carril,0.1+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
+		clone=Instantiate (BadSpawneable, new Vector3(carril,-0.5+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
-		clone=Instantiate (BadSpawneable, new Vector3(carril+2,0.1+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
+		clone=Instantiate (BadSpawneable, new Vector3(carril+2,-0.5+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
 	}
 	if(tipoEnemigo==4){
 		// estalatcita y estalacmita en carril al azar
 		carril = Random.Range(1,4)*2;
-		clone=Instantiate (BadSpawneable, new Vector3(carril,0.1+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
+		clone=Instantiate (BadSpawneable, new Vector3(carril,-0.5+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
 		clone=Instantiate (BadSpawneable2, new Vector3(carril,3.9+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
@@ -243,17 +243,17 @@ function BadSpawn2(){
 	//	Instantiate (BadSpawneable, new Vector3(carril,0.1,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone=Instantiate (BadSpawneable2, new Vector3(carril,3.9+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
-		clone=Instantiate (BadSpawneable, new Vector3(carril+2,0.1+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
+		clone=Instantiate (BadSpawneable, new Vector3(carril+2,-0.5+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
 	}
 	if(tipoEnemigo==6){
 		// estalactitas en  el carril inferior
 		carril = 2;
-		clone=Instantiate (BadSpawneable, new Vector3(carril,0.1+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
+		clone=Instantiate (BadSpawneable, new Vector3(carril,-0.5+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
-		clone=Instantiate (BadSpawneable, new Vector3(carril+2,0.1+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
+		clone=Instantiate (BadSpawneable, new Vector3(carril+2,-0.5+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
-	   	clone=Instantiate (BadSpawneable, new Vector3(carril+4,0.1+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
+	   	clone=Instantiate (BadSpawneable, new Vector3(carril+4,-0.5+BadSpawneableHeight,(myPlayer.transform.position.z+spawnDistance)), Quaternion.Euler(0,180,0));
 		clone.SetActive(true);
 	}
 	if(tipoEnemigo==7){
