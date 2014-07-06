@@ -8,6 +8,7 @@ public var runAnimation : AnimationClip;
 public var jumpPoseAnimation : AnimationClip;
 public var moveLeft : AnimationClip;
 public var moveRight : AnimationClip;
+public var dead_Animation : AnimationClip;
 
 public var walkMaxAnimationSpeed : float = 0.75;
 public var trotMaxAnimationSpeed : float = 1.0;
@@ -587,7 +588,8 @@ function deadAnimation()
 if(SpeedBoost==0){
 moveAction=0;
 
-animation.Play("motionplus10");
+//animation.Play("motionplus10");
+animation.Play(dead_Animation.name);
 Invoke( "restartLvl", 3.0 );
 stopMovement=true;
 
@@ -639,7 +641,7 @@ function animJumpLeft(){
 	//moveLeft.play();
 	//moveLeft.speed=3;
 	
-	Invoke( "startMovement", (animation["motionplus0"].length/3) );
+	Invoke( "startMovement", (animation[moveLeft.name].length/3) );
 
 	stopMovement=true;
 
@@ -648,7 +650,7 @@ function animJumpRight(){
 	animation[moveRight.name].speed=3;
 	animation.Play(moveRight.name);
 	
-	Invoke( "startMovement", (animation["motionplus0"].length/3) );
+	Invoke( "startMovement", (animation[moveRight.name].length/3) );
 	
 	stopMovement=true;
 

@@ -26,6 +26,7 @@ public class HUD : BaseGui {
 
 		if (hp < 1) {
 		    points = points + (Mathf.Pow (2, (hp * 10)));
+			Debug.Log((Mathf.Pow (2, (hp * 10))));
 		} 
 		else {
 		
