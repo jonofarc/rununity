@@ -10,7 +10,7 @@ public class stopSpanC : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		int x =(int)HUD.points;
-		int terrainSize =(int) myTerrain.terrainData.size.z-50;
+		int terrainSize =(int) myTerrain.terrainData.size.z-100;
 		Debug.Log (2048*terrainSize/20);
 	}
 	
@@ -22,7 +22,7 @@ public class stopSpanC : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 	
 		int x =(int)HUD.points;
-		int terrainSize =(int) myTerrain.terrainData.size.z-50;
+		int terrainSize =(int) myTerrain.terrainData.size.z-1000;
  
 
 		if (x>(2048*terrainSize/20)){
