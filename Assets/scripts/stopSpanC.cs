@@ -11,7 +11,7 @@ public class stopSpanC : MonoBehaviour {
 	void Start () {
 		int x =(int)HUD.points;
 		int terrainSize =(int) myTerrain.terrainData.size.z-100;
-		Debug.Log (2048*terrainSize/20);
+		Debug.Log (2048*terrainSize/17);
 	}
 	
 	// Update is called once per frame
@@ -22,14 +22,14 @@ public class stopSpanC : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 	
 		int x =(int)HUD.points;
-		int terrainSize =(int) myTerrain.terrainData.size.z-1000;
+		int terrainSize =(int) myTerrain.terrainData.size.z-100;
  
-
-		if (x>(2048*terrainSize/20)){
+		Debug.Log (x);
+		if (x>(2048*terrainSize/17)){
 
 			x=3;
 		}
-		else if (x>(1024*terrainSize/20)){
+		else if (x>(1024*terrainSize/17)){
 			x=2;
 		}
 		else{

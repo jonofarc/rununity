@@ -16,7 +16,7 @@ function Update () {
 	//move back section for enemies that push you back
 
 	if(Time.time<moveBack){
-	Debug.Log("entre");
+	
 		this.transform.Translate(0,0,-15*Time.deltaTime);
 		
 	}

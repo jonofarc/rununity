@@ -77,8 +77,9 @@ function Update () {
 		}
 		
 		if(doBackgroundObjects==backgroundChances&&backgroundObjectsOn==true){
-	
-			backgroundObjectSpawn(0);
+			
+			var tipoBackgroundObject= Random.Range(0,backgroundObjects.Length);
+			backgroundObjectSpawn(tipoBackgroundObject);
 			
 		
 		}
@@ -543,16 +544,13 @@ var spawny: int;
 	else{
 		carril=-10;
 	}
-	if(object==0){
-		spawny=10;
-	}
 
 
 
-
-
-	clone=Instantiate (backgroundObjects[object], new Vector3(carril,spawny,(myPlayer.transform.position.z+200)),  Quaternion.Euler(0,0,0));
+		clone=Instantiate (backgroundObjects[object], new Vector3(carril,backgroundObjects[object].transform.position.y,(myPlayer.transform.position.z+spawnDistance)), backgroundObjects[object].transform.rotation);
 		clone.SetActive(true);
+
+
 
 
 
