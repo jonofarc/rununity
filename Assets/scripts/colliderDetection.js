@@ -42,6 +42,7 @@ function OnTriggerEnter (collision : Collider) {
 		Destroy(collision.gameObject);
 		this.SendMessage("deadAnimation");	
 		myCamera.SendMessage("decreaseHP");
+
 		
 	
 	}
@@ -69,9 +70,10 @@ function OnTriggerEnter (collision : Collider) {
 
 				lvlFinished=true;
 				//Destroy(collision.gameObject);
-				
+				myCamera.SendMessage("stopTimer");
 				collision.gameObject.SendMessage("lvlFinished");
 				this.SendMessage("lvlFinished");
+				
 				
 				
 		

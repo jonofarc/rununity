@@ -9,9 +9,7 @@ public class stopSpanC : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		int x =(int)HUD.points;
-		int terrainSize =(int) myTerrain.terrainData.size.z-100;
-		Debug.Log (2048*terrainSize/17);
+
 	}
 	
 	// Update is called once per frame
@@ -36,7 +34,6 @@ public class stopSpanC : MonoBehaviour {
 			x=1;
 		}
 		myLvlFinished.renderer.material.mainTextureScale = new Vector2 (x,1);
-
 		mySpawnController.SetActive(false);
 		Destroy(this.gameObject);
 	
