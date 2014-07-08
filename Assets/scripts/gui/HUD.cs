@@ -43,6 +43,7 @@ public class HUD : BaseGui {
 
 	// Use this for initialization
 	void Start () {
+		base.skin=(GUISkin)Resources.Load("UserInterfaceSkin");
 		hp=0.0f;//inisialisamos la variable por si el nivel es reiniciado con el menu o por morir
 		points=0f; // idem
 		sublvl = GotoLvl.getSubLevel ();
@@ -93,12 +94,12 @@ public class HUD : BaseGui {
 		// jonathan agregado el puntaje y su estilo
 		Texture2D pointst = (Texture2D)Resources.Load("GUI/HUD/puntos");
 		GUI.DrawTexture(new Rect(10, 10, 196, 64),pointst );
-		GUI.Label(new Rect(20, 30, 128, 64),points.ToString());
+		GUI.Label(new Rect(-20, 30, 128, 64),points.ToString());
 		/*"puntos:"+points.ToString(),points*/
 		Texture2D levelt = (Texture2D)Resources.Load("GUI/HUD/nivel");
-		GUI.DrawTexture(new Rect(210, 10, 64,64),levelt );
+		GUI.DrawTexture(new Rect(210, 15, 64,64),levelt );
 		GUI.contentColor=Color.blue;
-		GUI.Label(new Rect(235, 30, 64,64),sublvl.ToString());
+		GUI.Label(new Rect(195, 30, 64,64),PlayerPrefs.GetInt("sublevel").ToString());
 		GUI.contentColor=Color.white;
 
 		//jonathan agregado el label de watermark y su estilo

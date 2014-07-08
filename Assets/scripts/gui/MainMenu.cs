@@ -13,6 +13,7 @@ public class MainMenu : BaseGui {
 
 	}
 	bool leaderBoard=false;
+	bool levelPicker=false;
 	JSONNode scores;
 	void OnGUI () {		
 		base.OnGUI();
@@ -22,7 +23,9 @@ public class MainMenu : BaseGui {
 			else{
 				doLeaderBoard();
 			}
-		}else{
+		} else if(levelPicker){
+			doLevelChooser();
+		}else {
 			doMainMenu();
 		}
 	}
@@ -31,20 +34,57 @@ public class MainMenu : BaseGui {
 		loadingLevel=false;
 		base.Start();
 	}
+	private int level=0;
+	private void doLevelChooser(){
+		Rect boxRect=new Rect(Screen.width*.1f,Screen.height*.1f,Screen.width*.8f,Screen.height*.8f);
+		GUI.Box(boxRect ,"Niveles");
+		closeButton();
+		Dictionary<string,ButtonDelegate> dic= new Dictionary<string,ButtonDelegate>();
+		if(level==0){
+			for(int x=1;x<=5;x++){
+				dic.Add("Nivel "+x,delegate(string text){
+					level=Int32.Parse(text.Split(' ')[1]);
+				});
+			}
+		}else{
+			for(int x=1;x<=5;x++){
+				dic.Add("Subnivel "+x,delegate(string text){
+					PlayerPrefs.SetInt("level",level);
+					PlayerPrefs.SetInt ("sublevel", Int32.Parse(text.Split(' ')[1]));
+					GotoLvl.changeLevel();
+				});
+
+			}
+		}
+
+
+
+		addButtons(dic,boxRect);
+
+
+	}
+	private void closeButton(){
+		Rect closeRect = new Rect ((Screen.width * .9f) - 32, (Screen.height * .1f), 32, 32);
+		Texture2D closeText = (Texture2D)Resources.Load("close-button");
+		GUI.DrawTexture(closeRect, closeText);
+		if (GUI.Button (closeRect, "", new GUIStyle())) {
+			leaderBoard=false;
+			levelPicker=false;
+			level=0;
+		}
+	}
 
 	Dictionary<String, Texture2D> dicImages= new Dictionary<string, Texture2D>();
 	private void doLeaderBoard(){
 		GUI.Box(new Rect(Screen.width*.1f,Screen.height*.1f,Screen.width*.8f,Screen.height*.8f),"Puntuaciones(Primeros 10)");
-		GUI.skin.button.fontSize=22;
-		GUI.skin.button.wordWrap = true;
+		GUISkin sk =GUI.skin;
+		sk.label.fontSize=11;
+
+
 		float buttonHeight=((Screen.height*.75f)/10);
 		float buttonWidth=Screen.width*.7f;
-		Texture2D closeText = (Texture2D)Resources.Load("close-button");
-		Rect closeRect = new Rect ((Screen.width * .9f) - 32, (Screen.height * .1f), 32, 32);
-		GUI.DrawTexture(closeRect, closeText);
-		if (GUI.Button (closeRect, "", new GUIStyle())) {
-			leaderBoard=false;
-		}
+		closeButton();
+
 		int count=0;
 		//for (int x=0;x<10;x++)
 		foreach (JSONNode node in scores["data"].AsArray){
@@ -59,8 +99,8 @@ public class MainMenu : BaseGui {
 				Rect rect=new Rect(-5+(Screen.width*.15f),(Screen.height*.15f)+((buttonHeight)*count),buttonWidth*.1f,16f);
 				GUI.DrawTexture(rect,dicImages[userId]);
 			}
-			GUI.Label(new Rect((Screen.width*.15f)+(buttonWidth*.1f),(Screen.height*.15f)+((buttonHeight)*count),buttonWidth*.1f,buttonHeight),node["score"]);
-			GUI.Label(new Rect((Screen.width*.15f)+(buttonWidth*.2f),(Screen.height*.15f)+((buttonHeight)*count),buttonWidth*.8f,buttonHeight),node["user"]["name"]);
+			GUI.Label(new Rect((Screen.width*.08f)+(buttonWidth*.1f),(Screen.height*.15f)+((buttonHeight)*count),buttonWidth*.8f,buttonHeight),node["score"],sk.label);
+			GUI.Label(new Rect((Screen.width*.15f)+(buttonWidth*.2f),(Screen.height*.15f)+((buttonHeight)*count),buttonWidth*.8f,buttonHeight),node["user"]["name"],sk.label);
 			
 
 
@@ -91,27 +131,28 @@ public class MainMenu : BaseGui {
 		buttonTop=boxHeigt/6f;
 		
 		GUI.Box(new Rect(boxLeft,boxTop,boxWidth,boxHeigt), "Menu");
-		
-		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop,buttonWidth,buttonHeigth), "Video")) {
-			Application.LoadLevel(0);
-		}
-		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*2,buttonWidth,buttonHeigth), "Nueva partida")) {
+				
+		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop,buttonWidth,buttonHeigth), "Nueva partida")) {
 			loadingLevel=true;
 			PlayerPrefs.SetInt ("level", 1);
 			PlayerPrefs.SetInt ("sublevel", 0);
 			GotoLvl.currentsubLvls=0;
 			Application.LoadLevel("Level1");
 		}
-		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "Continuar!!!")) {
+		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*2,buttonWidth,buttonHeigth), "Continuar!!!")) {
 			loadingLevel=true;
 			GotoLvl.setSubLevel();
 			GotoLvl.changeLevel(true);
+		}
+		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "Escoger nivel")) {
+				levelPicker=true;
+				leaderBoard=false;
 		}
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*4,buttonWidth,buttonHeigth), "LeaderBoard")) {
 			FBUtil.friendsScores(delegate(FBResult result) {
 				 scores=JSON.Parse(result.Text);
 				leaderBoard=true;
-
+				levelPicker=false;
 			});
 		}
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*5,buttonWidth,buttonHeigth), "Compartir en Facebook")) {

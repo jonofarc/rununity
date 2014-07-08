@@ -279,14 +279,14 @@ function UpdateSmoothedMovementDirection ()
 			}
 			     
 				// left swipe
-				if((fp.x - lp.x) > 80&&carril>2.5&&stopMovement==false){       
+				if((fp.x - lp.x) > 40&&carril>2.5&&stopMovement==false){       
 				 moveLane(-2);
 					leftSideMovement=true;
 					animJumpLeft();
 	  
 				}
 			  	// right swipe
-				else if((fp.x - lp.x) < -80&&carril<5.5&&stopMovement==false){
+				else if((fp.x - lp.x) < -40&&carril<5.5&&stopMovement==false){
 					moveLane(2);
 					rightSideMovement=true;
 					animJumpRight();

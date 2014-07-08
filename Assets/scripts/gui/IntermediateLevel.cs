@@ -42,11 +42,10 @@ public class IntermediateLevel : BaseGui {
 	}
 	void OnGUI(){
 		base.OnGUI();
+		Rect boxRect=new Rect(Screen.width*.1f,Screen.height*.1f,Screen.width*.8f,Screen.height*.8f);
 		if(loadingLevel==false){
 		if(questionStatus==QuestionStatus.unanswered ){
-
 			addBOX(question["q"]);
-
 			Dictionary<string,ButtonDelegate> dic= new Dictionary<string,ButtonDelegate>();
 			foreach(JSONNode answer in answers){
 				dic.Add(answer,delegate(string text) {
@@ -56,18 +55,7 @@ public class IntermediateLevel : BaseGui {
 						questionStatus=QuestionStatus.wrong;
 				});
 			}
-			addButtons(dic);
-
-			/*float buttonHeight=((Screen.height*.7f)/answers.Count)-10f;
-			float buttonWidth=Screen.width*.7f;
-			int count=1;
-
-			myStyle = new GUIStyle(GUI.skin.button);
-			myStyle.fontSize=20;
-			foreach(JSONNode answer in answers){
-				addButton(count*buttonHeight,buttonWidth,buttonHeight, answer);
-				count++;
-			}*/
+			addButtons(dic,boxRect);
 		} else if(questionStatus==QuestionStatus.correct ){
 
 			addBOX("Respuesta correcta!!!\n¿Deseas compartir tu puntuacion en Facebook?");
@@ -90,7 +78,7 @@ public class IntermediateLevel : BaseGui {
 					GotoLvl.changeLevel(true);
 				
 			});
-			addButtons(dic);
+			addButtons(dic,boxRect);
 
 
 		}else if(questionStatus==QuestionStatus.wrong){
@@ -102,7 +90,7 @@ public class IntermediateLevel : BaseGui {
 			dic.Add("Menu principal",delegate {
 				Application.LoadLevel("Start");				
 			});
-			addButtons(dic);
+			addButtons(dic,boxRect);
 		}
 
 		}//end if loadinglevel
@@ -117,19 +105,7 @@ public class IntermediateLevel : BaseGui {
 	private void addBOX(string title){
 		GUI.Box(new Rect(Screen.width*.1f,Screen.height*.1f,Screen.width*.8f,Screen.height*.8f),title);
 	}
-	private delegate void ButtonDelegate (string text);
 
-	private void addButtons(Dictionary<string,ButtonDelegate> data){
-		float buttonHeight=((Screen.height*.75f)/data.Count)-(10f*data.Count);
-		float buttonWidth=Screen.width*.7f;
-		int buttonNumber=0;
-		foreach (KeyValuePair<string, ButtonDelegate> entry in data){
-			if(GUI.Button(new Rect(Screen.width*.15f,(Screen.height*.2f)+((buttonHeight+5f)*buttonNumber)+5f,buttonWidth,buttonHeight),entry.Key)){
-				entry.Value(entry.Key);
-			}
-			buttonNumber=buttonNumber+1;
-		}
-	}
 
 	void Update () {
 
