@@ -111,7 +111,7 @@ public class HUD : BaseGui {
 		Texture2D levelt = (Texture2D)Resources.Load("GUI/HUD/nivel");
 		GUI.DrawTexture(new Rect(210, 15, 64,64),levelt );
 		GUI.contentColor=Color.blue;
-		GUI.Label(new Rect(195, 30, 64,64),(PlayerPrefs.GetInt("sublevel")+1).ToString());
+		GUI.Label(new Rect(185, 30, 94,64),(PlayerPrefs.GetInt("level")).ToString()+"."+(PlayerPrefs.GetInt("sublevel")+1).ToString());
 		GUI.contentColor=Color.white;
 
 		//jonathan agregado el label de watermark y su estilo

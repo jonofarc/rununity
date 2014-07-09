@@ -50,7 +50,7 @@ public class MainMenu : BaseGui {
 			for(int x=1;x<=5;x++){
 				dic.Add("Subnivel "+x,delegate(string text){
 					PlayerPrefs.SetInt("level",level);
-					PlayerPrefs.SetInt ("sublevel", Int32.Parse(text.Split(' ')[1]));
+					PlayerPrefs.SetInt ("sublevel", (Int32.Parse(text.Split(' ')[1]))-1);
 					GotoLvl.changeLevel();
 				});
 
