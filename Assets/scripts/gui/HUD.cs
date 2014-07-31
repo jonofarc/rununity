@@ -121,7 +121,7 @@ public class HUD : BaseGui {
 
 		//agregado contador de tiempo del lvl
 		Texture2D timer = (Texture2D)Resources.Load("GUI/HUD/barra-cronometro");
-		GUI.DrawTexture(new Rect(430, 10, 208, 34),timer );
+		GUI.DrawTexture(new Rect(280, 10, 208, 34),timer );
 		if(stopTime==false){
 			guiTime=Time.time-startTime;
 		}
@@ -131,7 +131,7 @@ public class HUD : BaseGui {
 			int subLvls= PlayerPrefs.GetInt("sublevel");
 			string currentLevelTimer="Level"+Lvls+"Sublvl"+subLvls;
 			PlayerPrefs.SetFloat(currentLevelTimer, guiTime);
-			Debug.Log(PlayerPrefs.GetFloat("Level"+Lvls+"Sublvl"+subLvls));
+//			Debug.Log(PlayerPrefs.GetFloat("Level"+Lvls+"Sublvl"+subLvls));
 			if(sublvl==4){
 				float subLvlvTime0=PlayerPrefs.GetFloat("Level"+Lvls+"Sublvl0");
 				float subLvlvTime1=PlayerPrefs.GetFloat("Level"+Lvls+"Sublvl1");
@@ -141,14 +141,14 @@ public class HUD : BaseGui {
 
 				float subLvlvTimeA=subLvlvTime0+subLvlvTime1+subLvlvTime2+subLvlvTime3+subLvlvTime4;
 
-			
-				GUI.DrawTexture(new Rect(330, 50, 308, 34),timer );
+			 
+				GUI.DrawTexture(new Rect(280, 50, 308, 34),timer );
 
 				int minutes2= (int)subLvlvTimeA/60;
 				int seconds2= (int)subLvlvTimeA%60;
 				int fraction2= (int)(subLvlvTimeA * 100) % 100;
 				string textTime2 = string.Format("Total del Area: "+"{0}\'{1}\"{2}", minutes2, seconds2, fraction2);
-				GUI.Label(new Rect(300, 50, 328, 64),textTime2);
+				GUI.Label(new Rect(250, 50, 358, 64),textTime2);
 
 
 			}
@@ -158,7 +158,7 @@ public class HUD : BaseGui {
 		int seconds= (int)guiTime%60;
 		int fraction= (int)(guiTime * 100) % 100;
 		string textTime = string.Format("Tiempo: "+"{0}\'{1}\"{2}", minutes, seconds, fraction);
-		GUI.Label(new Rect(400, 10, 228, 64),textTime);
+		GUI.Label(new Rect(250, 10, 258, 64),textTime);
 
 		//GUI.Label (Rect (400, 25, 100, 30), textTime); //changed variable name to textTime -->text is not a good variable name since it has other use already
 
