@@ -59,7 +59,7 @@ public class BaseGui : MonoBehaviour {
 		
 		//all to be rotated put here
 		//GUI.Label(new Rect(Screen.width/2-100, Screen.height/2-50,200,50), "Upside down");  
-		GUI.DrawTexture(new Rect(0, Screen.height/-2.2f, Screen.width/1,Screen.height/0.7f),backgrounds[1] );
+		GUI.DrawTexture(new Rect(0, Screen.height/-4.5f, Screen.width/1,Screen.height/1.2f),backgrounds[1] );
 		//end of rotated
 		
 		GUI.matrix = matrixBackup;
