@@ -40,7 +40,6 @@ public class BaseGui : MonoBehaviour {
 
 		Matrix4x4 matrixBackup  = GUI.matrix;
 		float thisAngle = logoAngle/4;
-		Debug.Log (logoAngle);
 		logoAngle = logoAngle + side;
 		if(logoAngle>(degreesMove*4)){
 			side=-1;
