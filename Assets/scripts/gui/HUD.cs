@@ -117,7 +117,7 @@ public class HUD : BaseGui {
 		//jonathan agregado el label de watermark y su estilo
 		watermarkStyle.normal.background = (Texture2D)Resources.Load("UserInterface/capture_button_normal_XHigh");
 		watermarkStyle.alignment= TextAnchor.MiddleCenter;
-		GUI.Label (new Rect (Screen.width/2, Screen.height-70, 200, 60), "Version de Desarrollo", watermarkStyle);
+		//GUI.Label (new Rect (Screen.width/2, Screen.height-70, 200, 60), "Version de Desarrollo", watermarkStyle);
 
 		//agregado contador de tiempo del lvl
 		Texture2D timer = (Texture2D)Resources.Load("GUI/HUD/barra-cronometro");
