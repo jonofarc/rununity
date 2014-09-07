@@ -628,7 +628,14 @@ function restartLvl(){
 function lvlFinished(){
 	moveAction=0;
 	stopMovement=true;//esta variable impidie que se ejecuten otras animaciones mas que la actual
-	animation.Play("motionplus8");
+	Debug.Log(PlayerPrefs.GetInt ("level"));
+	
+	
+	
+	if(PlayerPrefs.GetInt ("level")!=5){
+		animation.Play("motionplus8");
+	}
+	
 
 //	Debug.Log("Aqui carga el lvl que deve salir despues de pasar el lvl actual");
 

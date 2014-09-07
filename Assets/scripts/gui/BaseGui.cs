@@ -33,39 +33,40 @@ public class BaseGui : MonoBehaviour {
 	private int currentImage=0;
 	protected void OnGUI(){
 
-		//jonathan nueva forma de dibhujar el background sin animacion por cambio de texturas
-		GUI.DrawTexture(new Rect(0, 0, Screen.width,Screen.height),backgrounds[0] );
+		if (Application.loadedLevelName == "Start") {
+						//jonathan nueva forma de dibhujar el background sin animacion por cambio de texturas
+						GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), backgrounds [0]);
 
 
 
-		Matrix4x4 matrixBackup  = GUI.matrix;
-		float thisAngle = logoAngle/4;
-		logoAngle = logoAngle + side;
-		if(logoAngle>(degreesMove*4)){
-			side=-1;
-			//logoAngle++;
-		}
-		if(logoAngle<-(degreesMove*4)){
-			side=1;
-			//logoAngle++;
-		}
+						Matrix4x4 matrixBackup = GUI.matrix;
+						float thisAngle = logoAngle / 4;
+						logoAngle = logoAngle + side;
+						if (logoAngle > (degreesMove * 4)) {
+								side = -1;
+								//logoAngle++;
+						}
+						if (logoAngle < -(degreesMove * 4)) {
+								side = 1;
+								//logoAngle++;
+						}
 
 
-		Vector2 pos =  new Vector2(Screen.width/2, Screen.height/2);
-		float posx =Screen.width;
-		float posy =Screen.height;
+						Vector2 pos = new Vector2 (Screen.width / 2, Screen.height / 2);
+						float posx = Screen.width;
+						float posy = Screen.height;
 		
-		GUIUtility.RotateAroundPivot(thisAngle, pos);
+						GUIUtility.RotateAroundPivot (thisAngle, pos);
 		
-		//all to be rotated put here
-		//GUI.Label(new Rect(Screen.width/2-100, Screen.height/2-50,200,50), "Upside down");  
-		GUI.DrawTexture(new Rect(0, Screen.height/-4.5f, Screen.width/1,Screen.height/1.2f),backgrounds[1] );
-		//end of rotated
+						//all to be rotated put here
+						//GUI.Label(new Rect(Screen.width/2-100, Screen.height/2-50,200,50), "Upside down");  
+						GUI.DrawTexture (new Rect (0, Screen.height / -4.5f, Screen.width / 1, Screen.height / 1.2f), backgrounds [1]);
+						//end of rotated
 		
-		GUI.matrix = matrixBackup;
+						GUI.matrix = matrixBackup;
 
-		/////////////////////////////////////////// fin de jonathan :P
-
+						/////////////////////////////////////////// fin de jonathan :P
+				}
 		/*
 		if(backgrounds!=null){
 			if (currentImage >= backgrounds.Length)

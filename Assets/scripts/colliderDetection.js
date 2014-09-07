@@ -73,6 +73,7 @@ function OnTriggerEnter (collision : Collider) {
 				myCamera.SendMessage("stopTimer");
 				collision.gameObject.SendMessage("lvlFinished");
 				this.SendMessage("lvlFinished");
+				collision.SendMessage("FinishText");
 				
 				
 				
