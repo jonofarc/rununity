@@ -1,15 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\spawnObjects.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\gui\IntermediateLevel.cs">
     <Files>
-      <File FileName="Assets\scripts\ChangeSkyBox.js" Line="17" Column="1" />
-      <File FileName="Assets\scripts\gui\HUD.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\goToCarril.js" Line="1" Column="1" />
-      <File FileName="Assets\scripts\gui\MainMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\GotoLvl.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\colliderDetection.js" Line="1" Column="1" />
-      <File FileName="Assets\scripts\FelicidadesText.js" Line="10" Column="1" />
-      <File FileName="Assets\scripts\spawnObjects.js" Line="329" Column="20" />
+      <File FileName="Assets\scripts\gui\Logos.cs" Line="32" Column="1" />
+      <File FileName="Assets\scripts\gui\MainMenu.cs" Line="160" Column="36" />
+      <File FileName="Assets\scripts\gui\Logos.cs" Line="32" Column="1" />
+      <File FileName="Assets\scripts\gui\BaseGui.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\GotoLvl.cs" Line="20" Column="29" />
+      <File FileName="Assets\scripts\gui\IntermediateLevel.cs" Line="103" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

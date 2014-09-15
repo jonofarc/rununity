@@ -47,13 +47,33 @@ public class MainMenu : BaseGui {
 				});
 			}
 		}else{
-			for(int x=1;x<=5;x++){
-				dic.Add("Subnivel "+x,delegate(string text){
-					PlayerPrefs.SetInt("level",level);
-					PlayerPrefs.SetInt ("sublevel", (Int32.Parse(text.Split(' ')[1]))-1);
-					GotoLvl.changeLevel();
-				});
-
+			switch (level){
+			case 1: 
+					dic.Add("Subnivel 1",delegate(string text){
+						PlayerPrefs.SetInt("level",level);
+						PlayerPrefs.SetInt ("sublevel", (Int32.Parse(text.Split(' ')[1]))-1);
+						GotoLvl.changeLevel();
+					});
+					break;
+			case 2: 
+				for(int x=1;x<=2;x++){
+					dic.Add("Subnivel "+x,delegate(string text){
+						PlayerPrefs.SetInt("level",level);
+						PlayerPrefs.SetInt ("sublevel", (Int32.Parse(text.Split(' ')[1]))-1);
+						GotoLvl.changeLevel();
+					});
+					
+				}
+				break;
+			default:
+				for(int x=1;x<=3;x++){
+					dic.Add("Subnivel "+x,delegate(string text){
+						PlayerPrefs.SetInt("level",level);
+						PlayerPrefs.SetInt ("sublevel", (Int32.Parse(text.Split(' ')[1]))-1);
+						GotoLvl.changeLevel();
+					});				
+				}
+				break;
 			}
 		}
 

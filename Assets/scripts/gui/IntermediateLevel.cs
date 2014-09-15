@@ -68,6 +68,40 @@ public class IntermediateLevel : BaseGui {
 			});
 			dic.Add("No, llevame al siguiente nivel",delegate {
 		
+					//esta parte deveria cambiarse por una funcion donde asignemos el valor del sublvl en ves de mandar llamra una de maneras repetida
+					if(PlayerPrefs.GetInt ("level")==1){//esto checa si es el lvl 1 para que solo tenga 1 sublvl
+						
+						
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						
+						
+					}
+					if(PlayerPrefs.GetInt ("level")==2&&PlayerPrefs.GetInt ("sublevel")==1){//esto checa si es el lvl 1 para que solo tenga 1 sublvl
+						
+						
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						GotoLvl.changeSubLevel();
+						
+					}
+
 				GotoLvl.changeSubLevel();
 					loadingLevel=true;
 					GotoLvl.changeLevel(true);

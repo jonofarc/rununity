@@ -17,11 +17,10 @@ public class GotoLvl : MonoBehaviour {
 		//changeLevelDirectly ();
 	}
 	public static int finalLevel=5;
-	public static int subLvls=5;
+	public static int subLvls=3;
 	public static int currentsubLvls=0;
 	public static void changeLevel(bool succes=true){
-		//0==Estamos un nivel, 1 estamos en un menu,2 estamos en un video 
-		
+
 		
 		string loadedLevelName=Application.loadedLevelName;
 		if(loadedLevelName.Contains("LevelIntermediate") ){
