@@ -67,7 +67,7 @@ public class FBUtil {
 	private static void internalShare(FacebookDelegate del){
 		FB.Feed(
 			linkCaption: "El Gran Ciclo",
-			picture: "http://blog.osdamv.com/content/256.png",
+			picture: "https://lh6.ggpht.com/H_9zOTeyp4N7mExG6C6sk3GvCIwxVmrrthQqdi-m8WwvG4DrIftZpeiWVXBWzOFbFBE=w300",
 			linkName: "Ven ayuda a gonti!!!",
 			link: "http://apps.facebook.com/" + FB.AppId + "/?challenge_brag=" + (FB.IsLoggedIn ? FB.UserId : "guest"),
 			callback: del

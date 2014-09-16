@@ -71,7 +71,7 @@ public class IntermediateLevel : BaseGui {
 					//esta parte deveria cambiarse por una funcion donde asignemos el valor del sublvl en ves de mandar llamra una de maneras repetida
 					if(PlayerPrefs.GetInt ("level")==1){//esto checa si es el lvl 1 para que solo tenga 1 sublvl
 						
-						
+						//deveras jon no se te ocurrio una mejor manera >.>
 						GotoLvl.changeSubLevel();
 						GotoLvl.changeSubLevel();
 						GotoLvl.changeSubLevel();

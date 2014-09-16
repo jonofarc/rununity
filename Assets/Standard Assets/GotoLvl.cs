@@ -32,8 +32,10 @@ public class GotoLvl : MonoBehaviour {
 		}else if(loadedLevelName.Contains("Video")){
 			int currentLevel = PlayerPrefs.GetInt ("level");
 			currentLevel++;
-			if (currentLevel == 0 || currentLevel>finalLevel)
+			if (currentLevel == 0 || currentLevel>finalLevel){
 				currentLevel = 1;
+				PlayerPrefs.SetInt("finishGame",1);
+			}
 			PlayerPrefs.SetInt ("level", currentLevel);
 			loadLvl(0);
 		}else if(loadedLevelName=="Start"){

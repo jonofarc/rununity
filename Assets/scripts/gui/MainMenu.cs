@@ -140,15 +140,18 @@ public class MainMenu : BaseGui {
   private void doMainMenu(){
 
 	if(loadingLevel==false){
-
+		int terminoJuego=PlayerPrefs.GetInt("finishGame");
+			float subdivs=5f;
+		if(terminoJuego==1)
+				subdivs=6f;
 		float boxHeigt = Screen.height*.5f, 
 		boxWidth = Screen.width*.8f,
 		boxLeft = Screen.width*.1f, 
 		boxTop=Screen.height*.97f-boxHeigt,
 		buttonWidth=boxWidth*.9f,
-		buttonHeigth=(boxHeigt/6)-5f,
+		buttonHeigth=(boxHeigt/subdivs)-5f,
 		buttonLeft = boxLeft+boxWidth*.05f,
-		buttonTop=boxHeigt/6f;
+		buttonTop=boxHeigt/subdivs;
 		
 		GUI.Box(new Rect(boxLeft,boxTop,boxWidth,boxHeigt), "Menu");
 				
@@ -164,22 +167,24 @@ public class MainMenu : BaseGui {
 			GotoLvl.setSubLevel();
 			GotoLvl.changeLevel(true);
 		}
-		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "Escoger nivel")) {
-				levelPicker=true;
-				leaderBoard=false;
-		}
-		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*4,buttonWidth,buttonHeigth), "LeaderBoard")) {
+
+		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "LeaderBoard")) {
 			FBUtil.friendsScores(delegate(FBResult result) {
 				 scores=JSON.Parse(result.Text);
 				leaderBoard=true;
 				levelPicker=false;
 			});
 		}
-		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*5,buttonWidth,buttonHeigth), "Compartir en Facebook")) {
+		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*4,buttonWidth,buttonHeigth), "Compartir en Facebook")) {
 			FBUtil.share(delegate {
 				
 			});	
 		}
+		if(terminoJuego==1)
+			if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*5,buttonWidth,buttonHeigth), "Escoger nivel")) {
+				levelPicker=true;
+				leaderBoard=false;
+			}
 	}
 	else{
 			

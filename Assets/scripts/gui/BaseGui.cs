@@ -33,8 +33,13 @@ public class BaseGui : MonoBehaviour {
 	private int currentImage=0;
 	protected void OnGUI(){
 
-		if (Application.loadedLevelName == "Start") {
-						//jonathan nueva forma de dibhujar el background sin animacion por cambio de texturas
+		if (Application.loadedLevelName == "Start" || Application.loadedLevelName == "LevelIntermediate" ) {
+						//jonathan nueva forma de dibhujar el background sin animacion por cambio de texturas, 
+						//cabron de veras debes aprender orientado objetos esto no se hace >,>, 
+						//te jodiste el nivel intermedio por hacer esto y no tengo chance andar corrigiendo esto el dia de lanzamiento >.>
+						// con este comentario saco mi odio hacia a ti, btw como fregados tienes configurado tu ide que da 4 tabs O.o,
+						// posdata pa arreglar esto no se hacia con un if era heredar de nuevo y poner la pta imagen >.> si que da un 
+						// papa objeto nivel Dios todologo sera tu culpa !!!!!
 						GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), backgrounds [0]);
 
 
@@ -92,11 +97,11 @@ public class BaseGui : MonoBehaviour {
 	protected void addButtons(Dictionary<string,ButtonDelegate> data, Rect target){
 		//GUI.Box(new Rect(Screen.width*.1f,Screen.height*.1f,Screen.width*.8f,Screen.height*.8f),title);
 
-		float buttonHeight=((target.height*.9f)/(data.Count))-10f;
+		float buttonHeight=((target.height*.8f)/(data.Count))-10f;
 		float buttonWidth=target.width*.9f;
 		int buttonNumber=0;
 		foreach (KeyValuePair<string, ButtonDelegate> entry in data){
-			if(GUI.Button(new Rect(target.left+(buttonWidth*.05f),(target.top+(target.height*.1f))+((buttonHeight+5f)*buttonNumber),buttonWidth,buttonHeight),entry.Key)){
+			if(GUI.Button(new Rect(target.left+(buttonWidth*.05f),(target.top+(target.height*.2f))+((buttonHeight+5f)*buttonNumber),buttonWidth,buttonHeight),entry.Key)){
 				entry.Value(entry.Key);				
 			}
 			buttonNumber=buttonNumber+1;
