@@ -67,6 +67,11 @@ public class IntermediateLevel : BaseGui {
 				});
 			});
 			dic.Add("No, llevame al siguiente nivel",delegate {
+
+					PlayerPrefs.SetInt("puntajeLvl"+PlayerPrefs.GetInt("level")+"subLevel"+PlayerPrefs.GetInt("sublevel"),(int)HUD.getPoints());
+
+				//	GetScore.ResetMyScore();
+				//	GetScore.GetMyScore();
 		
 					//esta parte deveria cambiarse por una funcion donde asignemos el valor del sublvl en ves de mandar llamra una de maneras repetida
 					if(PlayerPrefs.GetInt ("level")==1){//esto checa si es el lvl 1 para que solo tenga 1 sublvl

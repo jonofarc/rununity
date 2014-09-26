@@ -628,7 +628,7 @@ function restartLvl(){
 function lvlFinished(){
 	moveAction=0;
 	stopMovement=true;//esta variable impidie que se ejecuten otras animaciones mas que la actual
-	Debug.Log(PlayerPrefs.GetInt ("level"));
+
 	
 	
 	
