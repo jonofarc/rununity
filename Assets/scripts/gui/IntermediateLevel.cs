@@ -61,10 +61,13 @@ public class IntermediateLevel : BaseGui {
 			addBOX("Respuesta correcta!!!\n¿Deseas compartir tu puntuacion en Facebook?");
 			Dictionary<string,ButtonDelegate> dic= new Dictionary<string,ButtonDelegate>();
 			dic.Add("Si",delegate {
-				FBUtil.score(((int)HUD.getPoints())+"",delegate {
+					FBUtil.share(delegate {
+						GotoLvl.changeLevel(true);
+					});	
+				/*FBUtil.score(((int)HUD.getPoints())+"",delegate {
 					GotoLvl.changeLevel(true);
 					
-				});
+				});*/
 			});
 			dic.Add("No, llevame al siguiente nivel",delegate {
 					Debug.Log("puntaje es!!!!!====="+PlayerPrefs.GetInt("puntajeLvl"+PlayerPrefs.GetInt("level")+"subLevel"+PlayerPrefs.GetInt("sublevel")));
