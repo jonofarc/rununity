@@ -156,29 +156,43 @@ public class MainMenu : BaseGui {
 		GUI.Box(new Rect(boxLeft,boxTop,boxWidth,boxHeigt), "Menu");
 				
 		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop,buttonWidth,buttonHeigth), "Nueva partida")) {
+			PlayerPrefs.SetInt("FirstPlay",1);
 			loadingLevel=true;
 			PlayerPrefs.SetInt ("level", 1);
 			PlayerPrefs.SetInt ("sublevel", 0);
 			GotoLvl.currentsubLvls=0;
 			Application.LoadLevel("Level1");
 		}
-		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*2,buttonWidth,buttonHeigth), "Continuar!!!")) {
-			loadingLevel=true;
-			GotoLvl.setSubLevel();
-			GotoLvl.changeLevel(true);
+
+			if(PlayerPrefs.GetInt("FirstPlay")==1){
+				if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*2,buttonWidth,buttonHeigth), "Continuar!!!")) {
+					loadingLevel=true;
+					GotoLvl.setSubLevel();
+					GotoLvl.changeLevel(true);
+			}
+	
 		}
 
-		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "LeaderBoard")) {
-			FBUtil.friendsScores(delegate(FBResult result) {
+		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*3,buttonWidth,buttonHeigth), "Reiniciar Puntuaciones")) {
+		
+		GetScore.ResetMyScore();
+		//codigo original de leaderboard
+		/*	FBUtil.friendsScores(delegate(FBResult result) {
 				 scores=JSON.Parse(result.Text);
 				leaderBoard=true;
 				levelPicker=false;
 			});
+		*/
 		}
-		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*4,buttonWidth,buttonHeigth), "Compartir en Facebook")) {
-			FBUtil.share(delegate {
+		if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*4,buttonWidth,buttonHeigth), "Ver Puntuaciones")) {
+			
+				Application.LoadLevel("Puntajes");
+
+			//FBUtil.share(delegate {
 				
-			});	
+			//});	
+
+
 		}
 		if(terminoJuego==1)
 			if(GUI.Button(new Rect(buttonLeft,boxTop+buttonTop*5,buttonWidth,buttonHeigth), "Escoger nivel")) {

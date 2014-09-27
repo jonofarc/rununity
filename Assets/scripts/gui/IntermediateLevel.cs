@@ -67,7 +67,7 @@ public class IntermediateLevel : BaseGui {
 				});
 			});
 			dic.Add("No, llevame al siguiente nivel",delegate {
-
+					Debug.Log("puntaje es!!!!!====="+PlayerPrefs.GetInt("puntajeLvl"+PlayerPrefs.GetInt("level")+"subLevel"+PlayerPrefs.GetInt("sublevel")));
 					PlayerPrefs.SetInt("puntajeLvl"+PlayerPrefs.GetInt("level")+"subLevel"+PlayerPrefs.GetInt("sublevel"),(int)HUD.getPoints());
 
 				//	GetScore.ResetMyScore();
@@ -77,6 +77,7 @@ public class IntermediateLevel : BaseGui {
 					if(PlayerPrefs.GetInt ("level")==1){//esto checa si es el lvl 1 para que solo tenga 1 sublvl
 						
 						//deveras jon no se te ocurrio una mejor manera >.>
+						// cuando estava en tu casa nomas esperaqndo subir la app no la saque en 2 min chanse menos XD hay la cambio
 						GotoLvl.changeSubLevel();
 						GotoLvl.changeSubLevel();
 						GotoLvl.changeSubLevel();
@@ -106,7 +107,7 @@ public class IntermediateLevel : BaseGui {
 						GotoLvl.changeSubLevel();
 						
 					}
-
+					Debug.Log ("aqui entro para cmabiar el sublvl");
 				GotoLvl.changeSubLevel();
 					loadingLevel=true;
 					GotoLvl.changeLevel(true);
