@@ -1,12 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\DisplayScores.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\gui\IntermediateLevel.cs">
     <Files>
-      <File FileName="Assets\scripts\GetScore.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\gui\IntermediateLevel.cs" Line="72" Column="6" />
-      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\GotoLvl.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\DisplayScores.cs" Line="7" Column="24" />
+      <File FileName="rununity.sln" Line="1" Column="1" />
+      <File FileName="Assets\scripts\gui\IntermediateLevel.cs" Line="44" Column="16" />
+      <File FileName="Assets\scripts\gui\MainMenu.cs" Line="191" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
