@@ -223,6 +223,19 @@ public class VideoTexture_FullScreen : MonoBehaviour
 				{	
 					GUI.DrawTexture(new Rect(Screen.width / 2 - (scrollBarLength / 2), Screen.height - scrollBarOffset, scrollBarLength, scrollBarHeight),scrollBarTexture,ScaleMode.StretchToFill,true);
 					GUI.DrawTexture(CTI,ctiTexture,ScaleMode.StretchToFill,true);
+
+					if(GUI.Button(new Rect(Screen.width / 2 - (scrollBarLength / 2), Screen.height - scrollBarOffset - (Screen.height/5), scrollBarLength, scrollBarHeight), "Saltar Video")) {
+						
+						Application.LoadLevel("Start");
+						
+						//FBUtil.share(delegate {
+						
+						//});	
+						
+						
+					}
+
+
 				}
 			}
 		}

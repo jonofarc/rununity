@@ -11,7 +11,7 @@ public class DisplayScores : MonoBehaviour {
 
 		myText = myText+ "Nivel " + "1" + " Subnivel " + "1" + " : " + PlayerPrefs.GetInt ("puntajeLvl1subLevel0")+ " Puntos \n";
 
-		myFinalScore = myFinalScore+PlayerPrefs.GetInt ("puntajeLvl1subLevel1");
+		myFinalScore = myFinalScore+PlayerPrefs.GetInt ("puntajeLvl1subLevel0");
 
 		for (int i = 2; i <= GotoLvl.finalLevel; i++) {
 			
